@@ -1,0 +1,6 @@
+framework module Pods_BGJTCloneApp {
+  umbrella header "Pods-BGJTCloneApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
