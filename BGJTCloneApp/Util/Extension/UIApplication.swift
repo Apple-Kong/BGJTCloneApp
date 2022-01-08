@@ -6,3 +6,36 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIApplication {
+    class var statusBarView: UIView? {
+        var statusBarView: UIView?
+        if #available(iOS 13.0, *) {
+            let tag = 38482458385
+            if let statusBar = UIApplication.shared.keyWindow?.viewWithTag(tag) {
+                statusBarView = statusBar
+                
+            } else {
+                let statusBar = UIView(frame: UIApplication.shared.statusBarFrame)
+                statusBar.tag = tag
+                UIApplication.shared.keyWindow?.addSubview(statusBar)
+                statusBarView = statusBar
+                
+            }
+            
+        } else {
+            statusBarView = UIApplication.shared.value(forKey: "statusBar") as? UIView
+            
+        }
+        return statusBarView }
+    
+    
+    class var statusBarBackgroundColor: UIColor? {
+        get {
+            return statusBarView?.backgroundColor
+            
+        } set { statusBarView?.backgroundColor = newValue }
+    }
+    
+}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50AB148FE4D906B1C7F0C069 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236351E5FE29C37373E0C7 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework */; };
+		C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DAD7F2789E4C4008430B8 /* UIApplication.swift */; };
 		C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759627899F1200C10AE4 /* AppDelegate.swift */; };
 		C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759827899F1200C10AE4 /* SceneDelegate.swift */; };
 		C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759A27899F1200C10AE4 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		C0B275E927899F4F00C10AE4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275E027899F4F00C10AE4 /* Device.swift */; };
 		C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */; };
 		C0D46F342789C61D0075048D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D46F332789C61D0075048D /* LoginManager.swift */; };
+		C0F90D832789D5A5001EF74D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90D822789D5A5001EF74D /* HomeViewController.swift */; };
 		DD357B9DE38F78400D34EFEB /* Pods_BGJTCloneAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */; };
 		E1B729B57D334CB84CB2C6AB /* Pods_BGJTCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,7 @@
 		80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGJTCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89899506D4DD36F64B8FB1D0 /* Pods-BGJTCloneAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneAppTests.debug.xcconfig"; path = "Target Support Files/Pods-BGJTCloneAppTests/Pods-BGJTCloneAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGJTCloneAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01DAD7F2789E4C4008430B8 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		C0B2759327899F1200C10AE4 /* BGJTCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGJTCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B2759627899F1200C10AE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0B2759827899F1200C10AE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		C0B275E027899F4F00C10AE4 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0D46F332789C61D0075048D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		C0F90D822789D5A5001EF74D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,7 @@
 				C0B275DD27899F4F00C10AE4 /* UIViewController.swift */,
 				C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */,
 				C0B275DF27899F4F00C10AE4 /* UIFont.swift */,
+				C01DAD7F2789E4C4008430B8 /* UIApplication.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -254,11 +259,28 @@
 		C0B275EA27899F5A00C10AE4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C0F90D812789D593001EF74D /* Login */,
+				C0F90D802789D58D001EF74D /* Home */,
 				C0B2759C27899F1200C10AE4 /* Main.storyboard */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C0F90D802789D58D001EF74D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C0F90D822789D5A5001EF74D /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C0F90D812789D593001EF74D /* Login */ = {
+			isa = PBXGroup;
+			children = (
 				C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */,
 				C0D46F332789C61D0075048D /* LoginManager.swift */,
 			);
-			path = Source;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D6A7EF4DBB83E77EEB7BE7C7 /* Pods */ = {
@@ -521,8 +543,10 @@
 				C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */,
 				C0B275E627899F4F00C10AE4 /* UIViewController.swift in Sources */,
 				C0B275E427899F4F00C10AE4 /* String.swift in Sources */,
+				C0F90D832789D5A5001EF74D /* HomeViewController.swift in Sources */,
 				C0D46F342789C61D0075048D /* LoginManager.swift in Sources */,
 				C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */,
+				C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */,
 				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
 				C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */,
 				C0B275E127899F4F00C10AE4 /* IndicatorView.swift in Sources */,
