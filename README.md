@@ -1,5 +1,5 @@
-# Bunjang_Test_iOS_Luke
+# 루크의 개발일지
+개발일지는 따로 노션으로 정리하였습니다
 
-개발일지는 노션에 따로 작성하였습니다.
-
-https://www.notion.so/softsquared/99093193bfc34730b32b1547b2deec9c
+### 1월 8일 토요일 개발일지
+https://www.notion.so/softsquared/1-8-1702cc8d727e4cce9b5ba1028895d279
