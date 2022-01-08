@@ -18,7 +18,7 @@
 		C0B275B827899F1400C10AE4 /* BGJTCloneAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275B727899F1400C10AE4 /* BGJTCloneAppUITests.swift */; };
 		C0B275BA27899F1400C10AE4 /* BGJTCloneAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275B927899F1400C10AE4 /* BGJTCloneAppUITestsLaunchTests.swift */; };
 		C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275C727899F3C00C10AE4 /* Constant.swift */; };
-		C0B275D127899F3C00C10AE4 /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275C927899F3C00C10AE4 /* KobisKey.swift */; };
+		C0B275D127899F3C00C10AE4 /* AppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275C927899F3C00C10AE4 /* AppKey.swift */; };
 		C0B275D227899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0B275CB27899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf */; };
 		C0B275D327899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0B275CC27899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf */; };
 		C0B275D427899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0B275CD27899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf */; };
@@ -32,6 +32,8 @@
 		C0B275E727899F4F00C10AE4 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */; };
 		C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DF27899F4F00C10AE4 /* UIFont.swift */; };
 		C0B275E927899F4F00C10AE4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275E027899F4F00C10AE4 /* Device.swift */; };
+		C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */; };
+		C0D46F342789C61D0075048D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D46F332789C61D0075048D /* LoginManager.swift */; };
 		DD357B9DE38F78400D34EFEB /* Pods_BGJTCloneAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */; };
 		E1B729B57D334CB84CB2C6AB /* Pods_BGJTCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +79,7 @@
 		C0B275B727899F1400C10AE4 /* BGJTCloneAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGJTCloneAppUITests.swift; sourceTree = "<group>"; };
 		C0B275B927899F1400C10AE4 /* BGJTCloneAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGJTCloneAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C0B275C727899F3C00C10AE4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		C0B275C927899F3C00C10AE4 /* KobisKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
+		C0B275C927899F3C00C10AE4 /* AppKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKey.swift; sourceTree = "<group>"; };
 		C0B275CB27899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		C0B275CC27899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
 		C0B275CD27899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
@@ -91,6 +93,8 @@
 		C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		C0B275DF27899F4F00C10AE4 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C0B275E027899F4F00C10AE4 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0D46F332789C61D0075048D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +204,7 @@
 		C0B275C827899F3C00C10AE4 /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				C0B275C927899F3C00C10AE4 /* KobisKey.swift */,
+				C0B275C927899F3C00C10AE4 /* AppKey.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -251,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				C0B2759C27899F1200C10AE4 /* Main.storyboard */,
+				C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */,
+				C0D46F332789C61D0075048D /* LoginManager.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -265,7 +271,6 @@
 				89899506D4DD36F64B8FB1D0 /* Pods-BGJTCloneAppTests.debug.xcconfig */,
 				7E31636B8F10DA2377954033 /* Pods-BGJTCloneAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -516,6 +521,7 @@
 				C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */,
 				C0B275E627899F4F00C10AE4 /* UIViewController.swift in Sources */,
 				C0B275E427899F4F00C10AE4 /* String.swift in Sources */,
+				C0D46F342789C61D0075048D /* LoginManager.swift in Sources */,
 				C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */,
 				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
 				C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */,
@@ -523,8 +529,9 @@
 				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
 				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
 				C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */,
+				C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */,
 				C0B275E527899F4F00C10AE4 /* UIButton.swift in Sources */,
-				C0B275D127899F3C00C10AE4 /* KobisKey.swift in Sources */,
+				C0B275D127899F3C00C10AE4 /* AppKey.swift in Sources */,
 				C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

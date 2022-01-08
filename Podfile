@@ -12,6 +12,7 @@ target 'BGJTCloneApp' do
   pod 'KakaoSDKUser'
   pod 'KakaoSDKTalk'
   pod 'Kingfisher', '~> 7.0'
+  pod 'ImageSlideshow', '~> 1.9.0'
 
   # Pods for BGJTCloneApp
 
