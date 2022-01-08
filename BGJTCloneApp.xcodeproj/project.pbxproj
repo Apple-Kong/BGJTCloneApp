@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50AB148FE4D906B1C7F0C069 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236351E5FE29C37373E0C7 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework */; };
 		C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759627899F1200C10AE4 /* AppDelegate.swift */; };
 		C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759827899F1200C10AE4 /* SceneDelegate.swift */; };
 		C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759A27899F1200C10AE4 /* ViewController.swift */; };
@@ -16,6 +17,23 @@
 		C0B275AE27899F1400C10AE4 /* BGJTCloneAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275AD27899F1400C10AE4 /* BGJTCloneAppTests.swift */; };
 		C0B275B827899F1400C10AE4 /* BGJTCloneAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275B727899F1400C10AE4 /* BGJTCloneAppUITests.swift */; };
 		C0B275BA27899F1400C10AE4 /* BGJTCloneAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275B927899F1400C10AE4 /* BGJTCloneAppUITestsLaunchTests.swift */; };
+		C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275C727899F3C00C10AE4 /* Constant.swift */; };
+		C0B275D127899F3C00C10AE4 /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275C927899F3C00C10AE4 /* KobisKey.swift */; };
+		C0B275D227899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0B275CB27899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf */; };
+		C0B275D327899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0B275CC27899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf */; };
+		C0B275D427899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0B275CD27899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf */; };
+		C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275CF27899F3C00C10AE4 /* BaseViewController.swift */; };
+		C0B275E127899F4F00C10AE4 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275D727899F4F00C10AE4 /* IndicatorView.swift */; };
+		C0B275E227899F4F00C10AE4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275D927899F4F00C10AE4 /* Date.swift */; };
+		C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DA27899F4F00C10AE4 /* UIColor.swift */; };
+		C0B275E427899F4F00C10AE4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DB27899F4F00C10AE4 /* String.swift */; };
+		C0B275E527899F4F00C10AE4 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DC27899F4F00C10AE4 /* UIButton.swift */; };
+		C0B275E627899F4F00C10AE4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DD27899F4F00C10AE4 /* UIViewController.swift */; };
+		C0B275E727899F4F00C10AE4 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */; };
+		C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DF27899F4F00C10AE4 /* UIFont.swift */; };
+		C0B275E927899F4F00C10AE4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275E027899F4F00C10AE4 /* Device.swift */; };
+		DD357B9DE38F78400D34EFEB /* Pods_BGJTCloneAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */; };
+		E1B729B57D334CB84CB2C6AB /* Pods_BGJTCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +54,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1698AD511259F1CD93309286 /* Pods-BGJTCloneApp-BGJTCloneAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneApp-BGJTCloneAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-BGJTCloneApp-BGJTCloneAppUITests/Pods-BGJTCloneApp-BGJTCloneAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		342F0CE37B84EA365EBB0028 /* Pods-BGJTCloneApp-BGJTCloneAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneApp-BGJTCloneAppUITests.release.xcconfig"; path = "Target Support Files/Pods-BGJTCloneApp-BGJTCloneAppUITests/Pods-BGJTCloneApp-BGJTCloneAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F4FF5121B5F9247D0F976FC /* Pods-BGJTCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneApp.debug.xcconfig"; path = "Target Support Files/Pods-BGJTCloneApp/Pods-BGJTCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
+		620E37B45146F23BD48C14D5 /* Pods-BGJTCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneApp.release.xcconfig"; path = "Target Support Files/Pods-BGJTCloneApp/Pods-BGJTCloneApp.release.xcconfig"; sourceTree = "<group>"; };
+		6E236351E5FE29C37373E0C7 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGJTCloneApp_BGJTCloneAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E31636B8F10DA2377954033 /* Pods-BGJTCloneAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneAppTests.release.xcconfig"; path = "Target Support Files/Pods-BGJTCloneAppTests/Pods-BGJTCloneAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGJTCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89899506D4DD36F64B8FB1D0 /* Pods-BGJTCloneAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneAppTests.debug.xcconfig"; path = "Target Support Files/Pods-BGJTCloneAppTests/Pods-BGJTCloneAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGJTCloneAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B2759327899F1200C10AE4 /* BGJTCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGJTCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B2759627899F1200C10AE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0B2759827899F1200C10AE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +76,21 @@
 		C0B275B327899F1400C10AE4 /* BGJTCloneAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BGJTCloneAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B275B727899F1400C10AE4 /* BGJTCloneAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGJTCloneAppUITests.swift; sourceTree = "<group>"; };
 		C0B275B927899F1400C10AE4 /* BGJTCloneAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGJTCloneAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0B275C727899F3C00C10AE4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C0B275C927899F3C00C10AE4 /* KobisKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
+		C0B275CB27899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		C0B275CC27899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		C0B275CD27899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		C0B275CF27899F3C00C10AE4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C0B275D727899F4F00C10AE4 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		C0B275D927899F4F00C10AE4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C0B275DA27899F4F00C10AE4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C0B275DB27899F4F00C10AE4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		C0B275DC27899F4F00C10AE4 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		C0B275DD27899F4F00C10AE4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		C0B275DF27899F4F00C10AE4 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		C0B275E027899F4F00C10AE4 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B729B57D334CB84CB2C6AB /* Pods_BGJTCloneApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD357B9DE38F78400D34EFEB /* Pods_BGJTCloneAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +114,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AB148FE4D906B1C7F0C069 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		873CA8A6F2C33A40C86A8992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */,
+				6E236351E5FE29C37373E0C7 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework */,
+				A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0B2758A27899F1200C10AE4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +138,8 @@
 				C0B275AC27899F1400C10AE4 /* BGJTCloneAppTests */,
 				C0B275B627899F1400C10AE4 /* BGJTCloneAppUITests */,
 				C0B2759427899F1200C10AE4 /* Products */,
+				D6A7EF4DBB83E77EEB7BE7C7 /* Pods */,
+				873CA8A6F2C33A40C86A8992 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +156,12 @@
 		C0B2759527899F1200C10AE4 /* BGJTCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				C0B275C627899F3C00C10AE4 /* Configuration */,
+				C0B275D627899F4F00C10AE4 /* Util */,
+				C0B275EA27899F5A00C10AE4 /* Source */,
 				C0B2759627899F1200C10AE4 /* AppDelegate.swift */,
 				C0B2759827899F1200C10AE4 /* SceneDelegate.swift */,
 				C0B2759A27899F1200C10AE4 /* ViewController.swift */,
-				C0B2759C27899F1200C10AE4 /* Main.storyboard */,
 				C0B2759F27899F1400C10AE4 /* Assets.xcassets */,
 				C0B275A127899F1400C10AE4 /* LaunchScreen.storyboard */,
 				C0B275A427899F1400C10AE4 /* Info.plist */,
@@ -127,6 +186,89 @@
 			path = BGJTCloneAppUITests;
 			sourceTree = "<group>";
 		};
+		C0B275C627899F3C00C10AE4 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C0B275C727899F3C00C10AE4 /* Constant.swift */,
+				C0B275C827899F3C00C10AE4 /* Secret */,
+				C0B275CA27899F3C00C10AE4 /* Font */,
+				C0B275CE27899F3C00C10AE4 /* Base */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		C0B275C827899F3C00C10AE4 /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				C0B275C927899F3C00C10AE4 /* KobisKey.swift */,
+			);
+			path = Secret;
+			sourceTree = "<group>";
+		};
+		C0B275CA27899F3C00C10AE4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C0B275CB27899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf */,
+				C0B275CC27899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf */,
+				C0B275CD27899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		C0B275CE27899F3C00C10AE4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C0B275CF27899F3C00C10AE4 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C0B275D627899F4F00C10AE4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C0B275D727899F4F00C10AE4 /* IndicatorView.swift */,
+				C0B275E027899F4F00C10AE4 /* Device.swift */,
+				C0B275D827899F4F00C10AE4 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C0B275D827899F4F00C10AE4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C0B275D927899F4F00C10AE4 /* Date.swift */,
+				C0B275DA27899F4F00C10AE4 /* UIColor.swift */,
+				C0B275DB27899F4F00C10AE4 /* String.swift */,
+				C0B275DC27899F4F00C10AE4 /* UIButton.swift */,
+				C0B275DD27899F4F00C10AE4 /* UIViewController.swift */,
+				C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */,
+				C0B275DF27899F4F00C10AE4 /* UIFont.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C0B275EA27899F5A00C10AE4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C0B2759C27899F1200C10AE4 /* Main.storyboard */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D6A7EF4DBB83E77EEB7BE7C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F4FF5121B5F9247D0F976FC /* Pods-BGJTCloneApp.debug.xcconfig */,
+				620E37B45146F23BD48C14D5 /* Pods-BGJTCloneApp.release.xcconfig */,
+				1698AD511259F1CD93309286 /* Pods-BGJTCloneApp-BGJTCloneAppUITests.debug.xcconfig */,
+				342F0CE37B84EA365EBB0028 /* Pods-BGJTCloneApp-BGJTCloneAppUITests.release.xcconfig */,
+				89899506D4DD36F64B8FB1D0 /* Pods-BGJTCloneAppTests.debug.xcconfig */,
+				7E31636B8F10DA2377954033 /* Pods-BGJTCloneAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0B275BD27899F1400C10AE4 /* Build configuration list for PBXNativeTarget "BGJTCloneApp" */;
 			buildPhases = (
+				E4855A39FE78B68AF11A93F6 /* [CP] Check Pods Manifest.lock */,
 				C0B2758F27899F1200C10AE4 /* Sources */,
 				C0B2759027899F1200C10AE4 /* Frameworks */,
 				C0B2759127899F1200C10AE4 /* Resources */,
+				AE391D7314BAFE1C698EC9FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0B275C027899F1400C10AE4 /* Build configuration list for PBXNativeTarget "BGJTCloneAppTests" */;
 			buildPhases = (
+				D9A8860BDBC6A4BDD0895754 /* [CP] Check Pods Manifest.lock */,
 				C0B275A527899F1400C10AE4 /* Sources */,
 				C0B275A627899F1400C10AE4 /* Frameworks */,
 				C0B275A727899F1400C10AE4 /* Resources */,
@@ -169,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0B275C327899F1400C10AE4 /* Build configuration list for PBXNativeTarget "BGJTCloneAppUITests" */;
 			buildPhases = (
+				79368B9AE7933B1E7C903829 /* [CP] Check Pods Manifest.lock */,
 				C0B275AF27899F1400C10AE4 /* Sources */,
 				C0B275B027899F1400C10AE4 /* Frameworks */,
 				C0B275B127899F1400C10AE4 /* Resources */,
+				935E136E569C5A3B0CC63073 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,9 +378,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0B275D327899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				C0B275A327899F1400C10AE4 /* LaunchScreen.storyboard in Resources */,
 				C0B275A027899F1400C10AE4 /* Assets.xcassets in Resources */,
 				C0B2759E27899F1200C10AE4 /* Main.storyboard in Resources */,
+				C0B275D227899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf in Resources */,
+				C0B275D427899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +403,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		79368B9AE7933B1E7C903829 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BGJTCloneApp-BGJTCloneAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		935E136E569C5A3B0CC63073 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGJTCloneApp-BGJTCloneAppUITests/Pods-BGJTCloneApp-BGJTCloneAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGJTCloneApp-BGJTCloneAppUITests/Pods-BGJTCloneApp-BGJTCloneAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGJTCloneApp-BGJTCloneAppUITests/Pods-BGJTCloneApp-BGJTCloneAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE391D7314BAFE1C698EC9FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGJTCloneApp/Pods-BGJTCloneApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BGJTCloneApp/Pods-BGJTCloneApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BGJTCloneApp/Pods-BGJTCloneApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A8860BDBC6A4BDD0895754 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BGJTCloneAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4855A39FE78B68AF11A93F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BGJTCloneApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C0B2758F27899F1200C10AE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */,
+				C0B275E727899F4F00C10AE4 /* UINavigationBar.swift in Sources */,
 				C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */,
+				C0B275E627899F4F00C10AE4 /* UIViewController.swift in Sources */,
+				C0B275E427899F4F00C10AE4 /* String.swift in Sources */,
 				C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */,
+				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
+				C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */,
+				C0B275E127899F4F00C10AE4 /* IndicatorView.swift in Sources */,
+				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
+				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
+				C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */,
+				C0B275E527899F4F00C10AE4 /* UIButton.swift in Sources */,
+				C0B275D127899F3C00C10AE4 /* KobisKey.swift in Sources */,
+				C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +699,7 @@
 		};
 		C0B275BE27899F1400C10AE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4FF5121B5F9247D0F976FC /* Pods-BGJTCloneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -445,8 +711,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,12 +724,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C0B275BF27899F1400C10AE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 620E37B45146F23BD48C14D5 /* Pods-BGJTCloneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,8 +742,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,12 +755,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		C0B275C127899F1400C10AE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89899506D4DD36F64B8FB1D0 /* Pods-BGJTCloneAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +787,7 @@
 		};
 		C0B275C227899F1400C10AE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E31636B8F10DA2377954033 /* Pods-BGJTCloneAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +813,7 @@
 		};
 		C0B275C427899F1400C10AE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1698AD511259F1CD93309286 /* Pods-BGJTCloneApp-BGJTCloneAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,6 +837,7 @@
 		};
 		C0B275C527899F1400C10AE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342F0CE37B84EA365EBB0028 /* Pods-BGJTCloneApp-BGJTCloneAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
