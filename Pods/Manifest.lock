@@ -20,6 +20,9 @@ PODS:
   - KakaoSDKUser (2.8.4):
     - KakaoSDKAuth (= 2.8.4)
   - Kingfisher (7.1.2)
+  - Pageboy (3.6.2)
+  - Tabman (2.11.1):
+    - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
@@ -29,6 +32,7 @@ DEPENDENCIES:
   - KakaoSDKTalk
   - KakaoSDKUser
   - Kingfisher (~> 7.0)
+  - Tabman (~> 2.11)
 
 SPEC REPOS:
   trunk:
@@ -40,6 +44,8 @@ SPEC REPOS:
     - KakaoSDKTemplate
     - KakaoSDKUser
     - Kingfisher
+    - Pageboy
+    - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -50,7 +56,9 @@ SPEC CHECKSUMS:
   KakaoSDKTemplate: 23ff3023d189f0962d28e34627a19c0eb8c1c7a6
   KakaoSDKUser: d878977e0ba6b365cfeac3b6319cdf4231713bea
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
+  Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: 0d5980f6fb0a5047964140beb8eb053fe14c23d8
+PODFILE CHECKSUM: 4c98b3ab215628339c5f435fce16eb10a3ad967e
 
 COCOAPODS: 1.11.2

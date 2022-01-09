@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonCollectionView: UICollectionView!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var customTabViewTopHeight: NSLayoutConstraint!
+    
+    let MaxTopHeight: CGFloat = 50
+    let MinTopHeight: CGFloat = 50
     
     let images = [ImageSource(image: UIImage(named: "Event_0")!),
                       ImageSource(image: UIImage(named: "Event_1")!),
@@ -27,23 +31,14 @@ class HomeViewController: UIViewController {
         
         //네비게이션 컨트롤러 투명하게 만들기
         self.navigationController?.navigationBar.tintColor = .white
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-
-       
-        scrollView.delegate = self
         
+        scrollView.delegate = self
         slideShow.setImageInputs(images)
         slideShow.contentScaleMode = .scaleAspectFill
-        
-        
         buttonCollectionView.delegate = self
         buttonCollectionView.dataSource = self
-        
-        
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,14 +47,17 @@ class HomeViewController: UIViewController {
     }
 }
 
-
-
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        
         let offset = scrollView.contentOffset.y
+        print(offset)
         
+       //고정되어야 하는 위치 - 뷰 높이
+        let threshold: CGFloat = 380
+        if offset > threshold {
+            scrollView.contentOffset = CGPoint(x: 0, y: 380)
+        }
         
         //이미지 슬라이드 헤더 stick to top
         if offset < 0 {
@@ -68,7 +66,6 @@ extension HomeViewController: UIScrollViewDelegate {
         } else {
             slideShow.heightConstraint?.constant = 240
         }
-    
        
         var proportionalOffset =  offset / 100
         //네비게이션 바 fade animation
