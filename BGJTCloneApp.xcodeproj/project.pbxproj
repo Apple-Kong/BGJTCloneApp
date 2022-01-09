@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		50AB148FE4D906B1C7F0C069 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236351E5FE29C37373E0C7 /* Pods_BGJTCloneApp_BGJTCloneAppUITests.framework */; };
 		C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DAD7F2789E4C4008430B8 /* UIApplication.swift */; };
+		C0A5EE06278A66640070E617 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5EE05278A66640070E617 /* UIView.swift */; };
+		C0A5EE08278A762A0070E617 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5EE07278A762A0070E617 /* ButtonCollectionViewCell.swift */; };
 		C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759627899F1200C10AE4 /* AppDelegate.swift */; };
 		C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759827899F1200C10AE4 /* SceneDelegate.swift */; };
 		C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2759A27899F1200C10AE4 /* ViewController.swift */; };
@@ -34,6 +36,7 @@
 		C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DF27899F4F00C10AE4 /* UIFont.swift */; };
 		C0B275E927899F4F00C10AE4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275E027899F4F00C10AE4 /* Device.swift */; };
 		C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */; };
+		C0BBCE59278A80C300C12161 /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBCE58278A80C300C12161 /* HomeViewController+DataSource.swift */; };
 		C0D46F342789C61D0075048D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D46F332789C61D0075048D /* LoginManager.swift */; };
 		C0F90D832789D5A5001EF74D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90D822789D5A5001EF74D /* HomeViewController.swift */; };
 		DD357B9DE38F78400D34EFEB /* Pods_BGJTCloneAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */; };
@@ -68,6 +71,8 @@
 		89899506D4DD36F64B8FB1D0 /* Pods-BGJTCloneAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BGJTCloneAppTests.debug.xcconfig"; path = "Target Support Files/Pods-BGJTCloneAppTests/Pods-BGJTCloneAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BGJTCloneAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01DAD7F2789E4C4008430B8 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		C0A5EE05278A66640070E617 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C0A5EE07278A762A0070E617 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0B2759327899F1200C10AE4 /* BGJTCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGJTCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B2759627899F1200C10AE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0B2759827899F1200C10AE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		C0B275DF27899F4F00C10AE4 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C0B275E027899F4F00C10AE4 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0BBCE58278A80C300C12161 /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
 		C0D46F332789C61D0075048D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		C0F90D822789D5A5001EF74D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +258,7 @@
 				C0B275DE27899F4F00C10AE4 /* UINavigationBar.swift */,
 				C0B275DF27899F4F00C10AE4 /* UIFont.swift */,
 				C01DAD7F2789E4C4008430B8 /* UIApplication.swift */,
+				C0A5EE05278A66640070E617 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -270,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				C0F90D822789D5A5001EF74D /* HomeViewController.swift */,
+				C0A5EE07278A762A0070E617 /* ButtonCollectionViewCell.swift */,
+				C0BBCE58278A80C300C12161 /* HomeViewController+DataSource.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -538,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A5EE06278A66640070E617 /* UIView.swift in Sources */,
 				C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */,
 				C0B275E727899F4F00C10AE4 /* UINavigationBar.swift in Sources */,
 				C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */,
@@ -553,9 +563,11 @@
 				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
 				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
 				C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */,
+				C0BBCE59278A80C300C12161 /* HomeViewController+DataSource.swift in Sources */,
 				C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */,
 				C0B275E527899F4F00C10AE4 /* UIButton.swift in Sources */,
 				C0B275D127899F3C00C10AE4 /* AppKey.swift in Sources */,
+				C0A5EE08278A762A0070E617 /* ButtonCollectionViewCell.swift in Sources */,
 				C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
