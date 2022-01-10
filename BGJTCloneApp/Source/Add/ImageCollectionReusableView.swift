@@ -9,4 +9,7 @@ import UIKit
 
 class ImageCollectionReusableView: UICollectionReusableView {
         
+    @IBOutlet weak var addImageButton: UIButton!
+    
+    
 }
