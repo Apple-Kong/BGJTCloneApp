@@ -17,7 +17,8 @@ class HomeItemViewController: TabmanViewController {
 
    override func viewDidLoad() {
        super.viewDidLoad()
-
+       
+       //MARK: - 커스텀 탭바 추가.
        let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RecommendViewController") as! RecommendViewController
        let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrandViewController") as! BrandViewController
            
@@ -35,32 +36,39 @@ class HomeItemViewController: TabmanViewController {
    }
     
     
+
+}
+
+
+extension HomeItemViewController {
     func settingTabBar (ctBar : TMBar.ButtonBar) {
-            ctBar.layout.transitionStyle = .snap
-            // 왼쪽 여백주기
-            ctBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-            
-            // 간격
-            ctBar.layout.interButtonSpacing = 20
-                
-            ctBar.backgroundView.style = .flat(color: .white)
-            
-            // 선택 / 안선택 색 + font size
-            ctBar.buttons.customize { (button) in
-                button.tintColor = .gray
-                button.selectedTintColor = .black
-                button.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-                button.selectedFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
-            }
-            
-            // 인디케이터 (영상에서 주황색 아래 바 부분)
-            ctBar.indicator.weight = .custom(value: 3)
-            ctBar.indicator.tintColor = .black
-      
+        ctBar.layout.transitionStyle = .snap
+        // 왼쪽 여백주기
+        ctBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+        
+        // 간격
+        ctBar.layout.interButtonSpacing = 20
+        // background 스타일
+        ctBar.backgroundView.style = .flat(color: .white)
+        
+        // 선택 / 안선택 색 + font size
+        ctBar.buttons.customize { (button) in
+            button.tintColor = .gray
+            button.selectedTintColor = .black
+            button.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            button.selectedFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
         }
+        
+        // 인디케이터 (영상에서 주황색 아래 바 부분)
+        ctBar.indicator.weight = .custom(value: 3)
+        ctBar.indicator.tintColor = .black
+  
+    }
 }
 
 extension HomeItemViewController: PageboyViewControllerDataSource, TMBarDataSource {
+    
+    //bar item 별 설정.
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         let item = TMBarItem(title: "")
         item.title = "Page \(index)"
@@ -76,9 +84,8 @@ extension HomeItemViewController: PageboyViewControllerDataSource, TMBarDataSour
         default:
             return TMBarItem(title: "page \(index)")
         }
-        
-        // ↑↑ 이미지는 이따가 탭바 형식으로 보여줄 때 사용할 것이니 "이미지가 왜 있지?" 하지말고 넘어가주세요.
     }
+    
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count

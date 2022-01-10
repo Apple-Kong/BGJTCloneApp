@@ -60,5 +60,4 @@ extension  RecommendViewController: UICollectionViewDelegateFlowLayout {
         let size = CGSize(width: width, height: height)
         return size
     }
-    
 }
