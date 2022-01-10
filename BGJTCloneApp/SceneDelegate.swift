@@ -8,12 +8,19 @@
 import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
+import NaverThirdPartyLogin
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
+        NaverThirdPartyLoginConnection
+          .getSharedInstance()?
+          .receiveAccessToken(URLContexts.first?.url)
+        
+        kServiceAppUrlScheme
         if let url = URLContexts.first?.url {
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
                 _ = AuthController.handleOpenUrl(url: url)

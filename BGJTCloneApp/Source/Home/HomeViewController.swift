@@ -7,6 +7,8 @@
 
 import UIKit
 import ImageSlideshow
+import Tabman
+import Pageboy
 
 class HomeViewController: UIViewController {
     
@@ -18,8 +20,11 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var customTabViewTopHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var containerView: UIView!
+    
     let MaxTopHeight: CGFloat = 50
     let MinTopHeight: CGFloat = 50
+    var threshold: CGFloat = 384
     
     let images = [ImageSource(image: UIImage(named: "Event_0")!),
                       ImageSource(image: UIImage(named: "Event_1")!),
@@ -39,6 +44,8 @@ class HomeViewController: UIViewController {
         slideShow.contentScaleMode = .scaleAspectFill
         buttonCollectionView.delegate = self
         buttonCollectionView.dataSource = self
+        
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,38 +57,48 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let offset = scrollView.contentOffset.y
-        print(offset)
-        
-       //고정되어야 하는 위치 - 뷰 높이
-        let threshold: CGFloat = 380
-        if offset > threshold {
-            scrollView.contentOffset = CGPoint(x: 0, y: 380)
-        }
-        
-        //이미지 슬라이드 헤더 stick to top
-        if offset < 0 {
-            slideShow.heightConstraint?.constant = 240 - offset
-            headerTopConstraint.constant = offset
-        } else {
-            slideShow.heightConstraint?.constant = 240
-        }
-       
-        var proportionalOffset =  offset / 100
-        //네비게이션 바 fade animation
-        if proportionalOffset > 1 {
-            proportionalOffset = 1
-            let color = UIColor(red: 1, green: 1, blue: 1, alpha: proportionalOffset)
-            self.navigationController?.navigationBar.tintColor = UIColor(hue: 1, saturation: proportionalOffset, brightness: 1, alpha: 1)
-            self.navigationController?.navigationBar.backgroundColor = color
-            UIApplication.statusBarBackgroundColor = color
+        if scrollView == self.scrollView {
+
+            let offset = scrollView.contentOffset.y
+            
+         
+            //고정되어야 하는 위치 - 뷰 높이
+            if offset > self.threshold {
+                scrollView.contentOffset = CGPoint(x: 0, y: self.threshold)
+             }
+           
+
+            //이미지 슬라이드 헤더 stick to top
+            if offset < 0 {
+                slideShow.heightConstraint?.constant = 240 - offset
+                headerTopConstraint.constant = offset
+            } else {
+                slideShow.heightConstraint?.constant = 240
+            }
             
             
-        } else {
-            let color = UIColor(red: 1, green: 1, blue: 1, alpha: proportionalOffset)
-            self.navigationController?.navigationBar.tintColor = UIColor(hue: 1, saturation: proportionalOffset, brightness: 1, alpha: 1)
-            self.navigationController?.navigationBar.backgroundColor = color
-            UIApplication.statusBarBackgroundColor = color
+           
+            var proportionalOffset =  offset / 60
+            //네비게이션 바 fade animation
+            if proportionalOffset > 1 {
+                proportionalOffset = 1
+                let color = UIColor(red: 1, green: 1, blue: 1, alpha: proportionalOffset)
+                self.navigationController?.navigationBar.tintColor = UIColor(hue: 1, saturation: 0, brightness: 1 - proportionalOffset, alpha: 1)
+                self.navigationController?.navigationBar.backgroundColor = color
+                
+                
+                UIApplication.statusBarBackgroundColor = color
+                
+                
+            } else {
+                let color = UIColor(red: 1, green: 1, blue: 1, alpha: proportionalOffset)
+                self.navigationController?.navigationBar.tintColor = UIColor(hue: 1, saturation: 0, brightness: 1 - proportionalOffset, alpha: 1)
+                self.navigationController?.navigationBar.backgroundColor = color
+                UIApplication.statusBarBackgroundColor = color
+            }
         }
     }
 }
+
+
+

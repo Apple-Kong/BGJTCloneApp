@@ -21,22 +21,26 @@ class HalfModalPresentationController: UIPresentationController {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.blurEffectView.isUserInteractionEnabled = true
         self.blurEffectView.addGestureRecognizer(tapGestureRecognizer)
+        
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
         CGRect(origin: CGPoint(x: 0,
-                               y: self.containerView!.frame.height * 181 / 800),
+                               y: self.containerView!.frame.height * 470 / 800),
                size: CGSize(width: self.containerView!.frame.width,
-                            height: self.containerView!.frame.height * 619 / 800))
+                            height: self.containerView!.frame.height * 400 / 800))
     }
     
     // 모달이 올라갈 때 뒤에 있는 배경을 검은색 처리해주는 용도
     override func presentationTransitionWillBegin() {
         self.blurEffectView.alpha = 0
         self.containerView!.addSubview(blurEffectView)
-        self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in self.blurEffectView.alpha = 0.4},
+        self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in self.blurEffectView.alpha = 0.5},
                                                                     completion: nil)
+        
     }
+    
+    
     
     // 모달이 없어질 때 검은색 배경을 슈퍼뷰에서 제거
     override func dismissalTransitionWillBegin() {
@@ -48,8 +52,14 @@ class HalfModalPresentationController: UIPresentationController {
     override func containerViewDidLayoutSubviews() {
         super.containerViewDidLayoutSubviews()
         blurEffectView.frame = containerView!.bounds
-        self.presentedView?.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMaxYCorner, .layerMinXMaxYCorner)
+       
+      
+        self.presentedView?.layer.masksToBounds = true
+        self.presentedView?.layer.cornerRadius = 20
+        self.presentedView!.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMinYCorner, .layerMinXMinYCorner)
     }
+    
+    
     
     @objc func dismissController() {
         self.presentedViewController.dismiss(animated: true, completion: nil)

@@ -30,6 +30,10 @@ class LoginViewController: UIViewController {
 
     }
     
+    @IBAction func OtherLoginButton(_ sender: UIButton) {
+        presentReviewModalViewController()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,9 +48,33 @@ class LoginViewController: UIViewController {
         slideShow.pageIndicator = indicator
        
         
+        
+        
     }
+    
+    //half modal view 띄우는 메서드
+    private func presentReviewModalViewController() {
+            let storyboard = UIStoryboard(name: "LoginStoryBoard", bundle: nil)
+            guard let reviewModalViewController = storyboard.instantiateViewController(withIdentifier: "OtherLoginViewController") as? OtherLoginViewController else {
+                return
+            }
+                
+            reviewModalViewController.modalPresentationStyle = .custom
+            reviewModalViewController.transitioningDelegate = self
+            present(reviewModalViewController, animated: true, completion: nil)
+    }
+    
+ 
 }
 
+//half modalView 띄우기
+extension LoginViewController: UIViewControllerTransitioningDelegate {
+        // ...
+
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
 
 
 extension LoginViewController {

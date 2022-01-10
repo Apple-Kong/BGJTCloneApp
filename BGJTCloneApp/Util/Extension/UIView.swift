@@ -10,7 +10,7 @@ import UIKit
 
 
 
-// 동적인 UIVie constraint 수정을 위한 확장
+// 동적인 UIView constraint 수정을 위한 확장
 extension UIView {
 
 var heightConstraint: NSLayoutConstraint? {

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+//iOS 13 이상에서 status bar의 프로퍼티 변경을 위한 확장
 extension UIApplication {
     class var statusBarView: UIView? {
         var statusBarView: UIView?

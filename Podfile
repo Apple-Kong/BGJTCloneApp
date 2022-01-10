@@ -14,6 +14,7 @@ target 'BGJTCloneApp' do
   pod 'Kingfisher', '~> 7.0'
   pod 'ImageSlideshow', '~> 1.9.0'
   pod 'Tabman', '~> 2.11'
+  pod 'naveridlogin-sdk-ios'
   
   # Pods for BGJTCloneApp
 
