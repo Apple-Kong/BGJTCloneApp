@@ -43,9 +43,10 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.tabBarController?.tabBar.isHidden = true
         //텍스트 필드 플레이스 홀더 세팅
         placeholderSetting()
+        
         
         
         //옵션 버튼 커스텀
@@ -56,6 +57,7 @@ class AddViewController: UIViewController {
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
 
+        imageCollectionView.contentInset.left = 20
         titleTextField.delegate = self
         priceTextField.delegate = self
     }
@@ -116,6 +118,7 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
+        cell.layer.cornerRadius = 5
         
         return cell
     }
@@ -139,6 +142,8 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             
             //헤더 뷰 생성
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ImageCollectionReusableView", for: indexPath) as! ImageCollectionReusableView
+            headerView.addImageButton.titleLabel?.font = UIFont(name: "system", size: 8)
+            headerView.layer.cornerRadius = 5
             return headerView
        
         default:
@@ -150,6 +155,12 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
 
 //컬렉션 뷰 셀 크기 조정
 extension AddViewController: UICollectionViewDelegateFlowLayout {
+    
+
+    
+    
+    
+    
     //아이템간 거리
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10

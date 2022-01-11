@@ -8,6 +8,5 @@
 import UIKit
 
 class ButtonCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var image: UIImageView!
 }

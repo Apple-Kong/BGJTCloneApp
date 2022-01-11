@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+struct AutoLoginResponse: Decodable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+}

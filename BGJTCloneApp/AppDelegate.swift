@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKCommon
 import NaverThirdPartyLogin
+import Alamofire
 
 
 @main
@@ -49,6 +50,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         instance?.appName = kServiceAppName
         
         KakaoSDK.initSDK(appKey: AppKey.KAKAO_KEY)
+        
+        
+        
+        // 앱 토큰 불러오기
+        if let token = UserDefaults.standard.string(forKey: "jwt") {
+            
+            print("토큰 존재")
+            
+            //토큰으로 자동 로그인 요청
+            let headers: HTTPHeaders = [
+                "x-access-token": token
+            ]
+            
+            let urlString = Constant.MAIN_URL + "/api/auth/auto-login"
+            
+            AF.request(urlString, method: .get, parameters: nil, headers: headers)
+                .responseDecodable(of: AutoLoginResponse.self) { response in
+                    switch response.result {
+                    case .success:
+                        print(response.value?.message)
+                        UserDefaults.standard.set(true, forKey: "isLogin")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        UserDefaults.standard.set(false, forKey: "isLogin")
+                    }
+                }
+            
+                //성공 >> 앱 진입
+            
+                //실패 >> 소셜 로그인 정보 불러오기.
+                        
+                        //소셜 정보 확인
+                            
+                            //유 >> 로그인 시도
+                                
+                                //성공
+            
+            
+                                //실패
+            
+                                    //회원가입 뷰
+                            //무 >> 회원가입 뷰
+            
+        } else {
+            
+            print("토큰 X")
+            
+            UserDefaults.standard.set(false, forKey: "isLogin")
+                                      //)
+            
+        }
+        
+        
         return true
     }
 

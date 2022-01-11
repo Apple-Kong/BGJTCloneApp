@@ -11,17 +11,31 @@ import Pageboy
 
 class HomeItemViewController: TabmanViewController {
     
-    
     private var viewControllers: Array<UIViewController> = []
-   
+    
+    
+    //delegate 중간 전달 임시 저장 변수
+    var scrollDelegate: NestedScrollDelegate?
+    
 
-   override func viewDidLoad() {
+   
+   
+    override func viewDidLoad() {
        super.viewDidLoad()
        
        //MARK: - 커스텀 탭바 추가.
        let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RecommendViewController") as! RecommendViewController
        let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BrandViewController") as! BrandViewController
-           
+        
+        
+        //중첩 스크롤 delegate 중간 전달.
+        if let scrollDelegate = scrollDelegate {
+            vc2.scrollDelegate = scrollDelegate
+        } else {
+           print("scrollDelegate 중간 전달 실패 : nil")
+        }
+        
+        
        viewControllers.append(vc2)
        viewControllers.append(vc3)
        
@@ -34,9 +48,6 @@ class HomeItemViewController: TabmanViewController {
        // Add to view
        addBar(bar, dataSource: self, at: .top)
    }
-    
-    
-
 }
 
 
@@ -86,16 +97,15 @@ extension HomeItemViewController: PageboyViewControllerDataSource, TMBarDataSour
         }
     }
     
-    
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
     }
-
+    
     func viewController(for pageboyViewController: PageboyViewController,
                         at index: PageboyViewController.PageIndex) -> UIViewController? {
         return viewControllers[index]
     }
-
+    
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }

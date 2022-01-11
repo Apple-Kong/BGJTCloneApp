@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eo-Pp-bQ8">
-                                <rect key="frame" x="128.5" y="798" width="157" height="34"/>
+                                <rect key="frame" x="128.5" y="743.5" width="157" height="88.5"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="다른 방법으로 로그인">
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XP-Fy-Fda">
-                                <rect key="frame" x="30" y="717" width="354" height="61"/>
+                                <rect key="frame" x="30" y="662.5" width="354" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9XP-Fy-Fda" secondAttribute="height" multiplier="93:16" id="x0K-hJ-otm"/>
                                 </constraints>
@@ -37,9 +37,12 @@
                                 <buttonConfiguration key="configuration" style="plain" title=" ">
                                     <backgroundConfiguration key="background" image="애플 로그인"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="appleLoginButton:" destination="jDG-T9-p8p" eventType="touchUpInside" id="Rfv-Cy-aU8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-nM-ecr">
-                                <rect key="frame" x="30" y="646" width="354" height="61"/>
+                                <rect key="frame" x="30" y="591.5" width="354" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8fr-nM-ecr" secondAttribute="height" multiplier="93:16" id="mzo-sb-tJq"/>
                                 </constraints>
@@ -52,11 +55,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-Zp-v28" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="0.0" y="68.5" width="414" height="517.5"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="517.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="G7J-Zp-v28" secondAttribute="height" multiplier="4:5" id="Y4s-yg-jqX"/>
-                                    <constraint firstAttribute="height" constant="517.5" id="s4U-ay-0PV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -64,12 +66,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Eo-Pp-bQ8" firstAttribute="top" secondItem="9XP-Fy-Fda" secondAttribute="bottom" constant="20" id="AEc-cB-Hrb"/>
-                            <constraint firstItem="G7J-Zp-v28" firstAttribute="top" secondItem="7CL-Mf-lly" secondAttribute="top" constant="24.5" id="BKQ-WQ-8Zz"/>
+                            <constraint firstItem="G7J-Zp-v28" firstAttribute="top" relation="lessThanOrEqual" secondItem="7CL-Mf-lly" secondAttribute="top" constant="20" id="BKQ-WQ-8Zz"/>
                             <constraint firstItem="7CL-Mf-lly" firstAttribute="trailing" secondItem="G7J-Zp-v28" secondAttribute="trailing" id="Hax-gq-9gR"/>
                             <constraint firstItem="7CL-Mf-lly" firstAttribute="bottom" secondItem="7Eo-Pp-bQ8" secondAttribute="bottom" constant="30" id="QPG-WW-eYh"/>
                             <constraint firstItem="G7J-Zp-v28" firstAttribute="leading" secondItem="7CL-Mf-lly" secondAttribute="leading" id="RTb-yk-YxY"/>
                             <constraint firstItem="7CL-Mf-lly" firstAttribute="trailing" secondItem="8fr-nM-ecr" secondAttribute="trailing" constant="30" id="WNG-aA-8yP"/>
                             <constraint firstItem="7Eo-Pp-bQ8" firstAttribute="centerX" secondItem="7CL-Mf-lly" secondAttribute="centerX" id="ZDK-Zh-gBJ"/>
+                            <constraint firstItem="8fr-nM-ecr" firstAttribute="top" relation="lessThanOrEqual" secondItem="G7J-Zp-v28" secondAttribute="bottom" constant="10" id="ZJf-aR-5fp"/>
                             <constraint firstItem="9XP-Fy-Fda" firstAttribute="top" secondItem="8fr-nM-ecr" secondAttribute="bottom" constant="10" id="bFV-eV-V1s"/>
                             <constraint firstItem="8fr-nM-ecr" firstAttribute="leading" secondItem="7CL-Mf-lly" secondAttribute="leading" constant="30" id="cAq-3V-dUB"/>
                             <constraint firstItem="7CL-Mf-lly" firstAttribute="trailing" secondItem="9XP-Fy-Fda" secondAttribute="trailing" constant="30" id="dA0-9b-sW4"/>

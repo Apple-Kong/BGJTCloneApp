@@ -12,6 +12,7 @@ class RecommendViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var scrollDelegate: NestedScrollDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,45 +20,28 @@ class RecommendViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
+
     }
 }
 
 
-
-extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCollectionViewCell
+//MARK: - 중첩 스크롤 해결
+extension RecommendViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        cell.image.layer.masksToBounds = true
-        cell.image.layer.cornerRadius = 16
-        return cell
-    }
-}
-
-
-extension  RecommendViewController: UICollectionViewDelegateFlowLayout {
-    
-    //행
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    //행간 높이
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //사이즈 조정
-        
-        let width = collectionView.frame.width / 2 - 10
-        let height = width * 2.2
-        let size = CGSize(width: width, height: height)
-        return size
+        if scrollView.contentOffset.y < -5 {
+            //하위 스크롤이 맨위에 닿는 다면 delegate 메서드 실행
+            scrollDelegate?.scrollDidEndTop()
+            
+            //스크롤이 맨위까지 닿는다면 하위 스크롤 잠금
+            collectionView.isScrollEnabled = false
+            
+            //0.4 초 뒤에 바로 해제
+            Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { timer in
+                
+                self.collectionView.isScrollEnabled = true
+            }
+           
+        }
     }
 }

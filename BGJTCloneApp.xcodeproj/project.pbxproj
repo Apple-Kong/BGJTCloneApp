@@ -13,6 +13,14 @@
 		C057F502278BB23400405ACD /* HomeStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F501278BB23400405ACD /* HomeStoryBoard.storyboard */; };
 		C057F504278BB43200405ACD /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F503278BB43200405ACD /* HalfModalPresentationController.swift */; };
 		C057F506278BB60800405ACD /* OtherLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F505278BB60800405ACD /* OtherLoginViewController.swift */; };
+		C057F508278BF8D900405ACD /* NaverLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F507278BF8D900405ACD /* NaverLoginResponse.swift */; };
+		C057F50D278C04A400405ACD /* ItemStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F50C278C04A400405ACD /* ItemStoryBoard.storyboard */; };
+		C057F50F278C04CB00405ACD /* RecommendStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F50E278C04CB00405ACD /* RecommendStoryBoard.storyboard */; };
+		C057F511278C052100405ACD /* BrandStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F510278C052100405ACD /* BrandStoryBoard.storyboard */; };
+		C057F514278C27F700405ACD /* AddStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F512278C27F700405ACD /* AddStoryBoard.storyboard */; };
+		C057F518278C862600405ACD /* RecommendViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */; };
+		C063F723278D1AEB00636680 /* AutoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F722278D1AEB00636680 /* AutoLoginResponse.swift */; };
+		C063F725278D50A800636680 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F724278D50A800636680 /* TabBarController.swift */; };
 		C069EB2D278B1B5D004C2900 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */; };
 		C069EB2F278B1C1A004C2900 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB2E278B1C1A004C2900 /* UITextField.swift */; };
 		C069EB31278B3390004C2900 /* ImageCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */; };
@@ -87,6 +95,14 @@
 		C057F501278BB23400405ACD /* HomeStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
 		C057F503278BB43200405ACD /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		C057F505278BB60800405ACD /* OtherLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherLoginViewController.swift; sourceTree = "<group>"; };
+		C057F507278BF8D900405ACD /* NaverLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginResponse.swift; sourceTree = "<group>"; };
+		C057F50C278C04A400405ACD /* ItemStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
+		C057F50E278C04CB00405ACD /* RecommendStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecommendStoryBoard.storyboard; path = BGJTCloneApp/Source/Home/Item/RecommendStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
+		C057F510278C052100405ACD /* BrandStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BrandStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
+		C057F513278C27F700405ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BGJTCloneApp/Source/Base.lproj/AddStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
+		C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+DataSource.swift"; sourceTree = "<group>"; };
+		C063F722278D1AEB00636680 /* AutoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginResponse.swift; sourceTree = "<group>"; };
+		C063F724278D50A800636680 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C069EB2E278B1C1A004C2900 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -169,9 +185,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C057F509278BFE2900405ACD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C057F507278BF8D900405ACD /* NaverLoginResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C057F50A278C045E00405ACD /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				C057F50E278C04CB00405ACD /* RecommendStoryBoard.storyboard */,
+				C0BBCE5D278A9CB400C12161 /* RecommendViewController.swift */,
+				C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */,
+				C057F519278C864A00405ACD /* Cell */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		C057F50B278C046E00405ACD /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				C057F510278C052100405ACD /* BrandStoryBoard.storyboard */,
+				C0BBCE5F278A9CEF00C12161 /* BrandViewController.swift */,
+			);
+			path = Brand;
+			sourceTree = "<group>";
+		};
+		C057F519278C864A00405ACD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C06E9005278ADBA5005AE69F /* RecommendCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C06E9007278B1A29005AE69F /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				C057F512278C27F700405ACD /* AddStoryBoard.storyboard */,
 				C06E9008278B1A37005AE69F /* AddViewController.swift */,
 				C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */,
 				C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */,
@@ -208,6 +261,7 @@
 				C0B275D627899F4F00C10AE4 /* Util */,
 				C0B275EA27899F5A00C10AE4 /* Source */,
 				C0B2759627899F1200C10AE4 /* AppDelegate.swift */,
+				C063F722278D1AEB00636680 /* AutoLoginResponse.swift */,
 				C0B2759827899F1200C10AE4 /* SceneDelegate.swift */,
 				C0B2759A27899F1200C10AE4 /* ViewController.swift */,
 				C0B2759F27899F1400C10AE4 /* Assets.xcassets */,
@@ -305,6 +359,7 @@
 				C0F90D802789D58D001EF74D /* Home */,
 				C06E9007278B1A29005AE69F /* Add */,
 				C0B2759C27899F1200C10AE4 /* Main.storyboard */,
+				C063F724278D50A800636680 /* TabBarController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -312,9 +367,10 @@
 		C0BBCE5C278A9C9500C12161 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				C0BBCE5D278A9CB400C12161 /* RecommendViewController.swift */,
-				C0BBCE5F278A9CEF00C12161 /* BrandViewController.swift */,
-				C06E9005278ADBA5005AE69F /* RecommendCollectionViewCell.swift */,
+				C057F50C278C04A400405ACD /* ItemStoryBoard.storyboard */,
+				C0BBCE5A278A9AE200C12161 /* HomeItemViewController.swift */,
+				C057F50A278C045E00405ACD /* Recommend */,
+				C057F50B278C046E00405ACD /* Brand */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -326,7 +382,6 @@
 				C0F90D822789D5A5001EF74D /* HomeViewController.swift */,
 				C0BBCE58278A80C300C12161 /* HomeViewController+DataSource.swift */,
 				C0A5EE07278A762A0070E617 /* ButtonCollectionViewCell.swift */,
-				C0BBCE5A278A9AE200C12161 /* HomeItemViewController.swift */,
 				C0BBCE5C278A9C9500C12161 /* Item */,
 			);
 			path = Home;
@@ -336,10 +391,11 @@
 			isa = PBXGroup;
 			children = (
 				C057F4FE278BB1F900405ACD /* LoginStoryBoard.storyboard */,
-				C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */,
 				C0D46F332789C61D0075048D /* LoginManager.swift */,
-				C057F503278BB43200405ACD /* HalfModalPresentationController.swift */,
+				C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */,
 				C057F505278BB60800405ACD /* OtherLoginViewController.swift */,
+				C057F503278BB43200405ACD /* HalfModalPresentationController.swift */,
+				C057F509278BFE2900405ACD /* Entity */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -468,11 +524,15 @@
 			files = (
 				C0B275D327899F3C00C10AE4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				C057F500278BB1F900405ACD /* LoginStoryBoard.storyboard in Resources */,
+				C057F50D278C04A400405ACD /* ItemStoryBoard.storyboard in Resources */,
 				C057F502278BB23400405ACD /* HomeStoryBoard.storyboard in Resources */,
 				C0B275A327899F1400C10AE4 /* LaunchScreen.storyboard in Resources */,
+				C057F514278C27F700405ACD /* AddStoryBoard.storyboard in Resources */,
 				C0B275A027899F1400C10AE4 /* Assets.xcassets in Resources */,
+				C057F511278C052100405ACD /* BrandStoryBoard.storyboard in Resources */,
 				C0B2759E27899F1200C10AE4 /* Main.storyboard in Resources */,
 				C0B275D227899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf in Resources */,
+				C057F50F278C04CB00405ACD /* RecommendStoryBoard.storyboard in Resources */,
 				C0B275D427899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,10 +661,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C063F723278D1AEB00636680 /* AutoLoginResponse.swift in Sources */,
 				C0A5EE06278A66640070E617 /* UIView.swift in Sources */,
 				C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */,
 				C06E9009278B1A37005AE69F /* AddViewController.swift in Sources */,
 				C0B275E727899F4F00C10AE4 /* UINavigationBar.swift in Sources */,
+				C057F518278C862600405ACD /* RecommendViewController+DataSource.swift in Sources */,
 				C0B2759727899F1200C10AE4 /* AppDelegate.swift in Sources */,
 				C0B275E627899F4F00C10AE4 /* UIViewController.swift in Sources */,
 				C0BBCE60278A9CEF00C12161 /* BrandViewController.swift in Sources */,
@@ -620,6 +682,7 @@
 				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
 				C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */,
 				C0B275E127899F4F00C10AE4 /* IndicatorView.swift in Sources */,
+				C063F725278D50A800636680 /* TabBarController.swift in Sources */,
 				C057F506278BB60800405ACD /* OtherLoginViewController.swift in Sources */,
 				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
 				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
@@ -631,6 +694,7 @@
 				C0B275E527899F4F00C10AE4 /* UIButton.swift in Sources */,
 				C0B275D127899F3C00C10AE4 /* AppKey.swift in Sources */,
 				C0A5EE08278A762A0070E617 /* ButtonCollectionViewCell.swift in Sources */,
+				C057F508278BF8D900405ACD /* NaverLoginResponse.swift in Sources */,
 				C0BBCE5B278A9AE200C12161 /* HomeItemViewController.swift in Sources */,
 				C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */,
 			);
@@ -675,6 +739,14 @@
 				C057F4FF278BB1F900405ACD /* Base */,
 			);
 			name = LoginStoryBoard.storyboard;
+			sourceTree = "<group>";
+		};
+		C057F512278C27F700405ACD /* AddStoryBoard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C057F513278C27F700405ACD /* Base */,
+			);
+			name = AddStoryBoard.storyboard;
 			sourceTree = "<group>";
 		};
 		C0B2759C27899F1200C10AE4 /* Main.storyboard */ = {

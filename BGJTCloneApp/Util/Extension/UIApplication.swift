@@ -39,5 +39,4 @@ extension UIApplication {
             
         } set { statusBarView?.backgroundColor = newValue }
     }
-    
 }
