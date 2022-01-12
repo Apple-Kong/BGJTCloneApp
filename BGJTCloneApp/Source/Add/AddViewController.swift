@@ -16,6 +16,7 @@ class AddViewController: UIViewController {
     //서버로 보낼 데이터들.
     var isSafePay = false
     var isTaekPo = false
+    var category: [String] = []
     
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -26,6 +27,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var titleBarView: UIView!
     
     
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBAction func categoryButtonTap(_ sender: UIButton) {
         
     }
@@ -128,8 +130,37 @@ class AddViewController: UIViewController {
 
 
 
+extension AddViewController: CategoryDelegate {
+    func categorySelected(cateogry: [String]) {
+        self.category = cateogry
+        
+        print("delegate 함수 실행됨~")
+        if self.category.count > 1 {
+            
+            self.categoryLabel.textColor = .black
+            
+            let text = "\(cateogry.first!)  >  \(cateogry.last!)"
+            
+            let attributedStr = NSMutableAttributedString(string: text)
+            let color = UIColor.lightGray
+            attributedStr.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: (text as NSString).range(of: ">"))
+            
+            
+            categoryLabel.attributedText = attributedStr
+        }
+    }
+    
+    //delegate 채택
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "category" {
+            let vc = segue.destination as! CategoryViewController
+            vc.delegate = self
+        }
+    }
+}
 
 
+//MARK: - 텍스트 필드 편집시 애니메이션
 extension AddViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //해당 텍스트 필드 입력 시작시 하단 바 검정색으로 변경
