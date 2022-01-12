@@ -21,6 +21,9 @@
 		C057F518278C862600405ACD /* RecommendViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */; };
 		C063F723278D1AEB00636680 /* AutoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F722278D1AEB00636680 /* AutoLoginResponse.swift */; };
 		C063F725278D50A800636680 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F724278D50A800636680 /* TabBarController.swift */; };
+		C063F727278DD7BA00636680 /* AddViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F726278DD7BA00636680 /* AddViewController+DataSource.swift */; };
+		C063F729278DD7F900636680 /* AddViewController+FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F728278DD7F900636680 /* AddViewController+FlowLayout.swift */; };
+		C063F72B278DD83F00636680 /* AddViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F72A278DD83F00636680 /* AddViewController+TextView.swift */; };
 		C069EB2D278B1B5D004C2900 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */; };
 		C069EB2F278B1C1A004C2900 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB2E278B1C1A004C2900 /* UITextField.swift */; };
 		C069EB31278B3390004C2900 /* ImageCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */; };
@@ -103,6 +106,9 @@
 		C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+DataSource.swift"; sourceTree = "<group>"; };
 		C063F722278D1AEB00636680 /* AutoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginResponse.swift; sourceTree = "<group>"; };
 		C063F724278D50A800636680 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C063F726278DD7BA00636680 /* AddViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+DataSource.swift"; sourceTree = "<group>"; };
+		C063F728278DD7F900636680 /* AddViewController+FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+FlowLayout.swift"; sourceTree = "<group>"; };
+		C063F72A278DD83F00636680 /* AddViewController+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+TextView.swift"; sourceTree = "<group>"; };
 		C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C069EB2E278B1C1A004C2900 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -221,13 +227,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C063F72C278DD85B00636680 /* ImageCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */,
+				C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */,
+			);
+			path = ImageCollectionView;
+			sourceTree = "<group>";
+		};
 		C06E9007278B1A29005AE69F /* Add */ = {
 			isa = PBXGroup;
 			children = (
 				C057F512278C27F700405ACD /* AddStoryBoard.storyboard */,
 				C06E9008278B1A37005AE69F /* AddViewController.swift */,
-				C069EB2C278B1B5D004C2900 /* ImageCollectionViewCell.swift */,
-				C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */,
+				C063F72A278DD83F00636680 /* AddViewController+TextView.swift */,
+				C063F728278DD7F900636680 /* AddViewController+FlowLayout.swift */,
+				C063F726278DD7BA00636680 /* AddViewController+DataSource.swift */,
+				C063F72C278DD85B00636680 /* ImageCollectionView */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -661,6 +678,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C063F729278DD7F900636680 /* AddViewController+FlowLayout.swift in Sources */,
+				C063F72B278DD83F00636680 /* AddViewController+TextView.swift in Sources */,
 				C063F723278D1AEB00636680 /* AutoLoginResponse.swift in Sources */,
 				C0A5EE06278A66640070E617 /* UIView.swift in Sources */,
 				C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */,
@@ -696,6 +715,7 @@
 				C0A5EE08278A762A0070E617 /* ButtonCollectionViewCell.swift in Sources */,
 				C057F508278BF8D900405ACD /* NaverLoginResponse.swift in Sources */,
 				C0BBCE5B278A9AE200C12161 /* HomeItemViewController.swift in Sources */,
+				C063F727278DD7BA00636680 /* AddViewController+DataSource.swift in Sources */,
 				C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
