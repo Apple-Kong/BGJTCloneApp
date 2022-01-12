@@ -17,8 +17,6 @@ extension AddViewController: UITextViewDelegate {
     }
     
     
-    
-    
     func placeholderSetting() {
         
         let detailPlaceholder = "상품의 구입일자, 브랜드, 사용감 등을 적어주세요. 자세히 적을 수록 더 빨리 팔려요.(10자 이상)"
@@ -31,7 +29,7 @@ extension AddViewController: UITextViewDelegate {
         
         detailTextView.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         let attributes = [NSAttributedString.Key.paragraphStyle : style,
-                          NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .medium)
+                          NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .light)
         ]
         detailTextView.attributedText = NSAttributedString(string: detailPlaceholder, attributes: attributes)
         

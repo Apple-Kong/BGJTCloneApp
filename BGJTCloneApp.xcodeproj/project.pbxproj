@@ -11,6 +11,9 @@
 		C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DAD7F2789E4C4008430B8 /* UIApplication.swift */; };
 		C0526AA6278E77F90014C824 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0526AA5278E77F90014C824 /* RecentTableViewCell.swift */; };
 		C0526AA8278E78090014C824 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0526AA7278E78090014C824 /* AllTableViewCell.swift */; };
+		C0526AAC278EB2A70014C824 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0526AAB278EB2A70014C824 /* TagViewController.swift */; };
+		C0526AAF278EB7E50014C824 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0526AAE278EB7E50014C824 /* TagCollectionViewCell.swift */; };
+		C0526AB2278F0B860014C824 /* TagMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0526AB1278F0B860014C824 /* TagMainCollectionViewCell.swift */; };
 		C057F500278BB1F900405ACD /* LoginStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F4FE278BB1F900405ACD /* LoginStoryBoard.storyboard */; };
 		C057F502278BB23400405ACD /* HomeStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C057F501278BB23400405ACD /* HomeStoryBoard.storyboard */; };
 		C057F504278BB43200405ACD /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F503278BB43200405ACD /* HalfModalPresentationController.swift */; };
@@ -99,6 +102,9 @@
 		C01DAD7F2789E4C4008430B8 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		C0526AA5278E77F90014C824 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		C0526AA7278E78090014C824 /* AllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
+		C0526AAB278EB2A70014C824 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		C0526AAE278EB7E50014C824 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0526AB1278F0B860014C824 /* TagMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		C057F4FF278BB1F900405ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BGJTCloneApp/Source/Base.lproj/LoginStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
 		C057F501278BB23400405ACD /* HomeStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
 		C057F503278BB43200405ACD /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C0526AAA278EB2990014C824 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				C0526AAB278EB2A70014C824 /* TagViewController.swift */,
+				C0526AAD278EB7BF0014C824 /* Cell */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		C0526AAD278EB7BF0014C824 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C0526AAE278EB7E50014C824 /* TagCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C0526AB0278F0B5F0014C824 /* TagCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C0526AB1278F0B860014C824 /* TagMainCollectionViewCell.swift */,
+			);
+			path = TagCollectionView;
+			sourceTree = "<group>";
+		};
 		C057F509278BFE2900405ACD /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,12 +285,14 @@
 		C06E9007278B1A29005AE69F /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				C0526AAA278EB2990014C824 /* Tag */,
 				C08EFFDF278E75E200177177 /* Category */,
 				C057F512278C27F700405ACD /* AddStoryBoard.storyboard */,
 				C06E9008278B1A37005AE69F /* AddViewController.swift */,
 				C063F72A278DD83F00636680 /* AddViewController+TextView.swift */,
 				C063F728278DD7F900636680 /* AddViewController+FlowLayout.swift */,
 				C063F726278DD7BA00636680 /* AddViewController+DataSource.swift */,
+				C0526AB0278F0B5F0014C824 /* TagCollectionView */,
 				C063F72C278DD85B00636680 /* ImageCollectionView */,
 			);
 			path = Add;
@@ -724,6 +757,7 @@
 				C069EB2D278B1B5D004C2900 /* ImageCollectionViewCell.swift in Sources */,
 				C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */,
 				C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */,
+				C0526AAF278EB7E50014C824 /* TagCollectionViewCell.swift in Sources */,
 				C08EFFE1278E75F000177177 /* CategoryViewController.swift in Sources */,
 				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
 				C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */,
@@ -734,7 +768,9 @@
 				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
 				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
 				C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */,
+				C0526AAC278EB2A70014C824 /* TagViewController.swift in Sources */,
 				C06E9006278ADBA5005AE69F /* RecommendCollectionViewCell.swift in Sources */,
+				C0526AB2278F0B860014C824 /* TagMainCollectionViewCell.swift in Sources */,
 				C0BBCE59278A80C300C12161 /* HomeViewController+DataSource.swift in Sources */,
 				C0BBCE5E278A9CB400C12161 /* RecommendViewController.swift in Sources */,
 				C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */,

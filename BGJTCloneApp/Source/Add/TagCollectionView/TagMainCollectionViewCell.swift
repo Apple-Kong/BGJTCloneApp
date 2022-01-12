@@ -8,5 +8,6 @@
 import UIKit
 
 class TagMainCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var tagLabel: UILabel!
     
 }

@@ -55,7 +55,6 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             
             
-            print("테이블 뷰 선택됨")
             //문자열 파싱.
             let categoryString = recentCategory[indexPath.row]
             let category = categoryString.components(separatedBy: " > ")

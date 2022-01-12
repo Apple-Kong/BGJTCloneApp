@@ -17,29 +17,31 @@ class AddViewController: UIViewController {
     var isSafePay = false
     var isTaekPo = false
     var category: [String] = []
+    var tags: [String] = []
     
     @IBOutlet weak var scrollView: UIScrollView!
-
+    
+    //이미지
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
-    
+    //제목
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var titleBarView: UIView!
     
-    
+    //카테고리
     @IBOutlet weak var categoryLabel: UILabel!
     @IBAction func categoryButtonTap(_ sender: UIButton) {
-        
     }
     
+    //태그
+    @IBOutlet weak var tagCollectionViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBAction func tagButtonTap(_ sender: UIButton) {
-        
     }
     
-    
+    //배송비 포함
     @IBOutlet weak var taekPoBackgroundView: UIView!
     @IBOutlet weak var taekPoImageView: UIImageView!
-    
     @IBAction func taekPoButtonTap(_ sender: UITapGestureRecognizer) {
         if isTaekPo {
             taekPoImageView.tintColor = .systemGray6
@@ -52,7 +54,6 @@ class AddViewController: UIViewController {
             taekPoBackgroundView.backgroundColor = UIColor(named: "badge")
             isTaekPo = true
         }
-        
     }
     
     //가격입력
@@ -66,6 +67,8 @@ class AddViewController: UIViewController {
     @IBOutlet weak var safeButton: UIView!
     @IBOutlet weak var safeCheck: UIImageView!
     @IBOutlet weak var enrollButton: UIButton!
+    
+    //안전 결제 버튼 탭
     @IBAction func safeButtonTapped(_ sender: UITapGestureRecognizer) {
         if isSafePay {
             safeButton.layer.borderColor = UIColor.systemGray4.cgColor
@@ -78,9 +81,57 @@ class AddViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if tags.isEmpty {
+            // 비어 있다면 숨기기
+            tagCollectionView.isHidden = true
+        } else {
+            
+            // 비어있지 않다면 태그 컬렉션뷰 보이기
+            tagCollectionView.isHidden = false
+            tagCollectionView.backgroundColor = .systemBackground
+        }
+    }
+    
+    //태그 컬렉션 뷰 동적 수정. 태그간 회색 파티션 추가
+    override func viewDidAppear(_ animated: Bool) {
+        tagCollectionView.reloadData()
+        let height = tagCollectionView.contentSize.width
+        if height > tagCollectionView.frame.width {
+   
+            tagCollectionViewTrailingConstraint.constant = 0
+            tagCollectionView.backgroundColor = .systemGray6
+        } else {
+            if height > 60 {
+                tagCollectionViewTrailingConstraint.constant = tagCollectionView.frame.width - height + 4
+                tagCollectionView.backgroundColor = .systemGray6
+            } else {
+                tagCollectionViewTrailingConstraint.constant = 0
+                tagCollectionView.backgroundColor = .systemBackground
+            }
+        }
+    }
+    
+    //delegate 채택
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "category" {
+            let vc = segue.destination as! CategoryViewController
+            vc.delegate = self
+        } else if segue.identifier == "tag" {
+            let vc = segue.destination as! TagViewController
+            vc.delegate = self
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tagCollectionView.delegate = self
+        tagCollectionView.dataSource = self
+        tagCollectionView.contentInset.left = -4
+       
         
         
         taekPoBackgroundView.layer.cornerRadius = taekPoBackgroundView.frame.height / 2
@@ -122,41 +173,41 @@ class AddViewController: UIViewController {
 
         imageCollectionView.contentInset.left = 20
         titleTextField.delegate = self
+        titleTextField.addDoneButtonOnKeyboard()
         priceTextField.delegate = self
-        
+        priceTextField.addDoneButtonOnKeyboard()
         detailTextView.delegate = self
     }
 }
 
 
+//MARK: - 태그 뷰 ~ 데이터 수신
+extension AddViewController: TagDelegate {
+    func tagViewDismissed(tags: [String]) {
+        self.tags = tags
+        tagCollectionView.reloadData()
+    }
+}
 
+
+//MARK: - 카테고리 뷰 ~ 데이터 수신
 extension AddViewController: CategoryDelegate {
     func categorySelected(cateogry: [String]) {
         self.category = cateogry
         
-        print("delegate 함수 실행됨~")
         if self.category.count > 1 {
             
             self.categoryLabel.textColor = .black
-            
             let text = "\(cateogry.first!)  >  \(cateogry.last!)"
-            
             let attributedStr = NSMutableAttributedString(string: text)
             let color = UIColor.lightGray
             attributedStr.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: (text as NSString).range(of: ">"))
-            
             
             categoryLabel.attributedText = attributedStr
         }
     }
     
-    //delegate 채택
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "category" {
-            let vc = segue.destination as! CategoryViewController
-            vc.delegate = self
-        }
-    }
+
 }
 
 
@@ -190,17 +241,16 @@ extension AddViewController: UITextFieldDelegate {
 //MARK: - 이미지 추가 버튼 클릭 시.
 extension AddViewController: HeaderDelegate {
     func addButtonTapped() {
-        print("델리게이트 성공")
+  
         self.openLibrary()
-        
-        
     }
     
+    //이미지 피커 열기
     func openLibrary(){
-      picker.sourceType = .photoLibrary
-//        picker.modalPresentationStyle = .fullScreen
-      present(picker, animated: true, completion: nil)
         
+      picker.sourceType = .photoLibrary
+        picker.modalPresentationStyle = .fullScreen
+      present(picker, animated: true, completion: nil)
     }
 }
 
