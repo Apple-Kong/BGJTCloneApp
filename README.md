@@ -12,3 +12,7 @@ https://softsquared.notion.site/1-10-110b9e3d9b474a3c90eaff132c0d350b
 
 ### 1월 11일 화요일 개발일지
 https://softsquared.notion.site/1-11-a9755bc48a2b4d8db739575e12843ee7
+
+
+### 1 12일 수요일 개발일지
+https://softsquared.notion.site/1-12-d5dc8fd3261b472bbd542d295c023a06
