@@ -15,11 +15,25 @@ class BaseViewController: UIViewController {
         
         // MARK: 아래 예시들처럼 상황에 맞게 활용하시면 됩니다. 네비게이션 바 글꼴이나 이런것들.
         
-        // Navigation Bar
-//        self.navigationController?.navigationBar.titleTextAttributes = [
-//            .font : UIFont.NotoSans(.medium, size: 16),
-//        ]
-        // Background Color
-//        self.view.backgroundColor = .white
+    //     Navigation Bar
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            .font : UIFont.NotoSans(.medium, size: 16),
+        ]
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
+        //assign button to navigationbar
+        
+        
+        //백 버튼 커스텀
+        let backImage = UIImage(systemName: "chevron.backward")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        
+        
+
+        self.navigationController?.navigationBar.tintColor = .black
+         //Background Color
+      
+        
     }
 }

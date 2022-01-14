@@ -22,7 +22,7 @@ class CategoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let recentCategory: [String] = ["남성의류 > 티셔츠 > 반팔티셔츠", "남성의류 > 자켓 > 데님", "패션 액세서리 >", "남성의류 > 자켓 > 블레이저", " 남성의류 > 트레이닝 > 하의"]
+    let recentCategory: [String] = ["남성의류 > 티셔츠", "신발 > 스니커즈", "패션 액세서리 > 지갑", "디지털/가전 > 모바일", "스포츠/레저 > 인라인/스케이트보드"]
     let allCategory: [String] = ["여성의류", "남성의류", "신발", "가방" , "시계/쥬얼리", "패션 액세서리", "디지털/가전", "스포츠/레저"]
     
     let sections: [String] = ["최근 카테고리", "전체 카테고리"]

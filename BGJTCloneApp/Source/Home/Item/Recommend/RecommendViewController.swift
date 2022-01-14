@@ -9,10 +9,16 @@ import UIKit
 
 class RecommendViewController: UIViewController {
     
+    private let wishDataManager = WishDataManager()
+    private let recommendDataManager = RecommendDataManager()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var scrollDelegate: NestedScrollDelegate?
+    
+    //두번째 값은 찜 여부 저장
+    var items: [(RecommendResponse.Result, Bool)] = []
+    var page: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +26,45 @@ class RecommendViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
+        recommendDataManager.delegate = self
+        
+        //첫번째 페이지 가져오기
+        recommendDataManager.fetchData(page: 0)
+        
+        
+    }
+}
 
+
+extension RecommendViewController: WishDelegate, RecommendDelegate {
+    func didFetchedData(items: [RecommendResponse.Result]?) {
+        if let items = items {
+            for item in items {
+                self.items.append((item, false))
+            }
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func wishButtonTapped(index: Int) {
+        //인덱스 패스로 찜하기 요청.
+        
+        let itemID = items[index].0.item_id
+        
+        if items[index].1 {
+            //delete wish
+            wishDataManager.deleteWishItem(itemID: itemID)
+            items[index].1 = false
+            print(items[index].1)
+        } else {
+            //add wish
+            wishDataManager.addWishItem(itemID: itemID)
+            items[index].1 = true
+            print(" wow items\(items[index].1)")
+        }
+        
+        collectionView.reloadData()
     }
 }
 

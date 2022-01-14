@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jwI-oC-rHl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -156,29 +156,97 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="8qM-Ni-0nb"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="KDD-ng-c8q"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NyI-e5-zZ2">
+                                <rect key="frame" x="0.0" y="806" width="414" height="90"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfC-CE-g2K">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Bzv-w2-H20"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qAa-HH-ZTe">
+                                        <rect key="frame" x="10" y="0.0" width="394" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-bP-E1P">
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <backgroundConfiguration key="background" image="Home" imageContentMode="scaleAspectFit"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-DG-9ra">
+                                                <rect key="frame" x="83" y="0.0" width="62.5" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <backgroundConfiguration key="background" image="search-1" imageContentMode="scaleAspectFit"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-oB-MmL">
+                                                <rect key="frame" x="165.5" y="0.0" width="63" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <backgroundConfiguration key="background" image="add" imageContentMode="scaleAspectFit"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="XSa-IR-ypf" kind="presentation" modalPresentationStyle="fullScreen" id="FY2-ij-umq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfy-sQ-IYx">
+                                                <rect key="frame" x="248.5" y="0.0" width="62.5" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <backgroundConfiguration key="background" image="talk" imageContentMode="scaleAspectFit"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhK-aW-Gfh">
+                                                <rect key="frame" x="331" y="0.0" width="63" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <backgroundConfiguration key="background" image="my" imageContentMode="scaleAspectFit"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="qAa-HH-ZTe" firstAttribute="leading" secondItem="NyI-e5-zZ2" secondAttribute="leading" constant="10" id="TS2-fz-lCi"/>
+                                    <constraint firstAttribute="trailing" secondItem="HfC-CE-g2K" secondAttribute="trailing" id="Wle-wA-kBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="qAa-HH-ZTe" secondAttribute="trailing" constant="10" id="Ygv-pT-ddj"/>
+                                    <constraint firstItem="qAa-HH-ZTe" firstAttribute="top" secondItem="NyI-e5-zZ2" secondAttribute="top" id="brX-C3-M1e"/>
+                                    <constraint firstItem="HfC-CE-g2K" firstAttribute="top" secondItem="NyI-e5-zZ2" secondAttribute="top" id="hXl-5X-0La"/>
+                                    <constraint firstAttribute="height" constant="90" id="n6e-r2-YMS"/>
+                                    <constraint firstItem="HfC-CE-g2K" firstAttribute="leading" secondItem="NyI-e5-zZ2" secondAttribute="leading" id="o4U-2a-Rkh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FHU-YV-j0I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qAa-HH-ZTe" firstAttribute="bottom" secondItem="FHU-YV-j0I" secondAttribute="bottom" id="0Yg-Dl-DLA"/>
+                            <constraint firstItem="NyI-e5-zZ2" firstAttribute="leading" secondItem="FHU-YV-j0I" secondAttribute="leading" id="CDP-Or-lEj"/>
+                            <constraint firstAttribute="bottom" secondItem="NyI-e5-zZ2" secondAttribute="bottom" id="Ejm-Dk-0J6"/>
                             <constraint firstItem="FHU-YV-j0I" firstAttribute="trailing" secondItem="G6s-jx-uPd" secondAttribute="trailing" id="Ipg-bi-xzw"/>
                             <constraint firstItem="G6s-jx-uPd" firstAttribute="leading" secondItem="FHU-YV-j0I" secondAttribute="leading" id="K8X-Iy-1WH"/>
                             <constraint firstItem="G6s-jx-uPd" firstAttribute="top" secondItem="4uV-d9-1XV" secondAttribute="top" id="QKe-mC-Hi9"/>
                             <constraint firstAttribute="bottom" secondItem="G6s-jx-uPd" secondAttribute="bottom" id="svP-lk-cfb"/>
+                            <constraint firstItem="FHU-YV-j0I" firstAttribute="trailing" secondItem="NyI-e5-zZ2" secondAttribute="trailing" id="uch-nv-3Gu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xUZ-KF-lGE">
                         <barButtonItem key="leftBarButtonItem" image="menu" width="40" id="ULB-g0-B4B">
                             <inset key="imageInsets" minX="-93" minY="2" maxX="0.0" maxY="-8"/>
+                            <connections>
+                                <segue destination="76s-la-bMe" kind="show" id="vUy-29-H3X"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" id="igp-hG-ZhP">
                                 <imageReference key="image" image="bell" catalog="system" symbolScale="large"/>
                             </barButtonItem>
-                            <barButtonItem image="magnifyingglass" catalog="system" id="ke3-C3-EtA">
-                                <connections>
-                                    <segue destination="XSa-IR-ypf" kind="presentation" modalPresentationStyle="fullScreen" id="GSs-Mw-atH"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem image="magnifyingglass" catalog="system" id="ke3-C3-EtA"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -205,7 +273,7 @@
         <!--Item-->
         <scene sceneID="edO-01-gRw">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-jwI-oC-rHl" automaticallyAdjustsScrollViewInsets="NO" id="jwI-oC-rHl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController-jwI-oC-rHl" automaticallyAdjustsScrollViewInsets="NO" id="jwI-oC-rHl" customClass="MainNavigationController" customModule="BGJTCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="dtU-9G-Jmp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEa-Uh-LfU">
@@ -221,13 +289,25 @@
             </objects>
             <point key="canvasLocation" x="3934.7826086956525" y="133.92857142857142"/>
         </scene>
+        <!--DetailViewController-->
+        <scene sceneID="GOq-jR-1g9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailStoryBoard" referencedIdentifier="DetailViewController" id="76s-la-bMe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q7N-6S-Gmb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRP-5W-03h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5720" y="-139"/>
+        </scene>
         <!--AddStoryBoard-->
         <scene sceneID="Lbd-4w-QIN">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddStoryBoard" id="XSa-IR-ypf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AddStoryBoard" id="XSa-IR-ypf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Q7T-r0-DJb"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUd-LK-ah1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5556" y="-120"/>
+            <point key="canvasLocation" x="5556" y="86"/>
         </scene>
         <!--HomeItemViewController-->
         <scene sceneID="fat-zL-eA0">
@@ -235,7 +315,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="HomeItemViewController" storyboardName="ItemStoryBoard" referencedIdentifier="HomeItemViewController" id="SEt-e0-H6n" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfF-jd-Ypg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5600" y="331"/>
+            <point key="canvasLocation" x="5599" y="179"/>
         </scene>
         <!--RecommendViewController-->
         <scene sceneID="xKJ-hS-ZRc">
@@ -255,10 +335,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home" width="152" height="150"/>
+        <image name="add" width="152" height="152"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="menu" width="384" height="384"/>
+        <image name="my" width="152" height="151"/>
+        <image name="search-1" width="152" height="150"/>
+        <image name="talk" width="152" height="151"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -267,6 +352,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

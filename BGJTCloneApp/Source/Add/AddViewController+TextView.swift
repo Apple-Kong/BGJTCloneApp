@@ -16,6 +16,12 @@ extension AddViewController: UITextViewDelegate {
         return true
     }
     
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        
+        self.detail = textView.text
+        return true
+    }
+    
     
     func placeholderSetting() {
         

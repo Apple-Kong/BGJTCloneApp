@@ -13,6 +13,9 @@ class HalfModalPresentationController: UIPresentationController {
     var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     var check: Bool = false
     
+    var proportionalHeight: Double = 0.5
+    var proportianoalYPosition: Double = 470 / 800
+    
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         let blurEffect = UIBlurEffect(style: .dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -26,9 +29,9 @@ class HalfModalPresentationController: UIPresentationController {
     
     override var frameOfPresentedViewInContainerView: CGRect {
         CGRect(origin: CGPoint(x: 0,
-                               y: self.containerView!.frame.height * 470 / 800),
+                               y: self.containerView!.frame.height * proportianoalYPosition),
                size: CGSize(width: self.containerView!.frame.width,
-                            height: self.containerView!.frame.height * 400 / 800))
+                            height: self.containerView!.frame.height * proportionalHeight))
     }
     
     // 모달이 올라갈 때 뒤에 있는 배경을 검은색 처리해주는 용도
@@ -64,5 +67,4 @@ class HalfModalPresentationController: UIPresentationController {
     @objc func dismissController() {
         self.presentedViewController.dismiss(animated: true, completion: nil)
     }
-    
 }

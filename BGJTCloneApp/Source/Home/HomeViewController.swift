@@ -32,11 +32,16 @@ class HomeViewController: UIViewController {
                       ImageSource(image: UIImage(named: "Event_2")!),
                     ]
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        UIApplication.statusBarBackgroundColor = .white
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        indicatorView.layer.cornerRadius = 2
-        indicatorBackgroundView.layer.cornerRadius = 2
         
         //네비게이션 컨트롤러 투명하게 만들기
         self.navigationController?.navigationBar.tintColor = .white
@@ -45,17 +50,20 @@ class HomeViewController: UIViewController {
         
         buttonCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 160, bottom: 0, right: 160)
         
-
+        
         //delegate 설정
         scrollView.delegate = self
         slideShow.setImageInputs(images)
         slideShow.contentScaleMode = .scaleAspectFill
+        
+        
+        
+        
         buttonCollectionView.delegate = self
         buttonCollectionView.dataSource = self
         
         
         if !UserDefaults.standard.bool(forKey: "isLogin") {
-            print("로그인 뷰 컨트롤러 띄우자")
             
             let storyBoard = UIStoryboard(name: "LoginStoryBoard", bundle: nil)
             let loginVC: LoginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -64,13 +72,14 @@ class HomeViewController: UIViewController {
             
             self.present(loginVC, animated: true, completion: nil)
         }
-       
     }
 }
 
 
 //MARK: - 중첩 스크롤 문제를 해결하기 위한 뷰컨트롤러간 소통
 
+
+//MARK: - 치명적인 오류 발생 컬렉션 뷰 스크롤이 될 만큼 아이템이 충분하지 않을 시 상위 뷰 컨트롤러 스크롤 그대로 정지해버림
 protocol NestedScrollDelegate {
     func scrollDidEndTop()
 }
@@ -99,7 +108,6 @@ extension HomeViewController: UIScrollViewDelegate {
         if scrollView == self.buttonCollectionView {
             
             let offset = scrollView.contentOffset.x / 6
-            print(offset) //0 ~ 187
             
             indicatorLeadingConstraint.constant = offset
         }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="RecommendViewController" id="WLv-wj-zOX" customClass="RecommendViewController" customModule="BGJTCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gY-Ut-KLr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pE-ZI-Cde">
@@ -64,11 +66,27 @@
                                                         <constraint firstAttribute="height" constant="23" id="gTb-Es-W8A"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPm-o3-ysB">
+                                                    <rect key="frame" x="150" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yPm-o3-ysB" secondAttribute="height" multiplier="1:1" id="3ba-pa-e1W"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <backgroundConfiguration key="background" image="main_heart"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="wishButton:" destination="StW-aQ-aMS" eventType="touchUpInside" id="k6a-o5-Ld2"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="eXP-oC-Vqu" firstAttribute="leading" secondItem="b9n-Oh-cYj" secondAttribute="leading" id="2DP-5P-XCc"/>
+                                                <constraint firstAttribute="trailing" secondItem="yPm-o3-ysB" secondAttribute="trailing" constant="10" id="5Vh-Dm-w8H"/>
                                                 <constraint firstItem="wdJ-Zz-SNH" firstAttribute="leading" secondItem="b9n-Oh-cYj" secondAttribute="leading" id="7ZP-g8-oQu"/>
                                                 <constraint firstItem="wdJ-Zz-SNH" firstAttribute="top" secondItem="hH8-O6-KXJ" secondAttribute="bottom" constant="8" symbolic="YES" id="A1j-Tl-L0R"/>
+                                                <constraint firstItem="yPm-o3-ysB" firstAttribute="top" secondItem="b9n-Oh-cYj" secondAttribute="top" constant="10" id="GlA-7C-Ygb"/>
+                                                <constraint firstItem="yPm-o3-ysB" firstAttribute="width" secondItem="b9n-Oh-cYj" secondAttribute="width" multiplier="0.2" id="KEp-Cn-2kJ"/>
                                                 <constraint firstItem="hH8-O6-KXJ" firstAttribute="leading" secondItem="b9n-Oh-cYj" secondAttribute="leading" id="LjX-KJ-nXK"/>
                                                 <constraint firstItem="eXP-oC-Vqu" firstAttribute="top" secondItem="b9n-Oh-cYj" secondAttribute="top" id="LyY-bd-dGW"/>
                                                 <constraint firstAttribute="trailing" secondItem="eXP-oC-Vqu" secondAttribute="trailing" id="Njd-kM-4Fz"/>
@@ -86,6 +104,7 @@
                                             <outlet property="locationLabel" destination="hH8-O6-KXJ" id="nMA-9Z-zEJ"/>
                                             <outlet property="priceLabel" destination="UZW-wW-WgG" id="AbC-TX-saF"/>
                                             <outlet property="titleLabel" destination="r3V-2G-VVp" id="qd3-Bg-c9E"/>
+                                            <outlet property="wishButton" destination="yPm-o3-ysB" id="flI-9E-YLs"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -112,6 +131,7 @@
     <resources>
         <image name="Event_1" width="1125" height="900"/>
         <image name="bg pay" width="109" height="48"/>
+        <image name="main_heart" width="94" height="89"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

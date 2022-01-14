@@ -6,19 +6,64 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 //MARK: - 컬렉션 뷰 항목 개수, 셀로의 정보 전달.
 extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        vc.item = items[indexPath.row]
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCollectionViewCell
         
+        let item = items[indexPath.row].0
+        let isWishItem = items[indexPath.row].1
+        
+        
+        
+        cell.titleLabel.text = item.title
+        cell.priceLabel.text = String(item.price).insertComma
+        cell.locationLabel.text = item.location
+        
+        let url = URL(string: item.image_path)
+        cell.image.kf.setImage(with: url)
+        
+        if item.safety_pay == 1 {
+            //셀 뱃지 보이기
+            cell.BGpayImageView.isHidden = false
+        } else {
+            //셀 뱃지 숨기기
+            cell.BGpayImageView.isHidden = true
+        }
+        
+        if isWishItem {
+            // 버튼 빨갛게
+            print("버튼 빨갛게~")
+            cell.wishButton.setBackgroundImage(UIImage(named: "main_heart_fill"), for: UIControl.State.normal)
+        } else {
+            // 버튼 하얗게
+            cell.wishButton.setBackgroundImage(UIImage(named: "main_heart"), for: UIControl.State.normal)
+            
+        }
+        
         cell.image.layer.masksToBounds = true
         cell.image.layer.cornerRadius = 16
+        cell.delegate = self
+        cell.index = indexPath.row
+        
+        
         return cell
     }
 }

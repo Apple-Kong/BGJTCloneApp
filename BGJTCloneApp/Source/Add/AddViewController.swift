@@ -9,15 +9,41 @@ import UIKit
 
 class AddViewController: UIViewController {
     
+    let addManager = AddManager()
+    
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true) {
+           
+        }
+    }
     //이미지 피커
     let picker = UIImagePickerController()
     var selectedImages: [UIImage] = []
     
     //서버로 보낼 데이터들.
+    var itemTitle: String?
+    var price: Int?
     var isSafePay = false
     var isTaekPo = false
     var category: [String] = []
     var tags: [String] = []
+    var numOfItem: Int = 1
+    var isOld: Bool = true
+    var isExchangable: Bool = false
+    var detail: String?
+    
+
+    @IBAction func addItemButtonTap(_ sender: UIButton) {
+        
+        if let itemTitle = itemTitle, let price = price, let detail = detail {
+            let item = ItemInfo(category: category, title: itemTitle, location: nil, price: price, delivery_fee_included: isTaekPo, count: numOfItem, isOld: isOld, isExchangable: isExchangable, detail: detail, isSafe: isSafePay, tags: tags, images: [])
+            
+            addManager.addItem(item: item)
+        } else {
+            //MARK: 경고창 띄우기
+            self.presentAlert(title: "필수 정보를 입력하세요", isCancelActionIncluded: true)
+        }
+    }
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -61,6 +87,10 @@ class AddViewController: UIViewController {
     @IBOutlet weak var wonImageView: UIImageView!
     @IBOutlet weak var priceBarView: UIView!
     //옵션 및 세부사항
+    @IBAction func optionButtonTap(_ sender: UIButton) {
+        
+        presentReviewModalViewController()
+    }
     @IBOutlet weak var optionButton: UIButton!
     @IBOutlet weak var detailTextView: UITextView!
     //하단 바 - 번개 페이, 등록 버튼
@@ -210,6 +240,14 @@ extension AddViewController: CategoryDelegate {
 
 }
 
+extension AddViewController: OptionDelegate {
+    func optionChoosed(nuberOfItem: Int, isOld: Bool, isExchangable: Bool) {
+        self.numOfItem = nuberOfItem
+        self.isOld = isOld
+        self.isExchangable = isExchangable
+    }
+}
+
 
 //MARK: - 텍스트 필드 편집시 애니메이션
 extension AddViewController: UITextFieldDelegate {
@@ -227,12 +265,15 @@ extension AddViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == self.titleTextField {
             titleBarView.backgroundColor = .lightGray
-            
+            itemTitle = textField.text
             
         } else {
             priceBarView.backgroundColor = .lightGray
             wonImageView.tintColor = .lightGray
-            textField.text = textField.text?.insertComma
+            if let text = textField.text {
+                price = Int(text)
+                textField.text = textField.text?.insertComma
+            }
         }
     }
 }
@@ -266,4 +307,43 @@ extension AddViewController : UIImagePickerControllerDelegate, UINavigationContr
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+
+
+//half modalView 띄우기
+extension AddViewController: UIViewControllerTransitioningDelegate {
+        // ...
+    
+    //half modal view 띄우는 메서드
+    private func presentReviewModalViewController() {
+            let storyboard = UIStoryboard(name: "AddStoryBoard", bundle: nil)
+            guard let optionModalViewController = storyboard.instantiateViewController(withIdentifier: "OptionChoiceViewController") as? OptionChoiceViewController else {
+                return
+            }
+            
+            optionModalViewController.delegate = self
+
+        
+            optionModalViewController.modalPresentationStyle = .custom
+            optionModalViewController.transitioningDelegate = self
+            present(optionModalViewController, animated: true, completion: nil)
+    }
+    
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        let halfModalPC = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+        halfModalPC.proportianoalYPosition = 0.44
+        halfModalPC.proportionalHeight = 0.7
+        
+        return halfModalPC
+    }
+}
+
+
+extension AddViewController: DismissDelegate {
+    //다른 방법으로 로그인 시 호출 됨
+    func dismiss() {
+        print("option 선택 뷰 디스미스")
+    }
 }

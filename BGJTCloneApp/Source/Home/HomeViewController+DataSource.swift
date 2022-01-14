@@ -9,6 +9,14 @@ import UIKit
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let vc = UIStoryboard(name: "InterestStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "InterestViewController") as! InterestViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //버튼 갯수
         return 14

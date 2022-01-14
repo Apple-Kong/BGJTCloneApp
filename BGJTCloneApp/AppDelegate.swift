@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 애플리케이션 이름
         instance?.appName = kServiceAppName
         
-        KakaoSDK.initSDK(appKey: AppKey.KAKAO_KEY)
+        KakaoSDK.initSDK(appKey: Secret.KAKAO_KEY)
         
         
         
