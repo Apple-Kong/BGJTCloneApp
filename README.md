@@ -1,6 +1,9 @@
 # 루크의 개발일지
 개발일지는 따로 노션으로 정리하였습니다
 
+### 1월 15일 토요일 개발일지
+https://softsquared.notion.site/1-15-0d42eaf9d0e6421c8ffd9ec494525986
+
 ### 1월 14일 금요일 개발일지
 https://softsquared.notion.site/1-14-1648488128954b7fb543cb81ab2099f6
 
