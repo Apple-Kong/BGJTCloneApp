@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "-상품의 브랜드, 모델명, 사이즈 등을 입력해 보세요."; ObjectID = "1M0-fd-Aug"; */
+"1M0-fd-Aug.text" = "-상품의 브랜드, 모델명, 사이즈 등을 입력해 보세요.";
+
+/* Class = "UINavigationItem"; title = "태그"; ObjectID = "1Uh-Ij-kpU"; */
+"1Uh-Ij-kpU.title" = "태그";
+
+/* Class = "UILabel"; text = "-검색과 검색 광고 등에 사용됩니다."; ObjectID = "Mvp-np-Iw2"; */
+"Mvp-np-Iw2.text" = "-검색과 검색 광고 등에 사용됩니다.";
+
+/* Class = "UITextField"; placeholder = "태그를 입력해주세요. (최대 5개)"; ObjectID = "d3j-kI-veJ"; */
+"d3j-kI-veJ.placeholder" = "태그를 입력해주세요. (최대 5개)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dgj-2P-3ij"; */
+"dgj-2P-3ij.text" = "Label";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "o6V-ul-EMS"; */
+"o6V-ul-EMS.text" = "#";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "siY-hJ-LZj"; */
+"siY-hJ-LZj.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "siY-hJ-LZj"; */
+"siY-hJ-LZj.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "추가"; ObjectID = "w2L-UV-K64"; */
+"w2L-UV-K64.configuration.title" = "추가";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "w2L-UV-K64"; */
+"w2L-UV-K64.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "-상품과 관련이 없는 태그를 입력할 경우 상품의 노출이 중단되거나 삭제될 수 있습니다."; ObjectID = "zUd-XE-DAh"; */
+"zUd-XE-DAh.text" = "-상품과 관련이 없는 태그를 입력할 경우 상품의 노출이 중단되거나 삭제될 수 있습니다.";

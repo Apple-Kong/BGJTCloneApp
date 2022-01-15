@@ -88,6 +88,11 @@ class InterestViewController: TabmanViewController {
 }
 
 
+
+
+
+
+
 extension InterestViewController {
     func settingTabBar (ctBar : TMBar.ButtonBar) {
         ctBar.layout.transitionStyle = .snap

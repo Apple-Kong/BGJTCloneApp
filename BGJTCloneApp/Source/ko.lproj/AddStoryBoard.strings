@@ -1,0 +1,117 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "3Sz-uw-g8O"; */
+"3Sz-uw-g8O.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "카테고리"; ObjectID = "3p3-US-saC"; */
+"3p3-US-saC.title" = "카테고리";
+
+/* Class = "UILabel"; text = "태그"; ObjectID = "4lL-F6-J0j"; */
+"4lL-F6-J0j.text" = "태그";
+
+/* Class = "UIButton"; configuration.title = "자세히"; ObjectID = "5TP-Co-dS0"; */
+"5TP-Co-dS0.configuration.title" = "자세히";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5TP-Co-dS0"; */
+"5TP-Co-dS0.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5xr-dD-CdF"; */
+"5xr-dD-CdF.text" = "Label";
+
+/* Class = "UILabel"; text = "1개•중고상품•교환불가"; ObjectID = "AKV-r8-2W7"; */
+"AKV-r8-2W7.text" = "1개•중고상품•교환불가";
+
+/* Class = "UILabel"; text = "빠르게 팔고 싶다면 안전결제 환영을 이용하세요!"; ObjectID = "CB3-dD-2w0"; */
+"CB3-dD-2w0.text" = "빠르게 팔고 싶다면 안전결제 환영을 이용하세요!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CFm-9k-HoR"; */
+"CFm-9k-HoR.text" = "Label";
+
+/* Class = "UILabel"; text = "안전결제 환영"; ObjectID = "CKw-Zj-S12"; */
+"CKw-Zj-S12.text" = "안전결제 환영";
+
+/* Class = "UIButton"; configuration.title = "등록"; ObjectID = "Dj2-jU-hNz"; */
+"Dj2-jU-hNz.configuration.title" = "등록";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Dj2-jU-hNz"; */
+"Dj2-jU-hNz.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "새상품"; ObjectID = "LKY-tg-bng"; */
+"LKY-tg-bng.configuration.title" = "새상품";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LKY-tg-bng"; */
+"LKY-tg-bng.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "선택 완료"; ObjectID = "PEb-3X-5hS"; */
+"PEb-3X-5hS.configuration.title" = "선택 완료";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PEb-3X-5hS"; */
+"PEb-3X-5hS.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "상품명"; ObjectID = "PGb-Vk-bn4"; */
+"PGb-Vk-bn4.placeholder" = "상품명";
+
+/* Class = "UILabel"; text = "수량"; ObjectID = "Qf9-fg-4nN"; */
+"Qf9-fg-4nN.text" = "수량";
+
+/* Class = "UIButton"; configuration.title = "옵션선택"; ObjectID = "Qik-AM-ggL"; */
+"Qik-AM-ggL.configuration.title" = "옵션선택";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qik-AM-ggL"; */
+"Qik-AM-ggL.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "불가"; ObjectID = "TbV-gD-0qy"; */
+"TbV-gD-0qy.configuration.title" = "불가";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TbV-gD-0qy"; */
+"TbV-gD-0qy.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "옵션 선택"; ObjectID = "W7i-oM-XPq"; */
+"W7i-oM-XPq.text" = "옵션 선택";
+
+/* Class = "UIButton"; configuration.title = "0/12"; ObjectID = "YAA-JA-S7e"; */
+"YAA-JA-S7e.configuration.title" = "0/12";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YAA-JA-S7e"; */
+"YAA-JA-S7e.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "상품상태"; ObjectID = "fSN-qz-0yE"; */
+"fSN-qz-0yE.text" = "상품상태";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "gVp-mK-Pp8"; */
+"gVp-mK-Pp8.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "가능"; ObjectID = "ndM-vL-eBs"; */
+"ndM-vL-eBs.configuration.title" = "가능";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ndM-vL-eBs"; */
+"ndM-vL-eBs.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "교환"; ObjectID = "pJO-B0-oSw"; */
+"pJO-B0-oSw.text" = "교환";
+
+/* Class = "UIButton"; configuration.title = "중고상품"; ObjectID = "plg-aq-uE7"; */
+"plg-aq-uE7.configuration.title" = "중고상품";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "plg-aq-uE7"; */
+"plg-aq-uE7.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "puu-qz-17q"; */
+"puu-qz-17q.text" = "Label";
+
+/* Class = "UILabel"; text = "개"; ObjectID = "qXT-5f-t2n"; */
+"qXT-5f-t2n.text" = "개";
+
+/* Class = "UILabel"; text = "배송비포함"; ObjectID = "tfO-Tt-TQF"; */
+"tfO-Tt-TQF.text" = "배송비포함";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "uU8-l5-NvX"; */
+"uU8-l5-NvX.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uU8-l5-NvX"; */
+"uU8-l5-NvX.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "가격"; ObjectID = "xIV-VF-I44"; */
+"xIV-VF-I44.placeholder" = "가격";
+
+/* Class = "UILabel"; text = "카테고리"; ObjectID = "zEJ-Jg-TTm"; */
+"zEJ-Jg-TTm.text" = "카테고리";

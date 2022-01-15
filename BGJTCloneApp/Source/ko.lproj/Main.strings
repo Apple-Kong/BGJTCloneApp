@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "검색"; ObjectID = "3lB-cD-gxa"; */
+"3lB-cD-gxa.title" = "검색";
+
+/* Class = "UITabBarItem"; title = "홈"; ObjectID = "4QX-8q-hRs"; */
+"4QX-8q-hRs.title" = "홈";
+
+/* Class = "UITabBarItem"; title = "등록"; ObjectID = "NRL-ul-oor"; */
+"NRL-ul-oor.title" = "등록";
+
+/* Class = "UITabBarItem"; title = "번개톡"; ObjectID = "Pim-5Q-D2Z"; */
+"Pim-5Q-D2Z.title" = "번개톡";
+
+/* Class = "UITabBarItem"; title = "MY"; ObjectID = "UId-w1-eDL"; */
+"UId-w1-eDL.title" = "MY";
