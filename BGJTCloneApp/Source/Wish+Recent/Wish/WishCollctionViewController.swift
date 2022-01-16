@@ -36,7 +36,7 @@ class WishCollctionViewController: UIViewController {
 extension WishCollctionViewController: WishDelegate {
     func wishButtonTapped(index: Int) {
         self.items.remove(at: index)
-//        wishDataManager.deleteWishItem(itemID: items[index].item_id)
+        wishDataManager.deleteWishItem(itemID: items[index].item_id)
         self.wishCollectionView.reloadData()
     }
 }

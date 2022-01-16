@@ -38,7 +38,7 @@ class AddViewController: UIViewController {
         if let itemTitle = itemTitle, let price = price, let detail = detail {
             let item = ItemInfo(category: category, title: itemTitle, location: nil, price: price, delivery_fee_included: isTaekPo, count: numOfItem, isOld: isOld, isExchangable: isExchangable, detail: detail, isSafe: isSafePay, tags: tags, images: [])
             
-            addManager.addItem(item: item)
+//            addManager.addItem(item: item)
             addManager.addItemWithImage(item: item, images: self.selectedImages)
         } else {
             //MARK: 경고창 띄우기
