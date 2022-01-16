@@ -30,6 +30,30 @@ extension String {
     }
     
     
+    func dateExtract() -> String {
+        let ymd = self.substring(from: 0, to: 9)
+        let hms = self.substring(from: 11, to: 18)
+        return "\(ymd) \(hms)"
+    }
+    
+    func stringToDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+
+        let date:Date = dateFormatter.date(from: self)!
+        
+        return date
+    }
+    
+    func stringToIntervalDateString() -> String {
+        let dateString = self.dateExtract()
+        let date = dateString.stringToDate()
+        let intervalString = date.relativeTime_abbreviated
+        return intervalString
+    }
+
+    
     // MARK: substring
     func substring(from: Int, to: Int) -> String {
         guard (to >= 0) && (from <= self.count) && (from <= to) else {

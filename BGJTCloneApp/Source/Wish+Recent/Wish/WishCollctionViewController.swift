@@ -12,8 +12,9 @@ import UIKit
 class WishCollctionViewController: UIViewController {
     
     private let wishListDataManager = WishListDataManager()
+    private let wishDataManager = WishDataManager()
     
-    var items: [WishListResponse.Result] = []
+    var items: [WishListResponse.Result] = [WishListResponse.Result.init(item_id: 10000, image_path: "https://mblogthumb-phinf.pstatic.net/MjAyMDAxMDRfMjA2/MDAxNTc4MTMyNzAxMjYz.yBk7jsrSdixXGjcIPGzG7mL0jGkVVU842ejDu_tBpXQg.Xuc0pBCzgd9YADo6PGw4SsD4lg8tWnSLC-5XWcX_sVcg.JPEG.rampee/KakaoTalk_20200104_190829566.jpg?type=w800", safety_pay: 1, title: "UI 테스트용", price: 93000, created_at: "2022-01-11T14:46:36.000Z", shop_name: "루크", shop_image: nil)]
 
 
     @IBOutlet weak var wishCollectionView: UICollectionView!
@@ -23,12 +24,20 @@ class WishCollctionViewController: UIViewController {
         
         wishListDataManager.delegate = self
         
+        
         wishCollectionView.contentInset.top = 10
         wishCollectionView.delegate = self
         wishCollectionView.dataSource = self
  
         wishListDataManager.fetchData()
   
+    }
+}
+extension WishCollctionViewController: WishDelegate {
+    func wishButtonTapped(index: Int) {
+        self.items.remove(at: index)
+//        wishDataManager.deleteWishItem(itemID: items[index].item_id)
+        self.wishCollectionView.reloadData()
     }
 }
 
@@ -53,16 +62,11 @@ extension WishCollctionViewController: UICollectionViewDelegate, UICollectionVie
         
         
         let item = items[indexPath.row]
-        let data = RecommendResponse.Result(item_id: item.item_id, title: item.title, price: item.price, safety_pay: item.safety_pay, location: "지역정보 없음", created_at: item.created_at, image_path: item.image_path, wish_count: 0)
         
         let vc = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        if item.safety_pay == 1 {
-            vc.item = (data, true)
-        } else {
-            vc.item = (data, false)
-        }
-        
+        vc.itemID = item.item_id
+    
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -81,10 +85,16 @@ extension WishCollctionViewController: UICollectionViewDelegate, UICollectionVie
         cell.itemIamgeView.kf.setImage(with: url)
         cell.titleLabel.text = item.title
         cell.priceLabel.text = String(item.price).insertComma + "원"
-        cell.shopNameLabel.text = item.shop_name
+        cell.shopNameLabel.text = "\(item.shop_name) • \(item.created_at.stringToIntervalDateString())".localized
         cell.itemIamgeView.layer.masksToBounds = true
         cell.itemIamgeView.layer.cornerRadius = 20
+        cell.deleagte = self
         
+        if item.safety_pay == 1 {
+            cell.safetyPayView.isHidden = false
+        } else {
+            cell.safetyPayView.isHidden = true
+        }
         if let urlString = item.shop_image {
             let userUrl = URL(string: urlString)
             cell.userImageView.kf.setImage(with: userUrl)

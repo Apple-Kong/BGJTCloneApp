@@ -31,12 +31,12 @@ class WishDataManager {
     }
     
     func deleteWishItem(itemID: Int) {
-        
+        print("-------찜 목록 삭제 요청 시작 ----------")
         let urlString = Constant.MAIN_URL + "/api/wishes/\(itemID)"
         let headers = Secret.tokenHeaders
         
         
-        AF.request(urlString, method: .delete, headers: headers)
+        AF.request(urlString, method: .patch, headers: headers)
             .responseString(completionHandler: { response in
                 print(response.value)
             })

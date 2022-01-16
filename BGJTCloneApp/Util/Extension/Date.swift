@@ -14,6 +14,8 @@ extension Date {
         self = dateFormatter.date(from: "\(year):\(month):\(day)") ?? Date()
     }
     
+    
+    
     var text: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -32,4 +34,12 @@ extension Date {
         dateFormatter.dateFormat = "yyyyMMddhhmmssSSS"
         return dateFormatter.string(from: self)
     }
+    
+    var relativeTime_abbreviated: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .abbreviated
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
+    
+    //2022-01-11T08:18:09.000Z 에 해당하는 메서드 만들기
 }

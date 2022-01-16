@@ -34,6 +34,8 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = .white
+        UIApplication.statusBarBackgroundColor = .clear
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

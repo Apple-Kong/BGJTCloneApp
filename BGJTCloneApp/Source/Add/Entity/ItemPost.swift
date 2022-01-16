@@ -32,6 +32,23 @@ struct ItemInfo {
         return result
     }
     
+    func createImageParameters() -> [String: Any] {
+        let parameters: [String: Any] = [
+            "category_id" : mapCategory(),
+            "title" : title,
+            "location" : location ?? "",
+            "price" : price,
+            "delivery_fee_included" : self.delivery_fee_included ? 1 : 0,
+            "count" : count,
+            "condition" : isOld ? 0 : 1,
+            "exchange" : isExchangable ? 1 : 0,
+            "detail" : detail,
+            "safety_pay" : isSafe ? 1 : 0,
+            "tags" : arrayEncoding(name: "tag", array: tags)
+        ]
+        
+        return parameters
+    }
     func createParameters() -> [String: Any] {
         let parameters: [String: Any] = [
             "category_id" : mapCategory(),

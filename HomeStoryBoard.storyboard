@@ -206,6 +206,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title=" ">
                                                     <backgroundConfiguration key="background" image="my" imageContentMode="scaleAspectFit"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="9y5-FL-fEq" kind="show" animates="NO" id="cc6-tZ-oNo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -297,7 +300,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRP-5W-03h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5720" y="-139"/>
+            <point key="canvasLocation" x="5587" y="11"/>
         </scene>
         <!--AddStoryBoard-->
         <scene sceneID="Lbd-4w-QIN">
@@ -316,6 +319,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfF-jd-Ypg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5599" y="179"/>
+        </scene>
+        <!--MyViewController-->
+        <scene sceneID="aez-Fz-cDY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyStoryBoard" referencedIdentifier="MyViewController" id="9y5-FL-fEq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RGi-7A-6aO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWn-bD-fhp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5575" y="134"/>
         </scene>
         <!--RecommendViewController-->
         <scene sceneID="xKJ-hS-ZRc">

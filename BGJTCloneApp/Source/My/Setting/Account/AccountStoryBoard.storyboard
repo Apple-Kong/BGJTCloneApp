@@ -1,30 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="Y6W-OH-hqX" customClass="AccountViewController" customModule="BGJTCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-cz-I4k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="KIY-B6-Rpb"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountTableViewCell" rowHeight="168" id="eS7-PX-8ds" customClass="AccountTableViewCell" customModule="BGJTCloneApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="168"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eS7-PX-8ds" id="tcd-dS-ovB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakao_bank" translatesAutoresizingMaskIntoConstraints="NO" id="0pQ-fb-Nzr">
+                                                    <rect key="frame" x="20" y="20" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="0pQ-fb-Nzr" secondAttribute="height" multiplier="1:1" id="8f7-IX-T5b"/>
+                                                        <constraint firstAttribute="width" constant="32" id="QJl-kd-wQn"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-hy-9pF">
+                                                    <rect key="frame" x="72" y="20" width="55.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오뱅크 계좌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNk-on-8Nn">
+                                                    <rect key="frame" x="72" y="49.5" width="89" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오뱅크 계좌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80o-qe-g1w">
+                                                    <rect key="frame" x="72" y="86.5" width="76.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uki-BK-Vld">
+                                                    <rect key="frame" x="40" y="117" width="334" height="40"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cob-Aa-EKL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="1"/>
+                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="oEw-b1-am0"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfW-nW-oof">
+                                                            <rect key="frame" x="0.0" y="0.0" width="167" height="40"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정산계좌 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoR-2w-4AM">
+                                                                    <rect key="frame" x="45.5" y="10" width="76.5" height="20"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="erQ-rP-PZA">
+                                                                    <rect key="frame" x="21.5" y="12" width="20" height="16.5"/>
+                                                                    <color key="tintColor" name="BGpay"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="erQ-rP-PZA" secondAttribute="height" multiplier="1:1" id="hM2-Sk-hYx"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="PoR-2w-4AM" firstAttribute="centerY" secondItem="RfW-nW-oof" secondAttribute="centerY" id="5kq-KS-5gp"/>
+                                                                <constraint firstItem="erQ-rP-PZA" firstAttribute="top" secondItem="PoR-2w-4AM" secondAttribute="top" id="Hrs-e3-dtY"/>
+                                                                <constraint firstItem="PoR-2w-4AM" firstAttribute="centerX" secondItem="RfW-nW-oof" secondAttribute="centerX" id="eHV-SK-Whf"/>
+                                                                <constraint firstItem="PoR-2w-4AM" firstAttribute="leading" secondItem="erQ-rP-PZA" secondAttribute="trailing" constant="4" id="mHP-c9-0lj"/>
+                                                                <constraint firstItem="erQ-rP-PZA" firstAttribute="bottom" secondItem="PoR-2w-4AM" secondAttribute="bottom" id="tJU-G8-6nI"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3O-wC-eu6">
+                                                            <rect key="frame" x="167" y="0.0" width="167" height="40"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환불계좌 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8w-fx-PPF">
+                                                                    <rect key="frame" x="45.5" y="10" width="76.5" height="20"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tA5-t4-tpZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="1" height="40"/>
+                                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="1" id="5GE-1H-Kk5"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tsk-Q9-XyC">
+                                                                    <rect key="frame" x="21.5" y="12" width="20" height="16.5"/>
+                                                                    <color key="tintColor" name="BGpay"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="tsk-Q9-XyC" secondAttribute="height" multiplier="1:1" id="opm-Nw-fxG"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="tA5-t4-tpZ" firstAttribute="leading" secondItem="X3O-wC-eu6" secondAttribute="leading" id="NSj-DR-UdT"/>
+                                                                <constraint firstItem="tsk-Q9-XyC" firstAttribute="top" secondItem="K8w-fx-PPF" secondAttribute="top" id="WdI-oU-2Yz"/>
+                                                                <constraint firstAttribute="bottom" secondItem="tA5-t4-tpZ" secondAttribute="bottom" id="fuI-OS-BZ8"/>
+                                                                <constraint firstItem="tA5-t4-tpZ" firstAttribute="top" secondItem="X3O-wC-eu6" secondAttribute="top" id="nnK-X1-rME"/>
+                                                                <constraint firstItem="tsk-Q9-XyC" firstAttribute="bottom" secondItem="K8w-fx-PPF" secondAttribute="bottom" id="oft-IV-qyi"/>
+                                                                <constraint firstItem="K8w-fx-PPF" firstAttribute="leading" secondItem="tsk-Q9-XyC" secondAttribute="trailing" constant="4" id="oty-0t-kOc"/>
+                                                                <constraint firstItem="K8w-fx-PPF" firstAttribute="centerX" secondItem="X3O-wC-eu6" secondAttribute="centerX" id="rw6-oV-eRY"/>
+                                                                <constraint firstItem="K8w-fx-PPF" firstAttribute="centerY" secondItem="X3O-wC-eu6" secondAttribute="centerY" id="ytn-iO-Zgj"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="RfW-nW-oof" firstAttribute="leading" secondItem="uki-BK-Vld" secondAttribute="leading" id="CXO-nW-UGO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="X3O-wC-eu6" secondAttribute="bottom" id="Ic7-bt-UV6"/>
+                                                        <constraint firstItem="cob-Aa-EKL" firstAttribute="top" secondItem="uki-BK-Vld" secondAttribute="top" id="Kwb-dV-E5r"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RfW-nW-oof" secondAttribute="bottom" id="Wsb-g3-v1D"/>
+                                                        <constraint firstAttribute="height" constant="40" id="ZR5-Io-cpU"/>
+                                                        <constraint firstItem="RfW-nW-oof" firstAttribute="width" secondItem="uki-BK-Vld" secondAttribute="width" multiplier="0.5" id="agd-uI-xNl"/>
+                                                        <constraint firstItem="X3O-wC-eu6" firstAttribute="leading" secondItem="RfW-nW-oof" secondAttribute="trailing" id="fNj-bq-HYu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cob-Aa-EKL" secondAttribute="trailing" id="kKF-Ku-wQ3"/>
+                                                        <constraint firstItem="X3O-wC-eu6" firstAttribute="top" secondItem="uki-BK-Vld" secondAttribute="top" id="l7v-fc-fe4"/>
+                                                        <constraint firstItem="cob-Aa-EKL" firstAttribute="leading" secondItem="uki-BK-Vld" secondAttribute="leading" id="ljJ-7A-Dwe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="X3O-wC-eu6" secondAttribute="trailing" id="sHX-Xy-qDd"/>
+                                                        <constraint firstItem="RfW-nW-oof" firstAttribute="top" secondItem="uki-BK-Vld" secondAttribute="top" id="xRz-aA-4T4"/>
+                                                    </constraints>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5D-kW-8EY">
+                                                    <rect key="frame" x="364" y="79" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="4NG-O7-2Oe"/>
+                                                        <constraint firstAttribute="width" constant="30" id="fEu-JH-pPr"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                        <backgroundConfiguration key="background" image="three_dot_bold"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="editButtonTap:" destination="eS7-PX-8ds" eventType="touchUpInside" id="T8v-2r-HEt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uki-BK-Vld" firstAttribute="leading" secondItem="tcd-dS-ovB" secondAttribute="leadingMargin" constant="20" id="6tC-Bm-LEE"/>
+                                                <constraint firstItem="80o-qe-g1w" firstAttribute="top" secondItem="dNk-on-8Nn" secondAttribute="bottom" constant="20" id="CWI-i0-F9l"/>
+                                                <constraint firstItem="dNk-on-8Nn" firstAttribute="top" secondItem="0t9-hy-9pF" secondAttribute="bottom" constant="10" id="GHF-kd-NyT"/>
+                                                <constraint firstItem="0pQ-fb-Nzr" firstAttribute="leading" secondItem="tcd-dS-ovB" secondAttribute="leading" constant="20" id="GxJ-Dk-dek"/>
+                                                <constraint firstItem="dNk-on-8Nn" firstAttribute="leading" secondItem="0t9-hy-9pF" secondAttribute="leading" id="JQn-ry-DjG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uki-BK-Vld" secondAttribute="bottom" id="QH5-dB-Yxl"/>
+                                                <constraint firstItem="80o-qe-g1w" firstAttribute="leading" secondItem="dNk-on-8Nn" secondAttribute="leading" id="aiH-Di-x6U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uki-BK-Vld" secondAttribute="trailing" constant="20" id="cRA-Tl-rMM"/>
+                                                <constraint firstItem="0t9-hy-9pF" firstAttribute="top" secondItem="0pQ-fb-Nzr" secondAttribute="top" id="mY7-rW-wTn"/>
+                                                <constraint firstItem="0pQ-fb-Nzr" firstAttribute="top" secondItem="tcd-dS-ovB" secondAttribute="top" constant="20" id="nMC-aG-vDR"/>
+                                                <constraint firstItem="uki-BK-Vld" firstAttribute="top" secondItem="c5D-kW-8EY" secondAttribute="bottom" constant="8" symbolic="YES" id="tuq-67-ctH"/>
+                                                <constraint firstItem="0t9-hy-9pF" firstAttribute="leading" secondItem="0pQ-fb-Nzr" secondAttribute="trailing" constant="20" id="x3z-vj-To6"/>
+                                                <constraint firstAttribute="trailing" secondItem="c5D-kW-8EY" secondAttribute="trailing" constant="20" symbolic="YES" id="zYG-xh-ab1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountImageView" destination="0pQ-fb-Nzr" id="LEu-wN-EZf"/>
+                                            <outlet property="nameLabel" destination="dNk-on-8Nn" id="aNQ-CQ-hjZ"/>
+                                            <outlet property="numberLabel" destination="0t9-hy-9pF" id="S5x-p7-wJh"/>
+                                            <outlet property="ownerLabel" destination="80o-qe-g1w" id="K6b-1x-Oxn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3m-Ds-U3X">
+                                <rect key="frame" x="20" y="464" width="374" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌 등록하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgi-xr-Y3S">
+                                        <rect key="frame" x="148.5" y="16.5" width="77" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Xgi-xr-Y3S" firstAttribute="centerX" secondItem="E3m-Ds-U3X" secondAttribute="centerX" id="T0c-p3-kDP"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZKr-pe-g2V"/>
+                                    <constraint firstItem="Xgi-xr-Y3S" firstAttribute="centerY" secondItem="E3m-Ds-U3X" secondAttribute="centerY" id="abh-ue-5yD"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sc6-zI-mCd" appends="YES" id="RJh-tS-ssM"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E3m-Ds-U3X" firstAttribute="top" secondItem="4OX-cz-I4k" secondAttribute="bottom" constant="20" id="GZC-lW-zJ5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E3m-Ds-U3X" secondAttribute="trailing" constant="20" id="PHP-xd-S5E"/>
+                            <constraint firstItem="4OX-cz-I4k" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="TD8-7q-UAF"/>
+                            <constraint firstItem="E3m-Ds-U3X" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="VL0-JJ-Cuq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4OX-cz-I4k" secondAttribute="trailing" id="bUY-T3-zGn"/>
+                            <constraint firstItem="4OX-cz-I4k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dxk-Ii-ooW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="4OX-cz-I4k" id="Jrn-Pr-VnS"/>
+                        <outlet property="tableViewHeightConstraint" destination="KIY-B6-Rpb" id="d81-s7-B84"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sc6-zI-mCd" userLabel="계좌 등록 버튼">
+                    <connections>
+                        <action selector="addAccountButtonTap:" destination="Y6W-OH-hqX" id="mNw-Fn-YvG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-378.26086956521743" y="-168.08035714285714"/>
+        </scene>
+        <!--More Modal View Controller-->
+        <scene sceneID="YjH-Cl-tNM">
+            <objects>
+                <viewController storyboardIdentifier="MoreModalViewController" id="4hM-YI-jcu" customClass="MoreModalViewController" customModule="BGJTCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2YG-7i-CWu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3P-Bu-3UF">
+                                <rect key="frame" x="183.5" y="64" width="47" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSO-fV-3LT">
+                                <rect key="frame" x="20" y="116" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="g6k-wn-SuJ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="수정하기">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editButtonTap:" destination="4hM-YI-jcu" eventType="touchUpInside" id="r5K-WP-5Hg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-Re-Qh6">
+                                <rect key="frame" x="20" y="166" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="rex-F6-mGU"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="삭제하기">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonTap:" destination="4hM-YI-jcu" eventType="touchUpInside" id="w5P-s5-GVl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dcd-2S-fdV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4U2-Re-Qh6" firstAttribute="top" secondItem="qSO-fV-3LT" secondAttribute="bottom" constant="10" id="8Vh-9W-ccd"/>
+                            <constraint firstItem="4U2-Re-Qh6" firstAttribute="leading" secondItem="dcd-2S-fdV" secondAttribute="leading" constant="20" id="QeE-VY-I9t"/>
+                            <constraint firstItem="dcd-2S-fdV" firstAttribute="trailing" secondItem="qSO-fV-3LT" secondAttribute="trailing" constant="20" id="T54-xC-cVF"/>
+                            <constraint firstItem="dcd-2S-fdV" firstAttribute="trailing" secondItem="4U2-Re-Qh6" secondAttribute="trailing" constant="20" id="fE6-7S-qNU"/>
+                            <constraint firstItem="qSO-fV-3LT" firstAttribute="top" secondItem="g3P-Bu-3UF" secondAttribute="bottom" constant="30" id="fSd-Gh-BFs"/>
+                            <constraint firstItem="qSO-fV-3LT" firstAttribute="leading" secondItem="dcd-2S-fdV" secondAttribute="leading" constant="20" id="hVa-MO-WQc"/>
+                            <constraint firstItem="g3P-Bu-3UF" firstAttribute="top" secondItem="dcd-2S-fdV" secondAttribute="top" constant="20" id="n5t-x8-tOs"/>
+                            <constraint firstItem="g3P-Bu-3UF" firstAttribute="centerX" secondItem="dcd-2S-fdV" secondAttribute="centerX" id="nuJ-iL-bnH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFN-Nd-4AQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="-161"/>
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="kakao_bank" width="580" height="580"/>
+        <image name="three_dot_bold" width="74" height="75"/>
+        <namedColor name="BGpay">
+            <color red="1" green="0.40999999642372131" blue="0.40999999642372131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

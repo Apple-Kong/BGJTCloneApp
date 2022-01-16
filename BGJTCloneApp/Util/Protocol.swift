@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+protocol WishDelegate {
+    func wishButtonTapped(index: Int)
+}
+
+protocol ButtonInsideCellDelegate {
+    func buttonTapped(index: Int)
+}

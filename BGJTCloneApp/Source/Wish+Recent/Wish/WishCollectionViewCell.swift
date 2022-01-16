@@ -18,6 +18,7 @@ class WishCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var safetyPayView: UIImageView!
     
     @IBAction func wishButtonTap(_ sender: UIButton) {
         self.deleagte?.wishButtonTapped(index: self.index)

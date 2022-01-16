@@ -11,12 +11,15 @@ class SettingViewController: BaseViewController {
     
     
     
-    let recentCategory: [String] = ["남성의류 > 티셔츠", "신발 > 스니커즈", "패션 액세서리 > 지갑", "디지털/가전 > 모바일", "스포츠/레저 > 인라인/스케이트보드"]
-    let allCategory: [String] = ["여성의류", "남성의류", "신발", "가방" , "시계/쥬얼리", "패션 액세서리", "디지털/가전", "스포츠/레저"]
+    let userSettings: [String] = ["계정 설정" , "알림 설정", "우리동네 지역 설정", "배송지 설정", "계좌 설정", "간편결제 카드설정", "차단 상점 관리"]
+    let serviceInfos: [String] = ["이용약관","개인정보 처리방침", "위치기반 서비스 이용약관", "버전정보 8.5.0"]
     
-    let sections: [String] = ["최근 카테고리", "전체 카테고리"]
+    let logout: [String] = ["로그아웃"]
+    
+    let sections: [String] = ["사용자 설정", "서비스 정보", " "]
     
     
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -24,6 +27,8 @@ class SettingViewController: BaseViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.topItem?.title = "설정"
     }
 }
 
@@ -42,16 +47,12 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             
-            
-            //문자열 파싱.
-            let categoryString = recentCategory[indexPath.row]
-            let category = categoryString.components(separatedBy: " > ")
-        
-            //델리게이트 함수로 전달
-            delegate?.categorySelected(cateogry: category)
-            
-            //네비게이션 컨트롤러 디스미스
-            _ = navigationController?.popViewController(animated: true)
+            if indexPath.row == 4{
+                // 계좌 설정뷰로 이동
+                let vc = UIStoryboard(name: "AccountStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
             
         } else if indexPath.section == 1 {
@@ -64,34 +65,26 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return recentCategory.count
+            return userSettings.count
         } else if section == 1 {
-            return allCategory.count
+            return serviceInfos.count
         } else {
-            return 0
+            return 1
         }
     }
     
     //셀 이미지 할당.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableViewCell", for: indexPath) as! RecentTableViewCell
-            
-            cell.categoryLabel.text = recentCategory[indexPath.row]
-            
-            
-            return cell
-            
+            cell.titleLabel.text = userSettings[indexPath.row]
+
         } else if indexPath.section == 1{
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
-            
-            cell.categoryLabel.text = allCategory[indexPath.row]
-            cell.categoryImageView.image = UIImage(named: allCategory[indexPath.row].replacingOccurrences(of: "/", with: ":"))
+            cell.titleLabel.text = serviceInfos[indexPath.row]
             return cell
-            
         } else {
-           return UITableViewCell()
+            cell.titleLabel.text = "로그아웃"
         }
+        return cell
     }
 }

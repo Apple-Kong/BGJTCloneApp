@@ -13,7 +13,7 @@ protocol CategoryDelegate {
 
     
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: BaseViewController {
     
     
     var selectedCategory: [String]?
@@ -26,6 +26,8 @@ class CategoryViewController: UIViewController {
     let allCategory: [String] = ["여성의류", "남성의류", "신발", "가방" , "시계/쥬얼리", "패션 액세서리", "디지털/가전", "스포츠/레저"]
     
     let sections: [String] = ["최근 카테고리", "전체 카테고리"]
+    
+    
     
     
     

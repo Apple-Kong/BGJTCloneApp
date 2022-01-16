@@ -32,6 +32,3 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     }
 }
 
-protocol WishDelegate {
-    func wishButtonTapped(index: Int)
-}

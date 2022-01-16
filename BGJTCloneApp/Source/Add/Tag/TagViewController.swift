@@ -10,7 +10,7 @@ import UIKit
 protocol TagDelegate {
     func tagViewDismissed(tags: [String])
 }
-class TagViewController: UIViewController {
+class TagViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!

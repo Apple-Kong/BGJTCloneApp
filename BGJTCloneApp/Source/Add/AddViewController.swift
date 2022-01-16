@@ -39,6 +39,7 @@ class AddViewController: UIViewController {
             let item = ItemInfo(category: category, title: itemTitle, location: nil, price: price, delivery_fee_included: isTaekPo, count: numOfItem, isOld: isOld, isExchangable: isExchangable, detail: detail, isSafe: isSafePay, tags: tags, images: [])
             
             addManager.addItem(item: item)
+            addManager.addItemWithImage(item: item, images: self.selectedImages)
         } else {
             //MARK: 경고창 띄우기
             self.presentAlert(title: "필수 정보를 입력하세요", isCancelActionIncluded: true)
@@ -112,6 +113,7 @@ class AddViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         
         if tags.isEmpty {
             // 비어 있다면 숨기기
@@ -310,7 +312,7 @@ extension AddViewController : UIImagePickerControllerDelegate, UINavigationContr
 }
 
 
-//half modalView 띄우기
+//MARK: - half modalView 띄우기
 extension AddViewController: UIViewControllerTransitioningDelegate {
         // ...
     

@@ -12,10 +12,17 @@ import Kingfisher
 //MARK: - 컬렉션 뷰 항목 개수, 셀로의 정보 전달.
 extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        
+        
+    }
+    
+ 
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        vc.item = items[indexPath.row]
+        vc.itemID = items[indexPath.row].0.item_id
         
         self.navigationController?.pushViewController(vc, animated: true)
         
@@ -35,8 +42,13 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.titleLabel.text = item.title
         cell.priceLabel.text = String(item.price).insertComma
-        cell.locationLabel.text = item.location
         
+        
+
+        
+        cell.locationLabel.text = "\(item.location) • \(item.created_at.stringToIntervalDateString())".localized
+        
+        print("---- \(item.image_path) ---")
         let url = URL(string: item.image_path)
         cell.image.kf.setImage(with: url)
         
@@ -68,12 +80,13 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 }
 
+
 //MARK: - 컬렉션 뷰 레이아웃 수정
 extension  RecommendViewController: UICollectionViewDelegateFlowLayout {
     
     //행
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 5
     }
     
     //행간 높이
@@ -84,7 +97,7 @@ extension  RecommendViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //사이즈 조정
         
-        let width = collectionView.frame.width / 2 - 10
+        let width = collectionView.frame.width / 2 - 5
         let height = width * 2.2
         let size = CGSize(width: width, height: height)
         return size
