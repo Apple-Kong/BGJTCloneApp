@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Deal Modal View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DealModalViewController" id="Y6W-OH-hqX" customClass="DealModalViewController" customModule="BGJTCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전결제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-UC-nto">
+                                <rect key="frame" x="20" y="74" width="76.5" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="BgI-bn-fLq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg pay" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-hT-FOV">
+                                <rect key="frame" x="106.5" y="74" width="68" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OgC-hT-FOV" secondAttribute="height" multiplier="2:1" id="FFb-Zx-lIc"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLi-AA-QQX">
+                                <rect key="frame" x="20" y="148" width="374" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="택배거래" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKR-tN-6Id">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전하게 상품을 받을 때까지, 번개장터가 결제금액을 보관해요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At2-um-VsP">
+                                        <rect key="frame" x="0.0" y="29.5" width="244" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="At2-um-VsP" secondAttribute="trailing" constant="130" id="CXH-lL-GRG"/>
+                                    <constraint firstItem="VKR-tN-6Id" firstAttribute="leading" secondItem="DLi-AA-QQX" secondAttribute="leading" id="afy-oa-xQX"/>
+                                    <constraint firstItem="At2-um-VsP" firstAttribute="leading" secondItem="DLi-AA-QQX" secondAttribute="leading" id="g0n-KC-hkO"/>
+                                    <constraint firstAttribute="height" constant="100" id="h1c-zs-mhG"/>
+                                    <constraint firstItem="At2-um-VsP" firstAttribute="top" secondItem="VKR-tN-6Id" secondAttribute="bottom" constant="10" id="oc7-fh-75G"/>
+                                    <constraint firstItem="VKR-tN-6Id" firstAttribute="top" secondItem="DLi-AA-QQX" secondAttribute="top" id="qtL-9p-8cK"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ib6-Yw-56Q" appends="YES" id="1ZV-pi-dE9"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3v-W9-kov">
+                                <rect key="frame" x="20" y="262" width="374" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직거래" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLb-uk-oOR">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직거래도 현금없이 간편하게 결제할 수 있어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-bE-YXf">
+                                        <rect key="frame" x="0.0" y="29.5" width="354" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="TLb-uk-oOR" firstAttribute="leading" secondItem="R3v-W9-kov" secondAttribute="leading" id="Eb2-G5-hda"/>
+                                    <constraint firstItem="TLb-uk-oOR" firstAttribute="top" secondItem="R3v-W9-kov" secondAttribute="top" id="UCc-qb-Anm"/>
+                                    <constraint firstAttribute="trailing" secondItem="iOg-bE-YXf" secondAttribute="trailing" constant="20" id="Uj2-87-F57"/>
+                                    <constraint firstItem="iOg-bE-YXf" firstAttribute="leading" secondItem="R3v-W9-kov" secondAttribute="leading" id="V8n-8n-zae"/>
+                                    <constraint firstItem="iOg-bE-YXf" firstAttribute="top" secondItem="TLb-uk-oOR" secondAttribute="bottom" constant="10" id="dKG-xZ-HmP"/>
+                                    <constraint firstAttribute="height" constant="100" id="uUx-4K-vnb"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gpS-Eo-cc9" appends="YES" id="0Dh-P0-Vyd"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gT-S8-DBj">
+                                <rect key="frame" x="374" y="54" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="QcQ-bk-Iqe"/>
+                                    <constraint firstAttribute="width" constant="20" id="eg0-2V-S71"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                    <backgroundConfiguration key="background" imageContentMode="scaleAspectFit">
+                                        <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismissButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rkT-pz-FW5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OgC-hT-FOV" firstAttribute="top" secondItem="SaX-UC-nto" secondAttribute="top" id="5Ch-E4-tGo"/>
+                            <constraint firstItem="DLi-AA-QQX" firstAttribute="top" secondItem="SaX-UC-nto" secondAttribute="bottom" constant="40" id="5D5-Cf-NVP"/>
+                            <constraint firstItem="OgC-hT-FOV" firstAttribute="bottom" secondItem="SaX-UC-nto" secondAttribute="bottom" id="BDu-KR-pW2"/>
+                            <constraint firstItem="R3v-W9-kov" firstAttribute="trailing" secondItem="DLi-AA-QQX" secondAttribute="trailing" id="Gbq-Vg-NIn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DLi-AA-QQX" secondAttribute="trailing" constant="20" id="Jeq-4V-dw0"/>
+                            <constraint firstItem="DLi-AA-QQX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="JtP-mF-tbg"/>
+                            <constraint firstItem="0gT-S8-DBj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="N8x-GV-o1U"/>
+                            <constraint firstItem="OgC-hT-FOV" firstAttribute="centerY" secondItem="SaX-UC-nto" secondAttribute="centerY" id="NWH-h1-NKW"/>
+                            <constraint firstItem="SaX-UC-nto" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="TkG-Fo-THr"/>
+                            <constraint firstItem="R3v-W9-kov" firstAttribute="top" secondItem="DLi-AA-QQX" secondAttribute="bottom" constant="14" id="cZA-P9-BDq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0gT-S8-DBj" secondAttribute="trailing" constant="20" id="ck3-tv-Qy9"/>
+                            <constraint firstItem="R3v-W9-kov" firstAttribute="leading" secondItem="DLi-AA-QQX" secondAttribute="leading" id="jxr-Cj-TMx"/>
+                            <constraint firstItem="OgC-hT-FOV" firstAttribute="leading" secondItem="SaX-UC-nto" secondAttribute="trailing" constant="10" id="oxE-ML-GGi"/>
+                            <constraint firstItem="SaX-UC-nto" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="wg1-9z-KWH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ib6-Yw-56Q" userLabel="택배거래">
+                    <connections>
+                        <action selector="deliveryButtonTap:" destination="Y6W-OH-hqX" id="uAx-er-CkK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="gpS-Eo-cc9" userLabel="직거래">
+                    <connections>
+                        <action selector="directButtonTap:" destination="Y6W-OH-hqX" id="SkY-4m-H1L"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg pay" width="109" height="48"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
