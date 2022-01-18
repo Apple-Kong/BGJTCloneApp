@@ -36,7 +36,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="U3C-cA-Kcv">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="U3C-cA-Kcv">
                                                 <rect key="frame" x="20" y="107" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="U3C-cA-Kcv" secondAttribute="height" multiplier="1:1" id="NiL-Tk-Erp"/>

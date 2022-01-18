@@ -12,7 +12,7 @@ class MyViewController: UIViewController {
     
     let dealListDataManager = DealListDataManager()
     let myDataManager = MyDataManager()
-    
+    let itemEditManager = ItemEditManager()
     
     var sellingItems: [SellListResult] = []
     
@@ -26,7 +26,9 @@ class MyViewController: UIViewController {
     
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var shopImageView: UIImageView!
+    @IBOutlet weak var eventIndicatorLabel: UILabel!
     
+    @IBOutlet weak var eventIndicaatorView: UIView!
     @IBOutlet weak var wishCountLabel: UILabel!
     
     @IBOutlet weak var reviewCountLabel: UILabel!
@@ -56,6 +58,11 @@ class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        eventIndicaatorView.roundedBorder()
+        eventIndicaatorView.layer.borderColor = UIColor.systemGray5.cgColor
+        eventIndicaatorView.maskToCircle()
+        
         //데이터 요청
         myDataManager.delegate = self
         self.showIndicator()
@@ -70,6 +77,7 @@ class MyViewController: UIViewController {
         inquiryButton.roundedBorder()
         inquiryButton.maskToCircle()
         shopImageView.maskToCircle()
+        
         
         numOfItemLabel.text = "\(items.count)개"
         
@@ -145,6 +153,61 @@ extension MyViewController {
     }
 }
 
+extension MyViewController: ItemEditDelegate {
+    func edit(itemID: Int) {
+         //미구현
+    }
+    
+    func changeCondition(itemID: Int) {
+        itemEditManager.changeCondition(itemID: itemID, statusNum: 3)
+    }
+    
+    func delete(itemID: Int) {
+        itemEditManager.delete(itemID: itemID)
+        self.dealListDataManager.fetchSellList()
+    }
+    
+    
+}
+
+extension MyViewController: ButtonInsideCellDelegate {
+    func buttonTapped(index: Int) {
+        presentEditModalViewController(index: index)
+    }
+    
+    
+}
+
+//MARK: - half modalView 띄우기
+extension MyViewController: UIViewControllerTransitioningDelegate {
+        // ...
+    
+    //half modal view 띄우는 메서드
+    private func presentEditModalViewController(index: Int) {
+            let storyboard = UIStoryboard(name: "MyStoryBoard", bundle: nil)
+            guard let editModalViewController = storyboard.instantiateViewController(withIdentifier: "ItemEditViewController") as? ItemEditViewController else {
+                return
+            }
+            
+        editModalViewController.delegate = self
+        editModalViewController.itemID = sellingItems[index].item_id
+        
+        editModalViewController.modalPresentationStyle = .custom
+        editModalViewController.transitioningDelegate = self
+        present(editModalViewController, animated: true, completion: nil)
+    }
+    
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        let halfModalPC = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+        halfModalPC.proportianoalYPosition = 0.5
+        halfModalPC.proportionalHeight = 0.6
+        
+        return halfModalPC
+    }
+}
+
 
 extension MyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,7 +226,9 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
             let url = URL(string: Constant.IMAGE_URL + imagePath)
             cell.itemImageView.kf.setImage(with: url)
         }
-       
+        
+        cell.bgPayBadgeView.isHidden = sellingItem.safety_pay == 0 ? true : false
+        cell.delegate = self
         cell.titleLabel.text = sellingItem.title
         cell.priceLabel.text = String(sellingItem.price)
         

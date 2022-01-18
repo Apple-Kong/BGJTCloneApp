@@ -26,6 +26,11 @@ class DealViewController: UIViewController {
     var address = "경기도 부천시 경인로 134번길 16"
     var pay = "kakao"
     
+    
+    var itemName: String?
+    var price: String?
+    var image: UIImage?
+    
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
@@ -83,6 +88,11 @@ class DealViewController: UIViewController {
             
         }
         
+        if let itemName = itemName, let price = price, let image = image {
+            titleLabel.text = itemName
+            priceLabel.text = price
+            itemImageView.image = image
+        }
         
         dealButton.layer.masksToBounds = true
         dealButton.layer.cornerRadius = 5

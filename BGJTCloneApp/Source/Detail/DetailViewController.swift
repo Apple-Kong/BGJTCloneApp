@@ -226,11 +226,16 @@ extension DetailViewController: DealModalDelegate {
         
         
         if let itemInfo = self.itemInfo {
-            let url = URL(string: (itemInfo.images[0].imagePath))
-            let data = try? Data(contentsOf: url!)
-            vc.itemImageView.image = UIImage(data: data!)
-            vc.titleLabel.text = itemInfo.title
-            vc.priceLabel.text = String(itemInfo.price)
+            let url = URL(string: (Constant.IMAGE_URL + itemInfo.images[0].imagePath))
+            do {
+                let data = try Data(contentsOf: url!)
+                vc.image = UIImage(data: data)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            vc.itemName = itemInfo.title
+            vc.price = String(itemInfo.price)
         }
         
         vc.itemID = itemID
