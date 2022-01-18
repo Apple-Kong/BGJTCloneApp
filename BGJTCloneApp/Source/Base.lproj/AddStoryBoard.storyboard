@@ -56,13 +56,21 @@
                                                                             <rect key="frame" x="3.5" y="3.5" width="11" height="11"/>
                                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                                            <buttonConfiguration key="configuration" style="plain">
                                                                                 <backgroundConfiguration key="background" imageContentMode="scaleAspectFill">
                                                                                     <imageReference key="image" image="xmark" catalog="system" symbolScale="default"/>
                                                                                 </backgroundConfiguration>
+                                                                                <attributedString key="attributedTitle">
+                                                                                    <fragment content=" ">
+                                                                                        <attributes>
+                                                                                            <font key="NSFont" size="12" name="Helvetica"/>
+                                                                                        </attributes>
+                                                                                    </fragment>
+                                                                                </attributedString>
                                                                             </buttonConfiguration>
                                                                             <connections>
                                                                                 <action selector="deleteButtonTap:" destination="Bpd-ME-W3X" eventType="touchUpInside" id="eiX-wb-4IV"/>
+                                                                                <action selector="deleteButtonTap:" destination="9Ql-fN-wYH" eventType="touchUpInside" id="mcr-gb-OJ1"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -98,16 +106,15 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-JA-S7e">
-                                                            <rect key="frame" x="4" y="10" width="62" height="44"/>
+                                                            <rect key="frame" x="0.0" y="6" width="70" height="52"/>
                                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="top" titleAlignment="center">
-                                                                <imageReference key="image" image="camera.fill" catalog="system" symbolScale="medium"/>
+                                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="top">
+                                                                <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
                                                                 <attributedString key="attributedTitle">
-                                                                    <fragment content="0/12">
+                                                                    <fragment content=" ">
                                                                         <attributes>
-                                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                            <font key="NSFont" metaFont="cellTitle"/>
+                                                                            <font key="NSFont" size="12" name="Helvetica"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -116,16 +123,25 @@
                                                                 <action selector="addImageButton:" destination="mkQ-Gt-SR5" eventType="touchUpInside" id="Bc7-X1-Ghh"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcu-Nb-FYl">
+                                                            <rect key="frame" x="22" y="39.5" width="26.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.97246402499999995" green="0.97260349989999995" blue="0.97243350740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="YAA-JA-S7e" secondAttribute="trailing" constant="4" id="5tr-PY-KDn"/>
-                                                        <constraint firstAttribute="bottom" secondItem="YAA-JA-S7e" secondAttribute="bottom" constant="10" id="bZR-37-eED"/>
-                                                        <constraint firstItem="YAA-JA-S7e" firstAttribute="leading" secondItem="mkQ-Gt-SR5" secondAttribute="leading" constant="4" id="nL1-zw-7sp"/>
-                                                        <constraint firstItem="YAA-JA-S7e" firstAttribute="top" secondItem="mkQ-Gt-SR5" secondAttribute="top" constant="10" id="qV9-ng-WR5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YAA-JA-S7e" secondAttribute="trailing" id="5tr-PY-KDn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YAA-JA-S7e" secondAttribute="bottom" constant="6" id="bZR-37-eED"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Pcu-Nb-FYl" secondAttribute="bottom" constant="10" id="dKh-gf-BqP"/>
+                                                        <constraint firstItem="Pcu-Nb-FYl" firstAttribute="centerX" secondItem="mkQ-Gt-SR5" secondAttribute="centerX" id="kQN-LA-xJk"/>
+                                                        <constraint firstItem="YAA-JA-S7e" firstAttribute="leading" secondItem="mkQ-Gt-SR5" secondAttribute="leading" id="nL1-zw-7sp"/>
+                                                        <constraint firstItem="YAA-JA-S7e" firstAttribute="top" secondItem="mkQ-Gt-SR5" secondAttribute="top" constant="6" id="qV9-ng-WR5"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="addImageButton" destination="YAA-JA-S7e" id="0E4-sP-Bi7"/>
+                                                        <outlet property="countLabel" destination="Pcu-Nb-FYl" id="XWN-jE-Wj0"/>
                                                     </connections>
                                                 </collectionReusableView>
                                             </collectionView>
@@ -176,7 +192,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEJ-Jg-TTm">
-                                                        <rect key="frame" x="0.0" y="23.5" width="55.5" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="24" width="55.5" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -595,6 +611,7 @@
                         <outlet property="enrollButton" destination="Dj2-jU-hNz" id="9jm-fn-eIk"/>
                         <outlet property="imageCollectionView" destination="N3Y-Ia-2q9" id="z94-0q-POA"/>
                         <outlet property="optionButton" destination="Qik-AM-ggL" id="a5p-Kw-axc"/>
+                        <outlet property="optionLabel" destination="AKV-r8-2W7" id="176-WI-4hI"/>
                         <outlet property="priceBarView" destination="G73-S9-xQ8" id="6g3-kI-ICy"/>
                         <outlet property="priceTextField" destination="xIV-VF-I44" id="6LJ-L8-OMi"/>
                         <outlet property="safeButton" destination="ly9-5d-RWW" id="J8Z-1O-Zom"/>

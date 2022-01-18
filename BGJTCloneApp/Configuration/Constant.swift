@@ -19,6 +19,8 @@ struct Constant {
         return UserDefaults.standard.string(forKey: "user_id")
     }
     
+    
+    static let IMAGE_URL = "https://bjclone.s3.ap-northeast-2.amazonaws.com/"
     //UserDefault key 들
     
     /*

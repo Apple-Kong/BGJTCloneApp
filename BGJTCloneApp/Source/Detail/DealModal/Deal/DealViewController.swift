@@ -19,11 +19,12 @@ class DealViewController: UIViewController {
         }
     }
     
+    let dealDataManager = DealDataManager()
 
     var itemID: Int?
     var dealType = 0
     var address = "경기도 부천시 경인로 134번길 16"
-    var pay = "카카오페이"
+    var pay = "kakao"
     
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var topLabel: UILabel!
@@ -49,6 +50,17 @@ class DealViewController: UIViewController {
     @IBAction func dealButtonTap(_ sender: UIButton) {
         
         //결제 메서드 실행
+        if isAgree {
+            if let itemID = itemID {
+                dealDataManager.deal(itemID: itemID, deal_type: dealType, address: address, pay: pay)
+            } else {
+                self.presentAlert(title: "네트워킹 에러", message: "item ID 가 존재하지 않습니다.")
+            }
+           
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.presentAlert(title: "필수 동의", message: "개인정보 이용약관에 동의해주세요")
+        }
     }
     
     @IBOutlet weak var pointInputView: UIView!

@@ -36,9 +36,11 @@ class AddViewController: UIViewController {
     @IBAction func addItemButtonTap(_ sender: UIButton) {
         
         if let itemTitle = itemTitle, let price = price, let detail = detail {
+           
             let item = ItemInfo(category: category, title: itemTitle, location: nil, price: price, delivery_fee_included: isTaekPo, count: numOfItem, isOld: isOld, isExchangable: isExchangable, detail: detail, isSafe: isSafePay, tags: tags, images: [])
             
 //            addManager.addItem(item: item)
+            self.showIndicator()
             addManager.addItemWithImage(item: item, images: self.selectedImages)
         } else {
             //MARK: 경고창 띄우기
@@ -93,6 +95,7 @@ class AddViewController: UIViewController {
         presentReviewModalViewController()
     }
     @IBOutlet weak var optionButton: UIButton!
+    @IBOutlet weak var optionLabel: UILabel!
     @IBOutlet weak var detailTextView: UITextView!
     //하단 바 - 번개 페이, 등록 버튼
     @IBOutlet weak var safeButton: UIView!
@@ -113,7 +116,7 @@ class AddViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+       
         
         if tags.isEmpty {
             // 비어 있다면 숨기기
@@ -126,8 +129,13 @@ class AddViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
     //태그 컬렉션 뷰 동적 수정. 태그간 회색 파티션 추가
     override func viewDidAppear(_ animated: Bool) {
+        
+        
         tagCollectionView.reloadData()
         let height = tagCollectionView.contentSize.width
         if height > tagCollectionView.frame.width {
@@ -164,7 +172,7 @@ class AddViewController: UIViewController {
         tagCollectionView.dataSource = self
         tagCollectionView.contentInset.left = -4
        
-        
+        addManager.delegate = self
         
         taekPoBackgroundView.layer.cornerRadius = taekPoBackgroundView.frame.height / 2
         taekPoBackgroundView.layer.borderWidth = 1
@@ -242,11 +250,16 @@ extension AddViewController: CategoryDelegate {
 
 }
 
+//MARK: - 옵션 데이터 수신.
 extension AddViewController: OptionDelegate {
     func optionChoosed(nuberOfItem: Int, isOld: Bool, isExchangable: Bool) {
         self.numOfItem = nuberOfItem
         self.isOld = isOld
         self.isExchangable = isExchangable
+        
+        
+        
+        optionLabel.text = "\(nuberOfItem)개•\(isOld ? "중고상품" : "새상품")• \(isExchangable ? "교환가능" : "교환불가")"
     }
 }
 
@@ -281,16 +294,22 @@ extension AddViewController: UITextFieldDelegate {
 }
 
 
-//MARK: - 이미지 추가 버튼 클릭 시.
-extension AddViewController: HeaderDelegate {
+//MARK: - 이미지 추가, 제거 버튼 클릭 시.
+extension AddViewController: HeaderDelegate, DeleteDelegate {
+    
+    //삭제버튼 탭
+    func deleteButtonTapped(index: Int) {
+        selectedImages.remove(at: index)
+        imageCollectionView.reloadData()
+    }
+    
+    //추가버튼 탭
     func addButtonTapped() {
-  
         self.openLibrary()
     }
     
     //이미지 피커 열기
     func openLibrary(){
-        
       picker.sourceType = .photoLibrary
         picker.modalPresentationStyle = .fullScreen
       present(picker, animated: true, completion: nil)
@@ -305,11 +324,14 @@ extension AddViewController : UIImagePickerControllerDelegate, UINavigationContr
         
         
         selectedImages.append(info[.originalImage] as! UIImage)
-        imageCollectionView.reloadData()
-        picker.dismiss(animated: true, completion: nil)
+       
+        picker.dismiss(animated: true, completion: {
+            self.imageCollectionView.reloadData()
+        })
     }
     
 }
+
 
 
 //MARK: - half modalView 띄우기
@@ -347,5 +369,18 @@ extension AddViewController: DismissDelegate {
     //다른 방법으로 로그인 시 호출 됨
     func dismiss() {
         print("option 선택 뷰 디스미스")
+    }
+}
+
+
+extension AddViewController {
+    func itemAdded() {
+        self.dismissIndicator()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func failure(message: String) {
+        self.dismissIndicator()
+        self.presentAlert(title: "등록 실패", message: message)
     }
 }

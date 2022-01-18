@@ -17,7 +17,7 @@ class RecommendViewController: UIViewController {
     var scrollDelegate: NestedScrollDelegate?
     var isAvailable = true
     //두번째 값은 찜 여부 저장
-    var items: [(RecommendResponse.Result, Bool)] = [(RecommendResponse.Result.init(item_id: 10000, title: "UI 테스트용", price: 93000, safety_pay: 1, location: "위치 정보 없음", created_at: "2022-01-11T08:26:48.000Z", image_path: "https://mblogthumb-phinf.pstatic.net/MjAyMDAxMDRfMjA2/MDAxNTc4MTMyNzAxMjYz.yBk7jsrSdixXGjcIPGzG7mL0jGkVVU842ejDu_tBpXQg.Xuc0pBCzgd9YADo6PGw4SsD4lg8tWnSLC-5XWcX_sVcg.JPEG.rampee/KakaoTalk_20200104_190829566.jpg?type=w800", wish_count: 3), true)]
+    var items: [(RecommendResponse.Result, Bool)] = []
     /*
      가짜데이터 보류
      (RecommendResponse.Result.init(item_id: 10000, title: "UI 테스트용", price: 93000, safety_pay: 1, location: "위치 정보 없음", created_at: "2022-01-11T08:26:48.000Z", image_path: "https://mblogthumb-phinf.pstatic.net/MjAyMDAxMDRfMjA2/MDAxNTc4MTMyNzAxMjYz.yBk7jsrSdixXGjcIPGzG7mL0jGkVVU842ejDu_tBpXQg.Xuc0pBCzgd9YADo6PGw4SsD4lg8tWnSLC-5XWcX_sVcg.JPEG.rampee/KakaoTalk_20200104_190829566.jpg?type=w800", wish_count: 3), true)
@@ -43,6 +43,7 @@ class RecommendViewController: UIViewController {
 
 extension RecommendViewController: WishDelegate, RecommendDelegate {
     func didFetchedData(items: [RecommendResponse.Result]?) {
+        
         if let items = items {
             for item in items {
                 self.items.append((item, false))
@@ -83,7 +84,7 @@ extension RecommendViewController: UIScrollViewDelegate {
                         isAvailable = false
                         page += 1
                         recommendDataManager.fetchData(page: page)
-                        print(page)
+                        print("-----현재 페이지 :\(page)------")
                 }
 
             }

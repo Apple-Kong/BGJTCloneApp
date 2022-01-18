@@ -36,7 +36,7 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.image.image = selectedImages[indexPath.row]
             cell.image.layer.masksToBounds = true
             cell.image.layer.cornerRadius = 5
-            
+            cell.delegate = self
             return cell
             
         } else if collectionView == self.tagCollectionView {
@@ -77,8 +77,9 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
                 //헤더 뷰 생성
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ImageCollectionReusableView", for: indexPath) as! ImageCollectionReusableView
                 headerView.addImageButton.tintColor = .lightGray
-                headerView.addImageButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .light)
+               
                 headerView.layer.cornerRadius = 5
+                headerView.countLabel.text = "\(selectedImages.count)/12"
                 
                 //이미지 추가버튼 delegate
                 headerView.delegate = self

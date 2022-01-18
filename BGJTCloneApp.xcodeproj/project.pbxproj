@@ -13,6 +13,15 @@
 		C02051B52793D48800924DA4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02051B42793D48800924DA4 /* SettingViewController.swift */; };
 		C02051BA2793D55500924DA4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02051B92793D55500924DA4 /* SettingTableViewCell.swift */; };
 		C02051BF2793D66900924DA4 /* CategoryStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02051BE2793D66900924DA4 /* CategoryStoryBoard.storyboard */; };
+		C02B579A2795711700CD404D /* FollowDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B57992795711700CD404D /* FollowDataManager.swift */; };
+		C02B579C279575D600CD404D /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B579B279575D600CD404D /* FollowingViewController.swift */; };
+		C02B579E27957BB800CD404D /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B579D27957BB800CD404D /* FollowerViewController.swift */; };
+		C02B57A127957C0A00CD404D /* FollowingListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B57A027957C0A00CD404D /* FollowingListDataManager.swift */; };
+		C02B57A427957C3200CD404D /* FollowerListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B57A327957C3200CD404D /* FollowerListResponse.swift */; };
+		C02B57A627957C4600CD404D /* FollowingListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B57A527957C4600CD404D /* FollowingListResponse.swift */; };
+		C02B57A82795802000CD404D /* FollowingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B57A72795802000CD404D /* FollowingListTableViewCell.swift */; };
+		C02D1EB227951100000D4FE9 /* DealModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D1EB127951100000D4FE9 /* DealModalViewController.swift */; };
+		C02D1EB427951126000D4FE9 /* DealModalStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02D1EB327951126000D4FE9 /* DealModalStoryBoard.storyboard */; };
 		C030E9E42793E87100742574 /* MoreModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C030E9E32793E87100742574 /* MoreModalViewController.swift */; };
 		C030E9E62793E90000742574 /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C030E9E52793E90000742574 /* AccountDataManager.swift */; };
 		C030E9E92793F4A800742574 /* AccountEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C030E9E82793F4A800742574 /* AccountEditViewController.swift */; };
@@ -37,6 +46,7 @@
 		C057F518278C862600405ACD /* RecommendViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */; };
 		C05CED1E27918EAB005A2646 /* DealStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05CED1D27918EAB005A2646 /* DealStoryBoard.storyboard */; };
 		C05CED2027918EB6005A2646 /* DealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CED1F27918EB6005A2646 /* DealViewController.swift */; };
+		C05F4CF92795852300206BA8 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F4CF82795852300206BA8 /* FollowerTableViewCell.swift */; };
 		C063F723278D1AEB00636680 /* AutoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F722278D1AEB00636680 /* AutoLoginResponse.swift */; };
 		C063F725278D50A800636680 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F724278D50A800636680 /* TabBarController.swift */; };
 		C063F727278DD7BA00636680 /* AddViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063F726278DD7BA00636680 /* AddViewController+DataSource.swift */; };
@@ -107,6 +117,10 @@
 		C0F7514327932BCA000D7661 /* InterestStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F7514227932BCA000D7661 /* InterestStoryBoard.storyboard */; };
 		C0F90D832789D5A5001EF74D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90D822789D5A5001EF74D /* HomeViewController.swift */; };
 		C0FDCD922790774000859989 /* WishCollctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FDCD912790774000859989 /* WishCollctionViewController.swift */; };
+		C0FF3FAA27964B610008D1DC /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF3FA927964B610008D1DC /* MyDataManager.swift */; };
+		C0FF3FAD279652AD0008D1DC /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF3FAC279652AD0008D1DC /* MyResponse.swift */; };
+		C0FF3FAF279652C90008D1DC /* DealListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF3FAE279652C90008D1DC /* DealListDataManager.swift */; };
+		C0FF3FB127965FBC0008D1DC /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF3FB027965FBC0008D1DC /* DetailTableViewCell.swift */; };
 		DD357B9DE38F78400D34EFEB /* Pods_BGJTCloneAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04F2D31B4B0809F2C8898EF /* Pods_BGJTCloneAppTests.framework */; };
 		E1B729B57D334CB84CB2C6AB /* Pods_BGJTCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A53D6EC511E05BD545CFC1 /* Pods_BGJTCloneApp.framework */; };
 /* End PBXBuildFile section */
@@ -143,6 +157,15 @@
 		C02051B42793D48800924DA4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C02051B92793D55500924DA4 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		C02051BE2793D66900924DA4 /* CategoryStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategoryStoryBoard.storyboard; sourceTree = "<group>"; };
+		C02B57992795711700CD404D /* FollowDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowDataManager.swift; sourceTree = "<group>"; };
+		C02B579B279575D600CD404D /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		C02B579D27957BB800CD404D /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		C02B57A027957C0A00CD404D /* FollowingListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingListDataManager.swift; sourceTree = "<group>"; };
+		C02B57A327957C3200CD404D /* FollowerListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListResponse.swift; sourceTree = "<group>"; };
+		C02B57A527957C4600CD404D /* FollowingListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingListResponse.swift; sourceTree = "<group>"; };
+		C02B57A72795802000CD404D /* FollowingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingListTableViewCell.swift; sourceTree = "<group>"; };
+		C02D1EB127951100000D4FE9 /* DealModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealModalViewController.swift; sourceTree = "<group>"; };
+		C02D1EB327951126000D4FE9 /* DealModalStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DealModalStoryBoard.storyboard; sourceTree = "<group>"; };
 		C030E9E32793E87100742574 /* MoreModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreModalViewController.swift; sourceTree = "<group>"; };
 		C030E9E52793E90000742574 /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
 		C030E9E82793F4A800742574 /* AccountEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEditViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +190,7 @@
 		C057F517278C862600405ACD /* RecommendViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+DataSource.swift"; sourceTree = "<group>"; };
 		C05CED1D27918EAB005A2646 /* DealStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DealStoryBoard.storyboard; sourceTree = "<group>"; };
 		C05CED1F27918EB6005A2646 /* DealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealViewController.swift; sourceTree = "<group>"; };
+		C05F4CF82795852300206BA8 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		C063F722278D1AEB00636680 /* AutoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginResponse.swift; sourceTree = "<group>"; };
 		C063F724278D50A800636680 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C063F726278DD7BA00636680 /* AddViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+DataSource.swift"; sourceTree = "<group>"; };
@@ -246,6 +270,10 @@
 		C0F7514D27933847000D7661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C0F90D822789D5A5001EF74D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C0FDCD912790774000859989 /* WishCollctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCollctionViewController.swift; sourceTree = "<group>"; };
+		C0FF3FA927964B610008D1DC /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
+		C0FF3FAC279652AD0008D1DC /* MyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponse.swift; sourceTree = "<group>"; };
+		C0FF3FAE279652C90008D1DC /* DealListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealListDataManager.swift; sourceTree = "<group>"; };
+		C0FF3FB027965FBC0008D1DC /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +325,38 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		C02B5798279532BE00CD404D /* DealModal */ = {
+			isa = PBXGroup;
+			children = (
+				C02D1EB327951126000D4FE9 /* DealModalStoryBoard.storyboard */,
+				C02D1EB127951100000D4FE9 /* DealModalViewController.swift */,
+				C05CED1C27918E9B005A2646 /* Deal */,
+			);
+			path = DealModal;
+			sourceTree = "<group>";
+		};
+		C02B579F27957BF200CD404D /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				C02B579B279575D600CD404D /* FollowingViewController.swift */,
+				C02B579D27957BB800CD404D /* FollowerViewController.swift */,
+				C02B57A027957C0A00CD404D /* FollowingListDataManager.swift */,
+				C05F4CF82795852300206BA8 /* FollowerTableViewCell.swift */,
+				C02B57A72795802000CD404D /* FollowingListTableViewCell.swift */,
+				C02B57A227957C1D00CD404D /* Entity */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		C02B57A227957C1D00CD404D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C02B57A327957C3200CD404D /* FollowerListResponse.swift */,
+				C02B57A527957C4600CD404D /* FollowingListResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C030E9E72793F49700742574 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +388,10 @@
 				C03B25442793A2A6007A360F /* MyStoryBoard.storyboard */,
 				C03B25422793A175007A360F /* MyViewController.swift */,
 				C02051B22793C47100924DA4 /* MyTableViewCell.swift */,
+				C0FF3FA927964B610008D1DC /* MyDataManager.swift */,
+				C0FF3FAE279652C90008D1DC /* DealListDataManager.swift */,
+				C0FF3FAB2796529F0008D1DC /* Entity */,
+				C02B579F27957BF200CD404D /* Follow */,
 				C02051B62793D4DB00924DA4 /* Setting */,
 			);
 			path = My;
@@ -467,7 +531,9 @@
 				C0A2215A279116D40043B27F /* DetailViewController.swift */,
 				C08B46342794638F00DCAB7B /* DetailDataManager.swift */,
 				C08B4636279476E000DCAB7B /* Entity */,
-				C05CED1C27918E9B005A2646 /* Deal */,
+				C02B5798279532BE00CD404D /* DealModal */,
+				C02B57992795711700CD404D /* FollowDataManager.swift */,
+				C0FF3FB027965FBC0008D1DC /* DetailTableViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -725,6 +791,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C0FF3FAB2796529F0008D1DC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C0FF3FAC279652AD0008D1DC /* MyResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		D6A7EF4DBB83E77EEB7BE7C7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +937,7 @@
 				C0B275D227899F3C00C10AE4 /* NotoSansCJKkr-Medium.otf in Resources */,
 				C0F7514327932BCA000D7661 /* InterestStoryBoard.storyboard in Resources */,
 				C057F50F278C04CB00405ACD /* RecommendStoryBoard.storyboard in Resources */,
+				C02D1EB427951126000D4FE9 /* DealModalStoryBoard.storyboard in Resources */,
 				C0B275D427899F3C00C10AE4 /* NotoSansCJKkr-Bold.otf in Resources */,
 				C03B25452793A2A6007A360F /* MyStoryBoard.storyboard in Resources */,
 				C030E9EB2793F4D500742574 /* AccountEditStoryBoard.storyboard in Resources */,
@@ -997,6 +1072,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08B46352794638F00DCAB7B /* DetailDataManager.swift in Sources */,
+				C02B57A82795802000CD404D /* FollowingListTableViewCell.swift in Sources */,
 				C02051BA2793D55500924DA4 /* SettingTableViewCell.swift in Sources */,
 				C08B4638279476F300DCAB7B /* DetailResponse.swift in Sources */,
 				C063F729278DD7F900636680 /* AddViewController+FlowLayout.swift in Sources */,
@@ -1004,7 +1080,11 @@
 				C063F72B278DD83F00636680 /* AddViewController+TextView.swift in Sources */,
 				C0C37B2B27901A0500AA9AC0 /* WishResponse.swift in Sources */,
 				C0526AA6278E77F90014C824 /* RecentTableViewCell.swift in Sources */,
+				C0FF3FAF279652C90008D1DC /* DealListDataManager.swift in Sources */,
+				C0FF3FB127965FBC0008D1DC /* DetailTableViewCell.swift in Sources */,
 				C063F723278D1AEB00636680 /* AutoLoginResponse.swift in Sources */,
+				C02B57A427957C3200CD404D /* FollowerListResponse.swift in Sources */,
+				C02B57A627957C4600CD404D /* FollowingListResponse.swift in Sources */,
 				C0A5EE06278A66640070E617 /* UIView.swift in Sources */,
 				C030E9E42793E87100742574 /* MoreModalViewController.swift in Sources */,
 				C0B2759B27899F1200C10AE4 /* ViewController.swift in Sources */,
@@ -1022,6 +1102,7 @@
 				C030E9E92793F4A800742574 /* AccountEditViewController.swift in Sources */,
 				C0F90D832789D5A5001EF74D /* HomeViewController.swift in Sources */,
 				C057F504278BB43200405ACD /* HalfModalPresentationController.swift in Sources */,
+				C02B57A127957C0A00CD404D /* FollowingListDataManager.swift in Sources */,
 				C0C37B26279012C800AA9AC0 /* WishDataManager.swift in Sources */,
 				C0D46F342789C61D0075048D /* LoginManager.swift in Sources */,
 				C069EB31278B3390004C2900 /* ImageCollectionReusableView.swift in Sources */,
@@ -1030,10 +1111,13 @@
 				C0B2759927899F1200C10AE4 /* SceneDelegate.swift in Sources */,
 				C0C37B3C279064B900AA9AC0 /* WishListDataManager.swift in Sources */,
 				C0A2215827910C1F0043B27F /* UIImage.swift in Sources */,
+				C0FF3FAA27964B610008D1DC /* MyDataManager.swift in Sources */,
+				C02D1EB227951100000D4FE9 /* DealModalViewController.swift in Sources */,
 				C05CED2027918EB6005A2646 /* DealViewController.swift in Sources */,
 				C0A2215B279116D40043B27F /* DetailViewController.swift in Sources */,
 				C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */,
 				C0526AAF278EB7E50014C824 /* TagCollectionViewCell.swift in Sources */,
+				C02B579A2795711700CD404D /* FollowDataManager.swift in Sources */,
 				C03B25432793A175007A360F /* MyViewController.swift in Sources */,
 				C08EFFE1278E75F000177177 /* CategoryViewController.swift in Sources */,
 				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
@@ -1045,6 +1129,7 @@
 				C063F725278D50A800636680 /* TabBarController.swift in Sources */,
 				C057F506278BB60800405ACD /* OtherLoginViewController.swift in Sources */,
 				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
+				C0FF3FAD279652AD0008D1DC /* MyResponse.swift in Sources */,
 				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
 				C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */,
 				C0C37B32279054E700AA9AC0 /* InterestViewController.swift in Sources */,
@@ -1052,6 +1137,7 @@
 				C0C37B3A2790649700AA9AC0 /* WishListResponse.swift in Sources */,
 				C0526AAC278EB2A70014C824 /* TagViewController.swift in Sources */,
 				C030E9EE2794348500742574 /* AccountResponse.swift in Sources */,
+				C02B579C279575D600CD404D /* FollowingViewController.swift in Sources */,
 				C06E9006278ADBA5005AE69F /* RecommendCollectionViewCell.swift in Sources */,
 				C0526AB2278F0B860014C824 /* TagMainCollectionViewCell.swift in Sources */,
 				C0BBCE59278A80C300C12161 /* HomeViewController+DataSource.swift in Sources */,
@@ -1066,11 +1152,13 @@
 				C02051B32793C47100924DA4 /* MyTableViewCell.swift in Sources */,
 				C030E9E62793E90000742574 /* AccountDataManager.swift in Sources */,
 				C0BBCE5B278A9AE200C12161 /* HomeItemViewController.swift in Sources */,
+				C02B579E27957BB800CD404D /* FollowerViewController.swift in Sources */,
 				C063F727278DD7BA00636680 /* AddViewController+DataSource.swift in Sources */,
 				C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */,
 				C0C37B1F278FCC4300AA9AC0 /* ItemPost.swift in Sources */,
 				C0C37B22278FCD9800AA9AC0 /* AddManager.swift in Sources */,
 				C0C37B2D27901F2900AA9AC0 /* RecommendResponse.swift in Sources */,
+				C05F4CF92795852300206BA8 /* FollowerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

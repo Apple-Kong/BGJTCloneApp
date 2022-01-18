@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.isHidden = false
         UIApplication.statusBarBackgroundColor = .clear
         
     }
@@ -41,7 +42,10 @@ class HomeViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         UIApplication.statusBarBackgroundColor = .white
     }
-    
+    @objc func fbButtonPressed() {
+        
+        print("Share to fb")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +68,21 @@ class HomeViewController: UIViewController {
         buttonCollectionView.delegate = self
         buttonCollectionView.dataSource = self
         
+        
+        let buttonStrings = [ "my_bell", "search_detail"]
+        var buttons: [UIBarButtonItem] = []
+        for string in buttonStrings {
+            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 24))
+            //set image for button
+            let image = UIImage(named: string)
+            
+            image?.withRenderingMode(.alwaysTemplate) // 렌더링 모드 수정 필수 >> 컬러 변경 위ㅎ함
+            image?.resizeImage(size: CGSize(width: 24, height: 24)) // 리사이징도 필수 이미지 사이즈가 더 크면 오류남.
+            button.setImage(image, for: .normal)
+            button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
+            buttons.append(UIBarButtonItem(customView: button))
+        }
+        self.navigationItem.rightBarButtonItems = buttons
         
         if !UserDefaults.standard.bool(forKey: "isLogin") {
             

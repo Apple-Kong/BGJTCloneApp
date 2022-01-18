@@ -11,103 +11,41 @@ import Alamofire
 
 class FollowingViewController: UIViewController {
     
-    let followListDataManager = FollowListDataManager()
+    let followListDataManager = FollowingListDataManager()
     
+    @IBAction func backButtonTap(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        followListDataManager.fetchFollowingList()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
 }
+
 
 
 extension FollowingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FollowingListTableViewCell") as! FollowingListTableViewCell
+        
+        return cell
     }
-    
     
 }
 
-class FollowListDataManager {
-    func fetchFollowingList() {
-        print("-----상점 팔로잉 리스트 요청 시작 -----")
-        let url = Constant.MAIN_URL + "/api/follow/users/following"
-        
-        AF.request(url, method: .get, headers: Secret.tokenHeaders)
-            .responseString { response in
-                print(response.value)
-            }
-            .responseDecodable(of: FollowingListResponse.self) { response in
-                switch response.result {
-                case .success:
-                    print("상점 팔로우 목록 : \(response.value)")
-                case .failure(let error):
-                    print("상점 팔로우 목록 실패 : \(error.localizedDescription)")
-                }
-            }
-            
-        
-    }
-    
-    func fetchFollowerList() {
-        print("-----상점 팔로워 리스트 요청 시작 -----")
-        let url = Constant.MAIN_URL + "/api/follow/users/following"
-        
-        AF.request(url, method: .get, headers: Secret.tokenHeaders)
-            .responseString { response in
-                print(response.value)
-            }
-            .responseDecodable(of: FollowerListResponse.self) { response in
-                switch response.result {
-                case .success:
-                    print("상점 팔로우 목록 : \(response.value)")
-                case .failure(let error):
-                    print("상점 팔로우 목록 실패 : \(error.localizedDescription)")
-                }
-            }
-    }
-}
-
-struct FollowerListResponse: Decodable {
-    
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: [FollowerResult]
-    
-    struct FollowerResult: Decodable {
-        let userId: Int
-        let shopName: String
-        let getItemResult: [ItemResult]
-        
-        struct ItemResult: Decodable {
-            let item_id: Int
-            let price: Int
-            let image_path: String
-        }
-    }
-}
-
-struct FollowingListResponse: Decodable {
-    let isSuccess: Bool
-    let code: Int
-    let message: String
-    let result: [FollowResult]
-    
-    struct FollowResult: Decodable {
-        let item_id: Int
-        let image_path: String
-        let safety_pay: Int
-        let title: String
-        let price: Int
-        let created_at: String
-        let shop_name: String
-    }
-}

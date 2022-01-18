@@ -12,6 +12,7 @@ import KakaoSDKTemplate
 
 class AddManager {
     
+    var delegate: AddViewController?
     
     
 //    func addItem(item: ItemInfo) {
@@ -58,14 +59,19 @@ class AddManager {
             //이미지들 데이타로 변환해준 후에 바디에 추가
             for image in images {
        
-                if let imageData = image.pngData() {
-                    multipartFormData.append(imageData, withName: "image", fileName: "\(image).png", mimeType: "image/png")
+                if let imageData = image.jpegData(compressionQuality: 0.2) {
+                    multipartFormData.append(imageData, withName: "image", fileName: "\(image).jpeg", mimeType: "image/jpeg")
                 }
             }
             
             //파라미터들 바디에 추가.
             for (key, value) in parameters {
-                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "text/plain")
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+                if key == "tags" {
+                    for tag in value as! [String] {
+                        multipartFormData.append("\(tag)".data(using: .utf8, allowLossyConversion: false)!, withName: "\(key)")
+                    }
+                }
                 
             }
             
@@ -85,8 +91,10 @@ class AddManager {
                 switch response.result {
                 case .success:
                     print("이미지를 통한 상품 업로드 : \(response.value?.code) \(response.value?.isSuccess) \(response.value?.message)")
+                    self.delegate?.itemAdded()
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self.delegate?.failure(message: error.localizedDescription)
                 }
             }
     }

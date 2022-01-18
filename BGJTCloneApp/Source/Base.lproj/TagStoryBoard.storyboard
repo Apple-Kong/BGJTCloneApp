@@ -133,8 +133,15 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siY-hJ-LZj">
                                                             <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                            <buttonConfiguration key="configuration" style="plain">
                                                                 <backgroundConfiguration key="background"/>
+                                                                <attributedString key="attributedTitle">
+                                                                    <fragment content="  ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="12" name="Helvetica"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
                                                                 <directionalEdgeInsets key="contentInsets" top="0.0" leading="-1" bottom="0.0" trailing="0.0"/>
                                                             </buttonConfiguration>
                                                             <connections>

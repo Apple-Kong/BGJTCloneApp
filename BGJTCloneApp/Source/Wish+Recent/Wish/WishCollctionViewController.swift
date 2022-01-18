@@ -14,7 +14,7 @@ class WishCollctionViewController: UIViewController {
     private let wishListDataManager = WishListDataManager()
     private let wishDataManager = WishDataManager()
     
-    var items: [WishListResponse.Result] = [WishListResponse.Result.init(item_id: 10000, image_path: "https://mblogthumb-phinf.pstatic.net/MjAyMDAxMDRfMjA2/MDAxNTc4MTMyNzAxMjYz.yBk7jsrSdixXGjcIPGzG7mL0jGkVVU842ejDu_tBpXQg.Xuc0pBCzgd9YADo6PGw4SsD4lg8tWnSLC-5XWcX_sVcg.JPEG.rampee/KakaoTalk_20200104_190829566.jpg?type=w800", safety_pay: 1, title: "UI 테스트용", price: 93000, created_at: "2022-01-11T14:46:36.000Z", shop_name: "루크", shop_image: nil)]
+    var items: [WishListResponse.Result] = []
 
 
     @IBOutlet weak var wishCollectionView: UICollectionView!
@@ -35,8 +35,10 @@ class WishCollctionViewController: UIViewController {
 }
 extension WishCollctionViewController: WishDelegate {
     func wishButtonTapped(index: Int) {
-        self.items.remove(at: index)
+        
+        print("---------\(index)")
         wishDataManager.deleteWishItem(itemID: items[index].item_id)
+        self.items.remove(at: index)
         self.wishCollectionView.reloadData()
     }
 }
@@ -44,6 +46,7 @@ extension WishCollctionViewController: WishDelegate {
 extension WishCollctionViewController: WishListDelegate {
     func didFetch(items: [WishListResponse.Result]) {
         self.items = items
+        print(items)
         self.wishCollectionView.reloadData()
         
         
@@ -81,7 +84,9 @@ extension WishCollctionViewController: UICollectionViewDelegate, UICollectionVie
         
         let item = items[indexPath.row]
         
-        let url = URL(string: item.image_path)
+        cell.index = indexPath.row
+        
+        let url = URL(string: "https://bjclone.s3.ap-northeast-2.amazonaws.com/" + item.image_path)
         cell.itemIamgeView.kf.setImage(with: url)
         cell.titleLabel.text = item.title
         cell.priceLabel.text = String(item.price).insertComma + "원"
@@ -96,7 +101,8 @@ extension WishCollctionViewController: UICollectionViewDelegate, UICollectionVie
             cell.safetyPayView.isHidden = true
         }
         if let urlString = item.shop_image {
-            let userUrl = URL(string: urlString)
+            print("\(urlString)")
+            let userUrl = URL(string: "https://bjclone.s3.ap-northeast-2.amazonaws.com/" + urlString)
             cell.userImageView.kf.setImage(with: userUrl)
         }
         

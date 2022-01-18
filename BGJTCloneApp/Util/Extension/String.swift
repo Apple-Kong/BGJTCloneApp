@@ -31,8 +31,8 @@ extension String {
     
     
     func dateExtract() -> String {
-        let ymd = self.substring(from: 0, to: 9)
-        let hms = self.substring(from: 11, to: 18)
+        let ymd = self.substring(from: 0, to: 10)
+        let hms = self.substring(from: 11, to: 19)
         return "\(ymd) \(hms)"
     }
     
@@ -47,9 +47,12 @@ extension String {
     }
     
     func stringToIntervalDateString() -> String {
+
         let dateString = self.dateExtract()
         let date = dateString.stringToDate()
+    
         let intervalString = date.relativeTime_abbreviated
+  
         return intervalString
     }
 

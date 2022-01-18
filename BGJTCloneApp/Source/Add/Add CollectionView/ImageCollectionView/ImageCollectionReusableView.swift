@@ -19,9 +19,11 @@ class ImageCollectionReusableView: UICollectionReusableView {
     }
     @IBOutlet weak var addImageButton: UIButton!
     
+    @IBOutlet weak var countLabel: UILabel!
     
 
 }
+
 
 
 protocol HeaderDelegate {
@@ -29,3 +31,5 @@ protocol HeaderDelegate {
     // 2. create a function that will do something when the header is tapped
     func addButtonTapped()
 }
+
+

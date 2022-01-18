@@ -43,14 +43,18 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.titleLabel.text = item.title
         cell.priceLabel.text = String(item.price).insertComma
         
+        var location = item.location
+        if location == "" {
+            location  = "위치정보 없음"
+        }
+        cell.locationLabel.text = "\(location) • \(item.created_at.stringToIntervalDateString())".localized
         
-
-        
-        cell.locationLabel.text = "\(item.location) • \(item.created_at.stringToIntervalDateString())".localized
-        
-        print("---- \(item.image_path) ---")
-        let url = URL(string: item.image_path)
+        print("--------\(item.created_at.stringToIntervalDateString())------")
+      
+        let url = URL(string: Constant.IMAGE_URL + item.image_path)
         cell.image.kf.setImage(with: url)
+            
+     
         
         if item.safety_pay == 1 {
             //셀 뱃지 보이기
@@ -69,6 +73,8 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
             cell.wishButton.setBackgroundImage(UIImage(named: "main_heart"), for: UIControl.State.normal)
             
         }
+        
+        
         
         cell.image.layer.masksToBounds = true
         cell.image.layer.cornerRadius = 16
