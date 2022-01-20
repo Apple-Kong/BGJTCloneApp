@@ -40,6 +40,7 @@ extension WishCollctionViewController: WishDelegate {
         wishDataManager.deleteWishItem(itemID: items[index].item_id)
         self.items.remove(at: index)
         self.wishCollectionView.reloadData()
+        self.presentBottomAlert(message: "찜 해제가 완료되었습니다.")
     }
 }
 

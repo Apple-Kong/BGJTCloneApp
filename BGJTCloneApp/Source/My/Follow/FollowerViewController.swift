@@ -10,10 +10,12 @@ import UIKit
 class FollowerViewController: UIViewController {
     
     let followListDataManager = FollowingListDataManager()
+    
+    var users: [FollowerInfo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        followListDataManager.followerDelegate = self
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -36,14 +38,33 @@ class FollowerViewController: UIViewController {
 }
 
 
+extension FollowerViewController: FollowerListDelegate {
+    func didFetched(data: [FollowerInfo]) {
+        users = data
+        tableView.reloadData()
+    }
+    
+    func failure(message: String) {
+        self.presentAlert(title: "불러오기 실패", message: message)
+    }
+}
+
 extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowerTableViewCell") as! FollowerTableViewCell
+        let user = users[indexPath.row]
         
+        cell.shopNameLabel.text = user.shop_name
+        if let imagePath = user.image {
+            let url = URL(string: Constant.IMAGE_URL + imagePath)
+            cell.shopImageView.kf.setImage(with: url)
+        }
+        cell.followerCountLabel.text = String(user.countFollower)
+        cell.itemCountLabel.text = String(user.countItem)
         return cell
     }
 }

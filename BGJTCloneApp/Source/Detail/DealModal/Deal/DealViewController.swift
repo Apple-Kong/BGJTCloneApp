@@ -70,11 +70,16 @@ class DealViewController: UIViewController {
     
     @IBOutlet weak var pointInputView: UIView!
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.title = ""
+        self.navigationController?.navigationBar.isHidden = true
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = .black
+
+    
+    @IBAction func dismissButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()

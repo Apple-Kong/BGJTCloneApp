@@ -69,7 +69,8 @@ class AccountDataManager {
                 case .success:
                     response.value?.printResponse(message: "계좌 등록")
                     
-                    self.deleagate?.accountUpdated()
+                   
+                    self.getAccount()
                 case .failure(let error):
                     print("계좌 등록 :  \(error.localizedDescription)")
                 }
@@ -126,7 +127,7 @@ class AccountDataManager {
                 switch response.result {
                 case .success:
                     response.value?.printResponse(message: "계좌 삭제")
-                   
+                    self.getAccount()
                 case .failure(let error):
                     print("계좌 삭제 :  \(error.localizedDescription)")
                 }

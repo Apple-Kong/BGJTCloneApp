@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CQN-uA-Lcc">
-                                <rect key="frame" x="20" y="44" width="374" height="200"/>
+                                <rect key="frame" x="20" y="94" width="374" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-K8-wSc">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="66.5"/>
@@ -139,47 +139,90 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhh-QO-CUQ">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" name="BGpay"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Dwe-wN-Q0s"/>
                                 </constraints>
-                                <color key="tintColor" name="BGpay"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="등록">
+                                        <fragment content="등록 완료">
                                             <attributes>
                                                 <font key="NSFont" size="17" name="AppleSDGothicNeo-Bold"/>
-                                                <font key="NSOriginalFont" size="16" name=".AppleKoreanFont-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content=" ">
-                                            <attributes>
-                                                <font key="NSFont" size="17" name="AppleSDGothicNeo-Bold"/>
-                                                <font key="NSOriginalFont" metaFont="systemBold" size="16"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="완료">
-                                            <attributes>
-                                                <font key="NSFont" size="17" name="AppleSDGothicNeo-Bold"/>
-                                                <font key="NSOriginalFont" size="16" name=".AppleKoreanFont-Bold"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="enrollButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zcw-jJ-7Dx"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZa-ED-TiF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-o6-USG">
+                                        <rect key="frame" x="15" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="Fr1-hD-9ki"/>
+                                            <constraint firstAttribute="width" secondItem="R2H-o6-USG" secondAttribute="height" multiplier="1:1" id="g3k-9E-bzy"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" ">
+                                            <backgroundConfiguration key="background" image="go_back"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Isx-QV-EVb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWw-fD-Ynv">
+                                        <rect key="frame" x="174" y="14.5" width="66.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jb-ed-WhD">
+                                        <rect key="frame" x="374" y="16" width="20" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="v26-uQ-xw1"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" ">
+                                            <backgroundConfiguration key="background" image="xmark" catalog="system"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="dismissButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3E6-le-KIh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="43R-lw-2bj"/>
+                                    <constraint firstItem="OWw-fD-Ynv" firstAttribute="centerY" secondItem="gZa-ED-TiF" secondAttribute="centerY" id="7SN-QF-leI"/>
+                                    <constraint firstItem="OWw-fD-Ynv" firstAttribute="centerX" secondItem="gZa-ED-TiF" secondAttribute="centerX" id="LvE-5m-Dhb"/>
+                                    <constraint firstAttribute="trailing" secondItem="6jb-ed-WhD" secondAttribute="trailing" constant="20" id="VO3-6Y-hp3"/>
+                                    <constraint firstItem="6jb-ed-WhD" firstAttribute="centerY" secondItem="gZa-ED-TiF" secondAttribute="centerY" id="emt-hL-tOk"/>
+                                    <constraint firstItem="R2H-o6-USG" firstAttribute="centerY" secondItem="gZa-ED-TiF" secondAttribute="centerY" id="etv-Ih-jcv"/>
+                                    <constraint firstItem="6jb-ed-WhD" firstAttribute="width" secondItem="6jb-ed-WhD" secondAttribute="height" multiplier="10:9" id="fsG-qS-Wgq"/>
+                                    <constraint firstItem="R2H-o6-USG" firstAttribute="leading" secondItem="gZa-ED-TiF" secondAttribute="leading" constant="15" id="sID-2c-kwc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Xhh-QO-CUQ" secondAttribute="bottom" id="1Ks-Yi-a7O"/>
+                            <constraint firstItem="gZa-ED-TiF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2l1-fD-9ce"/>
+                            <constraint firstItem="gZa-ED-TiF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3X6-hm-qi0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CQN-uA-Lcc" secondAttribute="trailing" constant="20" id="6yk-ML-knX"/>
                             <constraint firstItem="CQN-uA-Lcc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Hyd-dz-ErB"/>
                             <constraint firstItem="Xhh-QO-CUQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NbB-f5-SML"/>
+                            <constraint firstItem="gZa-ED-TiF" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="VlB-Vt-xt7"/>
+                            <constraint firstItem="CQN-uA-Lcc" firstAttribute="top" secondItem="gZa-ED-TiF" secondAttribute="bottom" id="Xj1-3d-UMZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xhh-QO-CUQ" secondAttribute="trailing" id="bbr-AO-t26"/>
-                            <constraint firstItem="CQN-uA-Lcc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iie-cH-PhV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -187,6 +230,7 @@
                         <outlet property="enrollButton" destination="Xhh-QO-CUQ" id="mvl-fe-XSP"/>
                         <outlet property="numberTextField" destination="HiY-Lg-xQo" id="2Uf-oc-INB"/>
                         <outlet property="ownerTextField" destination="6kW-9M-iiw" id="aoK-wx-TyB"/>
+                        <outlet property="titleLabel" destination="OWw-fD-Ynv" id="rYO-BL-vxm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,9 +239,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="go_back" width="69" height="72"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="BGpay">
             <color red="1" green="0.40999999642372131" blue="0.40999999642372131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

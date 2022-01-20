@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     
     let detailDataManager = DetailDataManager()
     let followDataManager = FollowDataManager()
+    let wistDataManager = WishDataManager()
     
     
     var itemInfo: Item?
@@ -22,17 +23,62 @@ class DetailViewController: UIViewController {
     
     var itemID: Int?
     
+    //MARK: - 커스텀 네비게이션 바
+    @IBOutlet weak var topBar: UIView!
+    @IBOutlet weak var tobBarTitleLabel: UILabel!
+    @IBOutlet weak var topBarSearchButton: UIButton!
+    @IBOutlet weak var topBarShareButton: UIButton!
     
+    @IBOutlet weak var topBarBackButton: UIButton!
+    
+    @IBAction func topBarBackButtonTap(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: - Hiding Top bar
+    var isHideAvailable = false
+    var isShowAvailable = true
+    @IBOutlet weak var hideBar: UIView!
+    @IBOutlet weak var hidePriceLabel: UILabel!
+    @IBOutlet weak var topImageView: UIImageView!
+    
+    @IBOutlet weak var hideItemLabel: UILabel!
+    
+    @IBOutlet weak var hideReviewCountLabel: UILabel!
+    @IBOutlet weak var hideIsTaekPoLabel: UILabel!
+    @IBOutlet weak var hideShopLabel: UILabel!
     
     
     //MARK: - 찜하기 기능 관련
     var isWished = false {
         didSet {
-            if isWished {
-                wishButton.isHighlighted = true
-            } else {
-                wishButton.isHighlighted = false
+            if let itemID = itemID {
+                if isWished {
+                    wishButton.isHighlighted = true
+                    wistDataManager.addWishItem(itemID: itemID)
+                    self.presentBottomAlert(message: "찜 목록에 추가했어요!   ")
+                    
+                } else {
+                    wishButton.isHighlighted = false
+                    wistDataManager.deleteWishItem(itemID: itemID)
+                    self.presentBottomAlert(message: "찜 해제가 완료되었습니다.")
+                    
+                }
             }
+        }
+    }
+    
+    
+    @IBAction func inquiryButtonTap(_ sender: UITapGestureRecognizer) {
+        
+        let vc = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "InquiryViewController") as! InquiryViewController
+        
+        
+        if let itemID = itemID {
+            vc.itemID = itemID
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            self.presentBottomAlert(message: "item ID 가 존재하지 않습니다    ")
         }
     }
     
@@ -43,7 +89,7 @@ class DetailViewController: UIViewController {
     
     
     //MARK: - 거래 기능 관련
-    //모달뷰 띄우는 걸로 추후에 변경할 것.
+    //모달뷰 띄우는 걸로 추후에 변경할 것. >> 완료
     @IBAction func dealButtonTap(_ sender: UITapGestureRecognizer) {
         self.presentDealModalViewController()
        
@@ -87,13 +133,22 @@ class DetailViewController: UIViewController {
     var isFollowing: Bool = false {
         didSet {
             if isFollowing {
-                self.shopFollowButton.image = UIImage(named: "shop_follow_fill")
-                if let shopInfo = shopInfo {
                 
+                
+                self.shopFollowButton.image = UIImage(named: "shop_follow_fill")
+                
+                
+                if let shopInfo = shopInfo {
+                    
                     followDataManager.followShop(shopID: shopInfo.sellerID)
+                    
+                    let alert = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "FollowModalView") as! FollowModalView
+                    alert.modalPresentationStyle = .overCurrentContext
+                    alert.delegate = self
+                    present(alert, animated: false, completion: nil)
               
                 } else {
-                    presentAlert(title: "상점 정보 없음")
+                    self.presentBottomAlert(message: "상점 정보 없음     ")
                 }
                 
                 
@@ -103,7 +158,7 @@ class DetailViewController: UIViewController {
                 if let shopInfo = shopInfo {
                     followDataManager.unFollowShop(shopID: shopInfo.sellerID)
                 } else {
-                    presentAlert(title: "상점 정보 없음")
+                    self.presentBottomAlert(message: "상점 정보 없음     ")
                 }
             }
         }
@@ -134,22 +189,37 @@ class DetailViewController: UIViewController {
     
     //네비게이션 컨트롤러 초기화
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem!.title = " "
+        self.navigationController?.navigationBar.isHidden = true
+        
+
+        
         //네비게이션 컨트롤러 투명하게 만들기
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.tintColor = .white
+//        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        topBar.backgroundColor = .clear
+        topBarBackButton.tintColor = .white
+        topBarShareButton.tintColor = .white
+        topBarSearchButton.tintColor = .white
+        tobBarTitleLabel.tintColor = .clear
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = .black
+    override func viewWillDisappear(_ animated: Bool) {
+
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideBar.center.y = -50
+        hideBar.isHidden = true
         
+        
+        topImageView.layer.masksToBounds = true
+        topImageView.layer.cornerRadius = 4
         
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
@@ -194,27 +264,7 @@ class DetailViewController: UIViewController {
         
         
         shopImage.maskToCircle()
-        
 
-        //MARK: - 네비게이션 바 아이템 추가
-        
-        let buttonStrings = ["share_detail", "search_detail"]
-        var buttons: [UIBarButtonItem] = []
-        for string in buttonStrings {
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 24))
-            //set image for button
-            let image = UIImage(named: string)
-            
-            image?.withRenderingMode(.alwaysTemplate) // 렌더링 모드 수정 필수 >> 컬러 변경 위ㅎ함
-            image?.resizeImage(size: CGSize(width: 24, height: 24)) // 리사이징도 필수 이미지 사이즈가 더 크면 오류남.
-            button.setImage(image, for: .normal)
-            button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
-            buttons.append(UIBarButtonItem(customView: button))
-        }
-        self.navigationItem.rightBarButtonItems = buttons
-        
-        //네비게이션 바 타이틀 수정
-        self.navigationController?.navigationBar.topItem!.title = " "
     }
 }
 
@@ -247,11 +297,15 @@ extension DetailViewController: DealModalDelegate {
         vc.dealType = 0
         
         if let itemInfo = self.itemInfo {
-            let url = URL(string: (itemInfo.images[0].imagePath))
-            let data = try? Data(contentsOf: url!)
-            vc.itemImageView.image = UIImage(data: data!)
-            vc.titleLabel.text = itemInfo.title
-            vc.priceLabel.text = String(itemInfo.price)
+            let url = URL(string: (Constant.IMAGE_URL + itemInfo.images[0].imagePath))
+            do {
+                let data = try Data(contentsOf: url!)
+                vc.image = UIImage(data: data)
+            } catch {
+                print(error.localizedDescription)
+            }
+            vc.itemName = itemInfo.title
+            vc.price = String(itemInfo.price)
         }
         vc.itemID = itemID
         self.navigationController?.pushViewController(vc, animated: true)
@@ -272,44 +326,79 @@ extension DetailViewController: DetailDelegate {
         self.shopInfo = shop
         self.reviewInfo = review
         //MARK: - 아이템 구간
+        let url = URL(string:  Constant.IMAGE_URL + item.images[0].imagePath)
+        do {
+            let data = try Data(contentsOf: url!)
+            if let image = UIImage(data: data) {
+                topImageView.image = image
+            }
+            
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+        
         for imagePath in item.images {
-            if imagePath.imagePath.substring(from: 0, to: 4) == "item" {
-
-                print("이미지 패스 바꾸기")
-                let url = URL(string: "https://bjclone.s3.ap-northeast-2.amazonaws.com/" + imagePath.imagePath)
-                do {
-                    let data = try Data(contentsOf: url!)
-                    if let image = UIImage(data: data) {
-                        images.append(ImageSource(image: image))
-                    }
-                    
-                } catch {
-                    print("\(error.localizedDescription)")
-                }
-
-            } else {
-
-                let url = URL(string: imagePath.imagePath)
-                do {
-                    let data = try Data(contentsOf: url!)
-                    if let image = UIImage(data: data) {
-                        images.append(ImageSource(image: image))
-                    }
-                    
-                } catch {
-                    print("\(error.localizedDescription)")
+            let url = URL(string: Constant.IMAGE_URL + imagePath.imagePath)
+            do {
+                let data = try Data(contentsOf: url!)
+                if let image = UIImage(data: data) {
+                    images.append(ImageSource(image: image))
                 }
                 
+            } catch {
+                print("\(error.localizedDescription)")
             }
-
         }
         slideShow.setImageInputs(images)
         titleLabel.text = item.title
+        hideItemLabel.text = item.title
         priceLabel.text = String(item.price).insertComma
-        postInfo.text = item.creatdAt.stringToIntervalDateString()
+        hidePriceLabel.text = String(item.price).insertComma
+        
+        let attributedString = NSMutableAttributedString(string: " ")
+           
+        //삽입할 이미지
+        var imageAttachment = NSTextAttachment()
+        var image = UIImage(named: "create_at")
+       
+        imageAttachment.image = image
+        
+        imageAttachment.bounds = CGRect(x: 0, y: -3, width: 12, height: 12)
+        
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        
+        attributedString.append(NSAttributedString(string: " " + item.creatdAt.stringToIntervalDateString() + "  "))
+        
+        imageAttachment = NSTextAttachment()
+        image = UIImage(named: "view_count")
+        imageAttachment.image = image
+        imageAttachment.bounds = CGRect(x: 0, y: -3, width: 14, height: 14)
+        
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        
+        attributedString.append(NSAttributedString(string: "  \(String(item.view))  "))
+        
+        
+        imageAttachment = NSTextAttachment()
+        image = UIImage(named: "detail_heart_fill")
+        imageAttachment.image = image
+        imageAttachment.bounds = CGRect(x: 0, y: -3, width: 14, height: 14)
+        
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        
+        attributedString.append(NSAttributedString(string: "  \(String(item.wishCount))"))
+
+        postInfo.attributedText = attributedString
+        
+//        postInfo.text = item.creatdAt.stringToIntervalDateString()
         var condition = ""
         
-        locationLabel.text = item.location ?? "위치정보 없음"
+        
+        locationLabel.text = item.location ?? "지역정보 없음"
+        if item.location == "" {
+            locationLabel.text = "지역정보 없음"
+        }
+        
         if item.condition == 1 {
             condition = "새상품"
         } else {
@@ -322,6 +411,7 @@ extension DetailViewController: DetailDelegate {
         } else {
             deliveryFee = "배송비별도"
         }
+        hideIsTaekPoLabel.text = deliveryFee
         
         
         
@@ -363,6 +453,10 @@ extension DetailViewController: DetailDelegate {
         }
         
         
+        hideShopLabel.text = shop.shopName
+        
+        
+        
         //MARK: - review 구간
         if review.reviewCount == 0 {
             reviewViewHeightConstraint.constant = 0
@@ -373,7 +467,7 @@ extension DetailViewController: DetailDelegate {
         
         // 별점도 바꿔주기 🚧🚧🚧🚧🚧
         
-        
+        hideReviewCountLabel.text = "5.0 (\(review.reviewCount ?? 0))"
         
         self.dismissIndicator()
     }
@@ -410,49 +504,112 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.itemNameLabel.text = review.itemTitle
                 cell.reviewLabel.text = review.content
-                
+                cell.createAtLabel.text = review.createdAt.stringToIntervalDateString()
                 //아이템 이미지 가 안옴. 서버에서 임시 보류
 //                if let imagePath = review. {
 //                    let url = URL(string: Constant.IMAGE_URL + imagePath)
 //                    cell.ItemImageView.kf.setImage(with: url)
 //                }
-                
-                
             }
         }
-        
-        
-        
-        
         return cell
     }
 
 
 }
 
+
+
+
 //MARK: - 스크롤에 따른 UI 애니메이션 들
 extension DetailViewController: UIScrollViewDelegate {
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+
             //MARK: 네비게이션 바 fade animation
-        let offset = scrollView.contentOffset.y
-        var proportionalOffset =  offset / 80
+        let offset = scrollView.contentOffset.y - 90
+        
+        print(self.hideBar.center.y)
+        if offset > 420 && isShowAvailable {
+            isShowAvailable = false
+            
+            self.hideBar.center.y = 119 - 50
+            hideBar.isHidden = false
+            UIView.animate(withDuration: 0.15,
+                           delay: 0,
+                           options: .curveLinear,
+                           animations: {
+                self.hideBar.center.y = 119
+                            },
+                           completion: { Void in
+                self.isHideAvailable = true
+            }
+            )
+            print("아래로 스크롤")
+            
+        }
+        
+        if offset < 420 && isHideAvailable {
+            isHideAvailable = false
+ 
+            self.hideBar.center.y = 119
+            UIView.animate(withDuration: 0.15,
+                           delay: 0,
+                           options: .curveLinear,
+                           animations: {
+                self.hideBar.center.y = 119 - 50
+                            },
+                           completion: { Void in
+                self.isShowAvailable = true
+                self.hideBar.isHidden = true
+            }
+            )
+            print("위로 스크롤")
+            
+        }
+ 
+        
+        var proportionalOffset =  offset / 130
         
         if proportionalOffset > 1 {
             proportionalOffset = 1
             let color = UIColor(red: 1, green: 1, blue: 1, alpha: proportionalOffset)
             let tintColor = UIColor(hue: 1, saturation: 0, brightness: 1 - proportionalOffset, alpha: 1)
-            self.navigationController?.navigationBar.tintColor = tintColor
-            self.navigationController?.navigationBar.backgroundColor = color
-            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: tintColor]
+
+            let titleColor = UIColor(hue: 1, saturation: 0, brightness: 0, alpha: proportionalOffset)
+
+
+            topBar.backgroundColor = color
+
+            topBarBackButton.tintColor = tintColor
+            topBarShareButton.tintColor = tintColor
+            topBarSearchButton.tintColor = tintColor
+            tobBarTitleLabel.textColor = titleColor
             
         } else {
+            
             let color = UIColor(red: 1, green: 1, blue: 1, alpha: proportionalOffset)
             let tintColor = UIColor(hue: 1, saturation: 0, brightness: 1 - proportionalOffset, alpha: 1)
+            let titleColor = UIColor(hue: 1, saturation: 0, brightness: 0, alpha: proportionalOffset)
             
-            self.navigationController?.navigationBar.tintColor = tintColor
-            self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: tintColor]
-            self.navigationController?.navigationBar.backgroundColor = color
+            topBar.backgroundColor = color
+            
+            topBarBackButton.tintColor = tintColor
+            topBarShareButton.tintColor = tintColor
+            topBarSearchButton.tintColor = tintColor
+            tobBarTitleLabel.textColor = titleColor
         }
+    }
+}
+
+extension DetailViewController: FollowAlertDelegate {
+    func yesButtonTapped() {
+        self.presentBottomAlert(message: "알림이 등록되었습니다       ")
+    }
+    
+    func noButtonTapped() {
+        //nothing
     }
 }
 

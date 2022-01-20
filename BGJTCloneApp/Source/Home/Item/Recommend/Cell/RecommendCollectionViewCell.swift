@@ -11,7 +11,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     
     var delegate: WishDelegate?
     var index = 0
-   
+    
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!

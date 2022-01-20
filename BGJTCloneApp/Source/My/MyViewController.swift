@@ -108,21 +108,7 @@ class MyViewController: UIViewController {
     }
 }
 
-extension MyViewController: SellListDelegate {
-    func didFetched(data: [SellListResult]) {
-      
-        
-        for item in data {
-            self.sellingItems.append(item)
-        }
-        self.tableView.reloadData()
-    }
-    
-    func sellListFailure(message: String) {
-        self.presentAlert(title: "판매 목록 에러", message: message)
-        self.dismissIndicator()
-    }
-}
+
 
 extension MyViewController {
     func didFetched(data: MyResponse.MyResult) {
@@ -153,13 +139,30 @@ extension MyViewController {
     }
 }
 
+extension MyViewController: SellListDelegate {
+    func didFetched(data: [SellListResult]) {
+      
+        self.sellingItems = data
+        self.tableView.reloadData()
+    }
+    
+    func sellListFailure(message: String) {
+        self.presentAlert(title: "판매 목록 에러", message: message)
+        self.dismissIndicator()
+    }
+}
+
+
 extension MyViewController: ItemEditDelegate {
     func edit(itemID: Int) {
          //미구현
+        
     }
     
     func changeCondition(itemID: Int) {
-        itemEditManager.changeCondition(itemID: itemID, statusNum: 3)
+        
+        presentConditionModalViewController(index: itemID)
+        
     }
     
     func delete(itemID: Int) {
@@ -178,9 +181,40 @@ extension MyViewController: ButtonInsideCellDelegate {
     
 }
 
+extension MyViewController: ChangeConditionDelegate {
+    func reserved(itemID: Int) {
+        itemEditManager.changeCondition(itemID: itemID, statusNum: 2)
+    }
+    
+    func confirmed(itemID: Int) {
+        itemEditManager.changeCondition(itemID: itemID, statusNum: 3)
+    }
+    
+    
+}
+
 //MARK: - half modalView 띄우기
 extension MyViewController: UIViewControllerTransitioningDelegate {
         // ...
+    
+    //half modal view 띄우는 메서드
+    private func presentConditionModalViewController(index: Int) {
+            let storyboard = UIStoryboard(name: "MyStoryBoard", bundle: nil)
+            guard let changeModalViewController = storyboard.instantiateViewController(withIdentifier: "ChangeConditionViewController") as? ChangeConditionViewController else {
+                return
+            }
+            
+        
+        
+        changeModalViewController.delegate = self
+        changeModalViewController.itemID = index
+        
+        changeModalViewController.modalPresentationStyle = .custom
+        changeModalViewController.transitioningDelegate = self
+        present(changeModalViewController, animated: true, completion: nil)
+    }
+    
+    
     
     //half modal view 띄우는 메서드
     private func presentEditModalViewController(index: Int) {
@@ -200,11 +234,23 @@ extension MyViewController: UIViewControllerTransitioningDelegate {
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
-        let halfModalPC = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
-        halfModalPC.proportianoalYPosition = 0.5
-        halfModalPC.proportionalHeight = 0.6
+        if presented is ChangeConditionViewController {
+            let halfModalPC = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+            
+            halfModalPC.proportianoalYPosition = 0.7
+            halfModalPC.proportionalHeight = 0.5
+            
+            return halfModalPC
+        } else {
+            let halfModalPC = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+            
+            halfModalPC.proportianoalYPosition = 0.5
+            halfModalPC.proportionalHeight = 0.6
+            
+            return halfModalPC
+        }
         
-        return halfModalPC
+        
     }
 }
 
@@ -212,7 +258,7 @@ extension MyViewController: UIViewControllerTransitioningDelegate {
 extension MyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        tableViewHeightConstraint.constant = tableView.contentSize.height + 600
+        tableViewHeightConstraint.constant = CGFloat(130 * sellingItems.count)
         self.numOfItemLabel.text = "\(sellingItems.count)개"
         return sellingItems.count
     }
@@ -230,8 +276,8 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         cell.bgPayBadgeView.isHidden = sellingItem.safety_pay == 0 ? true : false
         cell.delegate = self
         cell.titleLabel.text = sellingItem.title
-        cell.priceLabel.text = String(sellingItem.price)
-        
+        cell.priceLabel.text = String(sellingItem.price).insertComma
+        cell.createAtLabel.text = sellingItem.created_at.stringToIntervalDateString()
         
         return cell
     }

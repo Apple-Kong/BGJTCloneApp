@@ -14,6 +14,9 @@ class AccountViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBAction func dismissButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     var accounts: [AccountResponse.Result] {
         get {
@@ -21,6 +24,7 @@ class AccountViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var addAccountButton: UIView!
     @IBAction func addAccountButtonTap(_ sender: UITapGestureRecognizer) {
         
         let vc = UIStoryboard(name: "AccountEditStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "AccountEditViewController") as! AccountEditViewController
@@ -30,6 +34,12 @@ class AccountViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         //싱글톤 객체로 데이터 불러오기.
         accountDataManager.getAccount()
+        self.navigationController?.navigationBar.isHidden = true
+    
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -38,6 +48,8 @@ class AccountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accountDataManager.deleagate = self
+        
+        
         
         
         
@@ -72,27 +84,79 @@ extension AccountViewController: ButtonInsideCellDelegate {
 extension AccountViewController: AccountDelegate {
     func accountUpdated() {
         self.tableView.reloadData()
+        tableViewHeightConstraint.constant = tableView.contentSize.height
     }
 }
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        
+        let count = accountDataManager.accounts.count
+        
+        if count >= 2 {
+            addAccountButton.isHidden = true
+        } else {
+            addAccountButton.isHidden = false
+        }
+        
+        return count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "AccountTableViewCell", for: indexPath) as! AccountTableViewCell
         
+        let item = accountDataManager.accounts[indexPath.row]
         
         cell.index = indexPath.row
         cell.delegate = self
-        let account = accounts[indexPath.row]
-        cell.nameLabel.text = account.bank
-        cell.numberLabel.text = account.account_number
-        cell.ownerLabel.text = account.user_name
+        
+        
+        cell.nameLabel.text = item.bank
+        cell.numberLabel.text = item.account_number
+        cell.ownerLabel.text = item.user_name
         
         return cell
+    }
+}
+
+extension AccountViewController: EditAccountDelegate {
+    func deleteButtonTap(index: Int) {
+        let alert = UIStoryboard(name: "HomeStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "CustomAlertView") as! CustomAlertView
+        alert.modalPresentationStyle = .overCurrentContext
+        alert.delegate = self
+        alert.index = index
+        present(alert, animated: false, completion: nil)
+    }
+    
+    func editButtonTap(index: Int) {
+        // 계좌 수정 메서드..
+        
+        let vc = UIStoryboard(name: "AccountEditStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "AccountEditViewController") as! AccountEditViewController
+        
+        vc.accNum = accountDataManager.accounts[index].account_number
+        vc.isEnroll = false
+        
+        
+        self.navigationController?.pushViewController(vc, animated: false)
+        
+        
+    }
+}
+
+extension AccountViewController: AlertDelegate {
+    func yesButtonTapped(index: Int) {
+        accountDataManager.deleteAccount(account_num: accountDataManager.accounts[index].account_number)
+        
+        self.presentBottomAlert(message: "계좌가 삭제되었습니다      ", offset: -30)
+    }
+    
+    func noButtonTapped() {
+        
     }
 }
 
@@ -107,7 +171,7 @@ extension AccountViewController: UIViewControllerTransitioningDelegate {
             guard let vc = storyboard.instantiateViewController(withIdentifier: "MoreModalViewController") as? MoreModalViewController else {
                 return
             }
-            
+        vc.delegate = self
         vc.index = index
         
 

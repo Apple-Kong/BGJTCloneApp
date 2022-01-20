@@ -9,24 +9,23 @@ import Foundation
 
 
 struct FollowingListResponse: Decodable {
-    
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [FollowerResult]
-    
-    struct FollowerResult: Decodable {
-        let userId: Int
-        let shopName: String
-        let howManyFollowers: Int
-        let getItemResult: [ItemResult]
-        
-        struct ItemResult: Decodable {
-            let item_id: Int
-            let price: Int
-            let image_path: String
-        }
-    }
+    let result: [FollowingResult]
+
 }
 
+struct FollowingResult: Decodable {
+        let userId: Int
+        let shopName: String
+        let howManyItem: Int
+        let howManyFollowers: Int
+        let getItemResult: [GetItemResult]
+}
 
+struct GetItemResult: Decodable {
+    let item_id: Int
+    let price: Int
+    let image_path: String
+}

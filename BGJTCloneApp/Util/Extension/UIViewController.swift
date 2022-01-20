@@ -72,31 +72,46 @@ extension UIViewController {
         
         let alertSuperview = UIView()
         alertSuperview.tag = 936419836287461
-        alertSuperview.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-        alertSuperview.layer.cornerRadius = 10
+        alertSuperview.backgroundColor = UIColor.gray.withAlphaComponent(0.9)
+        alertSuperview.layer.cornerRadius = 6
         alertSuperview.isHidden = true
         alertSuperview.translatesAutoresizingMaskIntoConstraints = false
     
         let alertLabel = UILabel()
-        alertLabel.font = .NotoSans(.regular, size: 15)
+        alertLabel.font = .systemFont(ofSize: 14, weight: .regular)
+            
         alertLabel.textColor = .white
         alertLabel.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(alertSuperview)
-        alertSuperview.bottomAnchor.constraint(equalTo: target ?? view.safeAreaLayoutGuide.bottomAnchor, constant: -12).isActive = true
+        alertSuperview.bottomAnchor.constraint(equalTo: target ?? view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
         alertSuperview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         alertSuperview.addSubview(alertLabel)
-        alertLabel.topAnchor.constraint(equalTo: alertSuperview.topAnchor, constant: 6).isActive = true
-        alertLabel.bottomAnchor.constraint(equalTo: alertSuperview.bottomAnchor, constant: -6).isActive = true
-        alertLabel.leadingAnchor.constraint(equalTo: alertSuperview.leadingAnchor, constant: 12).isActive = true
-        alertLabel.trailingAnchor.constraint(equalTo: alertSuperview.trailingAnchor, constant: -12).isActive = true
+        alertLabel.topAnchor.constraint(equalTo: alertSuperview.topAnchor, constant: 12).isActive = true
+        alertLabel.bottomAnchor.constraint(equalTo: alertSuperview.bottomAnchor, constant: -12).isActive = true
+        alertLabel.leadingAnchor.constraint(equalTo: alertSuperview.leadingAnchor, constant: 10).isActive = true
+        alertLabel.trailingAnchor.constraint(equalTo: alertSuperview.trailingAnchor, constant: -200).isActive = true
         
         alertLabel.text = message
         alertSuperview.alpha = 1.0
+        alertSuperview.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         alertSuperview.isHidden = false
+        
+        
         UIView.animate(
-            withDuration: 2.0,
-            delay: 1.0,
+            withDuration: 0.15,
+            delay: 0,
+            options: .curveEaseOut,
+            animations: {
+                
+                alertSuperview.transform = CGAffineTransform(scaleX: 1, y: 1) },
+            completion: { _ in
+                
+            }
+        )
+        UIView.animate(
+            withDuration: 1.0,
+            delay: 2.0,
             options: .curveEaseIn,
             animations: { alertSuperview.alpha = 0 },
             completion: { _ in

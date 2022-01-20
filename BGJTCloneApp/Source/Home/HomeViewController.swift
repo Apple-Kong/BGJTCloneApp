@@ -27,7 +27,9 @@ class HomeViewController: UIViewController {
     //기기에 따라서 달라질 수 있기에 뷰의 높이와 엮는 게 좋을 듯.
     var threshold: CGFloat = 370
     
-    let images = [ImageSource(image: UIImage(named: "Event_0")!),
+    let images = [
+        ImageSource(image: UIImage(named: "Event_3")!),
+                    ImageSource(image: UIImage(named: "Event_0")!),
                       ImageSource(image: UIImage(named: "Event_1")!),
                       ImageSource(image: UIImage(named: "Event_2")!),
                     ]
@@ -55,12 +57,16 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         buttonCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 160, bottom: 0, right: 160)
+        buttonCollectionView.contentInset.left = 10
         
         
+        indicatorBackgroundView.maskToCircle()
         //delegate 설정
         scrollView.delegate = self
         slideShow.setImageInputs(images)
         slideShow.contentScaleMode = .scaleAspectFill
+        slideShow.slideshowInterval = 4
+        
         
         
         

@@ -19,7 +19,7 @@ struct RecommendResponse: Decodable {
         let title: String
         let price: Int
         let safety_pay: Int
-        let location: String
+        let location: String?
         let created_at: String
         let image_path: String
         let wish_count: Int

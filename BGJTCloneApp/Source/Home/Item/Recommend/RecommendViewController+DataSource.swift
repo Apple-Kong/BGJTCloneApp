@@ -43,13 +43,22 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.titleLabel.text = item.title
         cell.priceLabel.text = String(item.price).insertComma
         
-        var location = item.location
-        if location == "" {
-            location  = "위치정보 없음"
-        }
-        cell.locationLabel.text = "\(location) • \(item.created_at.stringToIntervalDateString())".localized
         
-        print("--------\(item.created_at.stringToIntervalDateString())------")
+        
+        var locationText = ""
+        if let location = item.location {
+            if location == "" {
+                locationText = "지역정보 없음"
+            } else {
+                locationText = location
+            }
+        } else {
+            locationText = "지역정보 없음"
+        }
+        
+        cell.locationLabel.text = "\(locationText) ・ \(item.created_at.stringToIntervalDateString())".localized
+        
+
       
         let url = URL(string: Constant.IMAGE_URL + item.image_path)
         cell.image.kf.setImage(with: url)
@@ -67,10 +76,13 @@ extension RecommendViewController: UICollectionViewDelegate, UICollectionViewDat
         if isWishItem {
             // 버튼 빨갛게
             print("버튼 빨갛게~")
-            cell.wishButton.setBackgroundImage(UIImage(named: "main_heart_fill"), for: UIControl.State.normal)
+            let heartImage = UIImage(named: "main_heart_fill")?.resizeImage(size: CGSize(width: 32, height: 32))
+            cell.wishButton.setImage(heartImage, for: UIControl.State.normal)
         } else {
             // 버튼 하얗게
-            cell.wishButton.setBackgroundImage(UIImage(named: "main_heart"), for: UIControl.State.normal)
+            let heartImage = UIImage(named: "main_heart")?.resizeImage(size: CGSize(width: 32, height: 32))
+            cell.wishButton.setImage(heartImage, for: UIControl.State.normal)
+            
             
         }
         

@@ -15,6 +15,9 @@ class OptionChoiceViewController: UIViewController {
     
     var delegate: OptionDelegate?
     
+    
+    var isKeyBoardShown = false
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var numberBackView: UIView!
@@ -157,8 +160,12 @@ extension OptionChoiceViewController {
         {
 //            let keyboardRectangle = keyboardFrame.cgRectValue
 //            let keyboardHeight = keyboardRectangle.height
-            self.buttonStackView.frame.origin.y -= 60
-            self.titleLabel.frame.origin.y -= 20
+            if !isKeyBoardShown {
+                isKeyBoardShown = true
+                self.buttonStackView.window?.frame.origin.y -= 60
+                self.titleLabel.window?.frame.origin.y -= 20
+            }
+           
            
             
         }
@@ -168,10 +175,14 @@ extension OptionChoiceViewController {
         // 키보드의 높이만큼 화면을 내려준다.
         if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
         {
-//            let keyboardRectangle = keyboardFrame.cgRectValue
-//            let keyboardHeight = keyboardRectangle.height
-            self.buttonStackView.frame.origin.y += 60
-            self.titleLabel.frame.origin.y += 20
+            
+            
+            if isKeyBoardShown {
+                isKeyBoardShown = false
+                self.buttonStackView.window?.frame.origin.y += 60
+                self.titleLabel.window?.frame.origin.y += 20
+            }
+            
 
         }
     }

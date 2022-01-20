@@ -13,15 +13,18 @@ struct FollowerListResponse: Decodable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [FollowResult]
+    let result: FollowResult
     
     struct FollowResult: Decodable {
-        let item_id: Int
-        let image_path: String
-        let safety_pay: Int
-        let title: String
-        let price: Int
-        let created_at: String
-        let shop_name: String
+        let followerInfo: [FollowerInfo]
+        
     }
+}
+
+struct FollowerInfo: Decodable {
+    let user_id: Int
+    let shop_name: String
+    let image: String?
+    let countItem: Int
+    let countFollower: Int
 }

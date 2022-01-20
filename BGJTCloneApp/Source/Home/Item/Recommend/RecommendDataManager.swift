@@ -14,12 +14,12 @@ class RecommendDataManager {
     var delegate: RecommendDelegate?
     
     func fetchData(page: Int) {
-        print("----추천 상품 네트워킹 시작 : \(page * 2) -----")
+        print("----추천 상품 네트워킹 시작 : \(page * 20) -----")
         
         let urlString = Constant.MAIN_URL + "/api/items/main/recommends"
         let headers = Secret.tokenHeaders
         let parameters: [String : Any] = [
-            "offset" : page,
+            "offset" : page * 12 ,
             "limit" : 40
          ]
         

@@ -30,7 +30,6 @@ class RecommendViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
         recommendDataManager.delegate = self
         
         //첫번째 페이지 가져오기
@@ -63,6 +62,7 @@ extension RecommendViewController: WishDelegate, RecommendDelegate {
             wishDataManager.deleteWishItem(itemID: itemID)
             items[index].1 = false
             print(items[index].1)
+            
         } else {
             //add wish
             wishDataManager.addWishItem(itemID: itemID)

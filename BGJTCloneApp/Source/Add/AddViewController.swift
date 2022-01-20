@@ -42,9 +42,12 @@ class AddViewController: UIViewController {
 //            addManager.addItem(item: item)
             self.showIndicator()
             addManager.addItemWithImage(item: item, images: self.selectedImages)
+            self.dismiss(animated: true) {
+                
+            }
         } else {
             //MARK: 경고창 띄우기
-            self.presentAlert(title: "필수 정보를 입력하세요", isCancelActionIncluded: true)
+            self.presentAlert(title: "필수  정보를 입력하세요", isCancelActionIncluded: true)
         }
     }
     
