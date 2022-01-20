@@ -195,3 +195,9 @@ extension HomeViewController: UIScrollViewDelegate {
 
 
 
+extension HomeViewController {
+    
+    func itemAdded() {
+        self.presentBottomAlert(message: "상품이 등록되었습니다!       ")
+    }
+}

@@ -21,8 +21,14 @@
                                 <rect key="frame" x="128.5" y="743.5" width="157" height="88.5"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다른 방법으로 로그인">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="다른 방법으로 로그인">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="16"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="OtherLoginButton:" destination="jDG-T9-p8p" eventType="touchUpInside" id="pGu-X8-gYG"/>

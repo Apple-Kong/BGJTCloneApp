@@ -30,7 +30,7 @@ extension AddViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.deleteView.layer.borderWidth = 1
             cell.deleteView.layer.borderColor = UIColor.systemGray5.cgColor
             
-            
+            cell.index = indexPath.row
             //🚧🛠👷🏻‍♂️ cell 코너 radius 정해놓을 것...
         
             cell.image.image = selectedImages[indexPath.row]

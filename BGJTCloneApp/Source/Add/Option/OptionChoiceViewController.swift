@@ -16,6 +16,8 @@ class OptionChoiceViewController: UIViewController {
     var delegate: OptionDelegate?
     
     
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    @IBOutlet weak var leading: NSLayoutConstraint!
     var isKeyBoardShown = false
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -158,12 +160,14 @@ extension OptionChoiceViewController {
         // 키보드의 높이만큼 화면을 올려준다.
         if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
         {
-//            let keyboardRectangle = keyboardFrame.cgRectValue
-//            let keyboardHeight = keyboardRectangle.height
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
             if !isKeyBoardShown {
                 isKeyBoardShown = true
-                self.buttonStackView.window?.frame.origin.y -= 60
-                self.titleLabel.window?.frame.origin.y -= 20
+                self.buttonStackView.window?.frame.origin.y -= keyboardHeight - 60
+               
+                leading.constant = -10
+                trailing.constant = -10
             }
            
            
@@ -175,12 +179,15 @@ extension OptionChoiceViewController {
         // 키보드의 높이만큼 화면을 내려준다.
         if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
         {
-            
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
             
             if isKeyBoardShown {
                 isKeyBoardShown = false
-                self.buttonStackView.window?.frame.origin.y += 60
-                self.titleLabel.window?.frame.origin.y += 20
+                self.buttonStackView.window?.frame.origin.y += keyboardHeight - 60
+                leading.constant = 30
+                trailing.constant = 30
+             
             }
             
 

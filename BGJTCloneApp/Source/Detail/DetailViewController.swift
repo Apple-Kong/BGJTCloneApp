@@ -16,7 +16,12 @@ class DetailViewController: UIViewController {
     let followDataManager = FollowDataManager()
     let wistDataManager = WishDataManager()
     
+    @IBOutlet weak var goToTopButton: UIView!
     
+    @IBAction func goToTop(_ sender: UITapGestureRecognizer) {
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
     var itemInfo: Item?
     var shopInfo: Shop?
     var reviewInfo: ResultReview?
@@ -29,7 +34,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tobBarTitleLabel: UILabel!
     @IBOutlet weak var topBarSearchButton: UIButton!
     @IBOutlet weak var topBarShareButton: UIButton!
-    
     @IBOutlet weak var topBarBackButton: UIButton!
     
     @IBAction func topBarBackButtonTap(_ sender: UIButton) {
@@ -58,15 +62,12 @@ class DetailViewController: UIViewController {
                     wishButton.isHighlighted = true
                     wistDataManager.addWishItem(itemID: itemID)
                     self.presentBottomAlert(message: "찜 목록에 추가했어요!   ")
-                    
-                   
-                    
+
                 } else {
                     wishButton.isHighlighted = false
                     wistDataManager.deleteWishItem(itemID: itemID)
                     self.presentBottomAlert(message: "찜 해제가 완료되었습니다.")
-       
-                    
+
                 }
             }
         }
@@ -228,6 +229,7 @@ class DetailViewController: UIViewController {
         hideBar.center.y = -50
         hideBar.isHidden = true
         
+        goToTopButton.isHidden = true
         
         topImageView.layer.masksToBounds = true
         topImageView.layer.cornerRadius = 4
@@ -245,6 +247,13 @@ class DetailViewController: UIViewController {
         }
         
         
+       
+        // 둥근 모서리 및 그림자 생성 코드
+        goToTopButton.layer.cornerRadius = goToTopButton.frame.height / 2
+        goToTopButton.layer.shadowColor = UIColor.gray.cgColor
+        goToTopButton.layer.shadowOpacity = 0.5
+        goToTopButton.layer.shadowOffset = CGSize.zero
+        goToTopButton.layer.shadowRadius = 20
         
         //MARK: - 슬라이드쇼 초기화
         //slide show 인디케이터 초기화
@@ -346,6 +355,8 @@ extension DetailViewController: DetailDelegate {
         self.shopInfo = shop
         self.reviewInfo = review
         //MARK: - 아이템 구간
+        
+        
         let url = URL(string:  Constant.IMAGE_URL + item.images[0].imagePath)
         do {
             let data = try Data(contentsOf: url!)
@@ -574,6 +585,8 @@ extension DetailViewController: UIScrollViewDelegate {
             )
             print("아래로 스크롤")
             
+            self.goToTopButton.isHidden = false
+            
         }
         
         if offset < 420 && isHideAvailable {
@@ -592,7 +605,7 @@ extension DetailViewController: UIScrollViewDelegate {
             }
             )
             print("위로 스크롤")
-            
+            self.goToTopButton.isHidden = true
         }
  
         

@@ -10,6 +10,9 @@ import Alamofire
 
 class ItemEditManager {
     
+    
+    var delegate: MyViewController?
+    
     func edit(itemID: Int) {
         //MARK: - 서버 API 수정 안되어있음 엮지 말것.
 //        let url = Constant.MAIN_URL + "/api/items/\(itemID)"
@@ -36,6 +39,7 @@ class ItemEditManager {
                 switch response.result {
                 case .success:
                     print(response.value)
+                    self.delegate?.didChanged()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -67,6 +71,7 @@ class ItemEditManager {
                 switch response.result {
                 case .success:
                     print(response.value)
+                    self.delegate?.didChanged()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

@@ -164,8 +164,10 @@ extension InquiryViewController {
             if !isKeyBoardShown {
                 isKeyBoardShown = true
                 UIView.animate(withDuration: 1) {
-                    self.inquiryView.frame.origin.y -= keyboardHeight
+                    self.quiryViewBottomConstraint.constant = keyboardHeight
                 }
+                
+                print("show")
             }
  
             
@@ -179,10 +181,14 @@ extension InquiryViewController {
  
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height - 40
-
+            if isKeyBoardShown {
+                print("dismiss")
+                isKeyBoardShown = false
+//                self.inquiryView.frame.origin.y += keyboardHeight
+                self.quiryViewBottomConstraint.constant = 0
+            }
             
-                self.inquiryView.frame.origin.y += keyboardHeight
-            isKeyBoardShown = false
+               
 
         }
     }

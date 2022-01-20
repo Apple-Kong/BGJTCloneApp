@@ -10,6 +10,10 @@ import UIKit
 class SettingViewController: BaseViewController {
     
     
+    @IBAction func gobackButton(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     var selectedIndex = 20
     
     
@@ -23,7 +27,13 @@ class SettingViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

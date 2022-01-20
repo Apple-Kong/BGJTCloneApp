@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미구현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-Ee-odv">
-                                <rect key="frame" x="184.5" y="102" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="176" y="164" width="62.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -26,7 +26,7 @@
                         <viewLayoutGuide key="safeArea" id="tVy-y5-bLc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Dw-Ee-odv" firstAttribute="top" secondItem="tVy-y5-bLc" secondAttribute="top" constant="58" id="2Gg-IW-JKh"/>
+                            <constraint firstItem="5Dw-Ee-odv" firstAttribute="top" secondItem="tVy-y5-bLc" secondAttribute="top" constant="120" id="2Gg-IW-JKh"/>
                             <constraint firstItem="5Dw-Ee-odv" firstAttribute="centerX" secondItem="tVy-y5-bLc" secondAttribute="centerX" id="wLa-KG-Tws"/>
                         </constraints>
                     </view>

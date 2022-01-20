@@ -101,6 +101,7 @@ class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        itemEditManager.delegate = self
        
         eventIndicaatorView.roundedBorder()
         eventIndicaatorView.layer.borderColor = UIColor.systemGray5.cgColor
@@ -239,6 +240,7 @@ extension MyViewController: ButtonInsideCellDelegate {
 extension MyViewController: ChangeConditionDelegate {
     func reserved(itemID: Int) {
         itemEditManager.changeCondition(itemID: itemID, statusNum: 2)
+        
     }
     
     func confirmed(itemID: Int) {
@@ -246,6 +248,13 @@ extension MyViewController: ChangeConditionDelegate {
     }
     
     
+}
+
+
+extension MyViewController {
+    func didChanged() {
+        dealListDataManager.fetchSellList()
+    }
 }
 
 //MARK: - half modalView 띄우기
@@ -330,6 +339,7 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
             let url = URL(string: Constant.IMAGE_URL + imagePath)
             cell.itemImageView.kf.setImage(with: url)
         }
+        cell.index = indexPath.row
         
         cell.bgPayBadgeView.isHidden = sellingItem.safety_pay == 0 ? true : false
         cell.delegate = self

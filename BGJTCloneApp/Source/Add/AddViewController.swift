@@ -19,6 +19,8 @@ class AddViewController: UIViewController {
     //이미지 피커
     let picker = UIImagePickerController()
     var selectedImages: [UIImage] = []
+    var delegate: HomeViewController?
+    
     
     //서버로 보낼 데이터들.
     var itemTitle: String?
@@ -32,18 +34,23 @@ class AddViewController: UIViewController {
     var isExchangable: Bool = false
     var detail: String?
     
-
+    @IBAction func goBackButtonTap(_ sender: UIButton) {
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
     @IBAction func addItemButtonTap(_ sender: UIButton) {
         
         if let itemTitle = itemTitle, let price = price, let detail = detail {
            
-            let item = ItemInfo(category: category, title: itemTitle, location: nil, price: price, delivery_fee_included: isTaekPo, count: numOfItem, isOld: isOld, isExchangable: isExchangable, detail: detail, isSafe: isSafePay, tags: tags, images: [])
+            let item = ItemInfo(category: category, title: itemTitle, location: "부천시 송내2동", price: price, delivery_fee_included: isTaekPo, count: numOfItem, isOld: isOld, isExchangable: isExchangable, detail: detail, isSafe: isSafePay, tags: tags, images: [])
             
 //            addManager.addItem(item: item)
             self.showIndicator()
             addManager.addItemWithImage(item: item, images: self.selectedImages)
             self.dismiss(animated: true) {
-                
+                self.delegate?.itemAdded()
             }
         } else {
             //MARK: 경고창 띄우기
@@ -120,6 +127,7 @@ class AddViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        
+        self.navigationController?.navigationBar.isHidden = true
         
         if tags.isEmpty {
             // 비어 있다면 숨기기

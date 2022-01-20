@@ -627,9 +627,21 @@
                                                                     <constraint firstAttribute="height" constant="40" id="zKa-Nn-XPv"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 제 3자 제공동의와 결제대행 서비스 이용약관에 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-cr-7PZ">
-                                                                <rect key="frame" x="50" y="0.0" width="324" height="53"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 제 3자 제공동의와 결제대" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-cr-7PZ">
+                                                                <rect key="frame" x="50" y="0.0" width="334" height="25"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="25" id="ghb-p8-Ort"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행 서비스 이용약관에 동의합니다." textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYa-6Z-x2m">
+                                                                <rect key="frame" x="50" y="30" width="274.5" height="25"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="25" id="PkC-Ny-J8T"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -641,8 +653,10 @@
                                                             <constraint firstAttribute="height" constant="60" id="Ifz-Um-doe"/>
                                                             <constraint firstItem="Oim-Bi-fV0" firstAttribute="top" secondItem="mFh-4k-GYC" secondAttribute="top" id="T5G-2w-Fa3"/>
                                                             <constraint firstItem="Oim-Bi-fV0" firstAttribute="leading" secondItem="mFh-4k-GYC" secondAttribute="leading" id="Ukc-pe-bXH"/>
+                                                            <constraint firstItem="AYa-6Z-x2m" firstAttribute="top" secondItem="XUC-cr-7PZ" secondAttribute="bottom" constant="5" id="W1e-0w-E3U"/>
                                                             <constraint firstItem="XUC-cr-7PZ" firstAttribute="leading" secondItem="Oim-Bi-fV0" secondAttribute="trailing" constant="10" id="ZtU-Pq-cAS"/>
-                                                            <constraint firstAttribute="trailing" secondItem="XUC-cr-7PZ" secondAttribute="trailing" id="xC2-4K-F7r"/>
+                                                            <constraint firstItem="AYa-6Z-x2m" firstAttribute="leading" secondItem="XUC-cr-7PZ" secondAttribute="leading" id="eHG-4x-Tjo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="XUC-cr-7PZ" secondAttribute="trailing" constant="-10" id="xC2-4K-F7r"/>
                                                         </constraints>
                                                         <connections>
                                                             <outletCollection property="gestureRecognizers" destination="6e5-3u-MWd" appends="YES" id="hvk-eB-yWq"/>
@@ -668,7 +682,7 @@
                                                         </buttonConfiguration>
                                                     </button>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf8-nq-yN5">
-                                                        <rect key="frame" x="50" y="99" width="324" height="90"/>
+                                                        <rect key="frame" x="50" y="99" width="334" height="90"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="90" id="FHY-sJ-nhz"/>
@@ -845,7 +859,7 @@
         <image name="deal_button" width="64" height="63"/>
         <image name="deal_button_fill" width="65" height="64"/>
         <image name="deal_merit" width="1012" height="164"/>
-        <image name="logo" width="900" height="900"/>
+        <image name="logo" width="122" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="badge">
             <color red="0.84700000286102295" green="0.048999998718500137" blue="0.097999997437000275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

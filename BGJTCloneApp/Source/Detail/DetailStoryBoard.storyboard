@@ -292,7 +292,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eO6-Iz-qfU">
                                                 <rect key="frame" x="0.0" y="1163" width="414" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2d7-fd-ERd">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2d7-fd-ERd">
                                                         <rect key="frame" x="20" y="8" width="34" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="2d7-fd-ERd" secondAttribute="height" multiplier="1:1" id="ayf-KN-OEr"/>
@@ -1017,6 +1017,27 @@
                                     <constraint firstItem="tcD-Wt-o1i" firstAttribute="leading" secondItem="HHC-es-wDV" secondAttribute="leading" constant="15" id="yhD-kA-R0w"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-bN-l15">
+                                <rect key="frame" x="344" y="726" width="50" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="go to top" translatesAutoresizingMaskIntoConstraints="NO" id="II8-zt-c69">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="II8-zt-c69" firstAttribute="leading" secondItem="V3T-bN-l15" secondAttribute="leading" id="LqQ-9p-aId"/>
+                                    <constraint firstAttribute="bottom" secondItem="II8-zt-c69" secondAttribute="bottom" id="Nnh-HH-iQH"/>
+                                    <constraint firstAttribute="width" constant="50" id="Qvq-S4-dfs"/>
+                                    <constraint firstItem="II8-zt-c69" firstAttribute="top" secondItem="V3T-bN-l15" secondAttribute="top" id="Rsy-xv-ask"/>
+                                    <constraint firstAttribute="height" constant="50" id="hAl-p7-1gH"/>
+                                    <constraint firstAttribute="trailing" secondItem="II8-zt-c69" secondAttribute="trailing" id="lSU-Eu-X5d"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bhu-8Y-q2N" appends="YES" id="aJ8-Dq-JUF"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1027,6 +1048,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TXc-aY-S02" secondAttribute="trailing" id="2Xg-Tw-ydO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TXc-aY-S02" secondAttribute="bottom" id="Fua-gA-ZUe"/>
                             <constraint firstItem="TXc-aY-S02" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" id="HAL-15-jRY"/>
+                            <constraint firstItem="qxJ-ws-mF2" firstAttribute="top" secondItem="V3T-bN-l15" secondAttribute="bottom" constant="20" id="IFn-bF-9Xd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="V3T-bN-l15" secondAttribute="trailing" constant="20" id="JIk-a2-Ohf"/>
                             <constraint firstItem="HHC-es-wDV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="JP1-H2-Jx5"/>
                             <constraint firstItem="Le9-HH-EIp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="OLM-Wy-NNu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qxJ-ws-mF2" secondAttribute="trailing" id="Tyc-CM-L7Y"/>
@@ -1040,6 +1063,7 @@
                         <outlet property="detailTextView" destination="2Du-Oz-gdl" id="FMx-LY-Emw"/>
                         <outlet property="discountView" destination="K07-CH-OzO" id="fLN-Hg-Cca"/>
                         <outlet property="followerLabel" destination="f3v-MP-fo5" id="Nxu-DQ-gRz"/>
+                        <outlet property="goToTopButton" destination="V3T-bN-l15" id="poL-vj-Y7u"/>
                         <outlet property="hideBar" destination="Le9-HH-EIp" id="Rek-AS-YN7"/>
                         <outlet property="hideIsTaekPoLabel" destination="Sfq-xu-kuT" id="Exg-uk-qU9"/>
                         <outlet property="hideItemLabel" destination="o5Y-TL-3ay" id="dva-jw-wMv"/>
@@ -1097,6 +1121,11 @@
                 <tapGestureRecognizer id="jdG-lB-mDN" userLabel="문의하기">
                     <connections>
                         <action selector="inquiryButtonTap:" destination="Y6W-OH-hqX" id="OPr-0w-FUi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bhu-8Y-q2N">
+                    <connections>
+                        <action selector="goToTop:" destination="Y6W-OH-hqX" id="08I-rx-dvO"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1509,6 +1538,7 @@
         <image name="detail_heart" width="83" height="87"/>
         <image name="detail_heart_fill" width="86" height="85"/>
         <image name="follow_shop" width="81" height="84"/>
+        <image name="go to top" width="134" height="133"/>
         <image name="go_back" width="69" height="72"/>
         <image name="item_header" width="71" height="73"/>
         <image name="location_header" width="61" height="71"/>
