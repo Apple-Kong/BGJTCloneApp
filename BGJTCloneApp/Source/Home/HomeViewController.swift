@@ -105,6 +105,8 @@ class HomeViewController: UIViewController {
             loginVC.modalPresentationStyle = .fullScreen
             
             self.present(loginVC, animated: true, completion: nil)
+        } else {
+            self.presentBottomAlert(message: "로그인 되었습니다!       ")
         }
     }
 }

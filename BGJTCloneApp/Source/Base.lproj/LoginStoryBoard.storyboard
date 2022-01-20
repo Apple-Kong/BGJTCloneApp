@@ -34,8 +34,11 @@
                                     <constraint firstAttribute="width" secondItem="9XP-Fy-Fda" secondAttribute="height" multiplier="93:16" id="x0K-hJ-otm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="애플 로그인"/>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" "/>
+                                    </attributedString>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="appleLoginButton:" destination="jDG-T9-p8p" eventType="touchUpInside" id="Rfv-Cy-aU8"/>
@@ -47,8 +50,11 @@
                                     <constraint firstAttribute="width" secondItem="8fr-nM-ecr" secondAttribute="height" multiplier="93:16" id="mzo-sb-tJq"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="카카오 로그인"/>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" "/>
+                                    </attributedString>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginButton:" destination="jDG-T9-p8p" eventType="touchUpInside" id="uxs-7G-MJq"/>

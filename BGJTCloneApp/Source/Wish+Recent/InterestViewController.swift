@@ -23,17 +23,27 @@ class InterestViewController: TabmanViewController {
         print("Share to fb")
     }
     
+    @IBOutlet weak var customTabView: UIView!
     
+    @IBAction func backButtonTap(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
    
     override func viewDidLoad() {
        super.viewDidLoad()
         
         
-
+        
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.titleTextAttributes = [
             .font : UIFont.systemFont(ofSize: 16, weight: .bold),
@@ -83,7 +93,7 @@ class InterestViewController: TabmanViewController {
         
        settingTabBar(ctBar: bar) //함수 추후 구현
        // Add to view
-       addBar(bar, dataSource: self, at: .top)
+        addBar(bar, dataSource: self, at: .custom(view: customTabView, layout: nil))
    }
 }
 

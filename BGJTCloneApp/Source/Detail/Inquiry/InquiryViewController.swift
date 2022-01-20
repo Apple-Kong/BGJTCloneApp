@@ -14,6 +14,7 @@ class InquiryViewController: UIViewController {
     var inquirys: [InquiryResult] = []
     var isKeyBoardShown = false
     
+    @IBOutlet weak var textFieldView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -47,6 +48,9 @@ class InquiryViewController: UIViewController {
         
 //        self.dismissKeyboardWhenTappedAround()
         
+        
+        textFieldView.layer.masksToBounds = true
+        textFieldView.layer.cornerRadius = 2
         inquiryDataManager.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
@@ -160,7 +164,7 @@ extension InquiryViewController {
             if !isKeyBoardShown {
                 isKeyBoardShown = true
                 UIView.animate(withDuration: 1) {
-                    self.inquiryView.window?.frame.origin.y -= keyboardHeight
+                    self.inquiryView.frame.origin.y -= keyboardHeight
                 }
             }
  
@@ -177,7 +181,7 @@ extension InquiryViewController {
             let keyboardHeight = keyboardRectangle.height - 40
 
             
-                self.inquiryView.window?.frame.origin.y += keyboardHeight
+                self.inquiryView.frame.origin.y += keyboardHeight
             isKeyBoardShown = false
 
         }

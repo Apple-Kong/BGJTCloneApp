@@ -1145,33 +1145,33 @@
                                     <constraint firstAttribute="height" constant="50" id="jqO-sC-2QZ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-bJ-uzJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-bJ-uzJ">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.90972405670000001" green="0.90985494850000004" blue="0.9096954465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InquiryTableViewCell" rowHeight="100" id="Jyi-kK-h5k" customClass="InquiryTableViewCell" customModule="BGJTCloneApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InquiryTableViewCell" rowHeight="110" id="Jyi-kK-h5k" customClass="InquiryTableViewCell" customModule="BGJTCloneApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jyi-kK-h5k" id="nBK-op-Gfs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KI0-eg-Smy">
-                                                    <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                    <rect key="frame" x="16" y="20" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="956-dZ-Vbh"/>
                                                         <constraint firstAttribute="width" secondItem="KI0-eg-Smy" secondAttribute="height" multiplier="1:1" id="Lg4-xb-PTb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shop_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqf-Kk-zlo">
-                                                    <rect key="frame" x="80" y="20" width="75" height="17"/>
+                                                    <rect key="frame" x="72" y="20" width="75" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 사진은 따로 없나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-zb-fcX">
-                                                    <rect key="frame" x="80" y="43" width="139.5" height="17"/>
+                                                    <rect key="frame" x="72" y="43" width="139.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1182,7 +1182,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3q-O3-akL">
-                                                    <rect key="frame" x="80" y="70" width="66" height="20"/>
+                                                    <rect key="frame" x="60" y="75" width="66" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Izp-gr-2Yo"/>
                                                         <constraint firstAttribute="width" constant="66" id="MUS-Nk-pIh"/>
@@ -1203,7 +1203,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-aQ-dg6">
-                                                    <rect key="frame" x="153" y="70" width="66" height="20"/>
+                                                    <rect key="frame" x="116" y="75" width="66" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="ObO-ca-BCR"/>
                                                         <constraint firstAttribute="height" constant="20" id="e1i-Bu-Vfv"/>
@@ -1214,7 +1214,7 @@
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="삭제하기">
                                                                 <attributes>
-                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -1223,19 +1223,29 @@
                                                         <action selector="deleteButtonTap:" destination="Jyi-kK-h5k" eventType="touchUpInside" id="DkD-kI-RfS"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFK-Pk-gvE">
+                                                    <rect key="frame" x="121" y="78" width="1" height="14"/>
+                                                    <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="LWP-bO-g22"/>
+                                                        <constraint firstAttribute="width" constant="1" id="dei-a9-5V7"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xqf-Kk-zlo" firstAttribute="leading" secondItem="KI0-eg-Smy" secondAttribute="trailing" constant="20" id="Epq-Zn-bQj"/>
-                                                <constraint firstItem="KI0-eg-Smy" firstAttribute="leading" secondItem="nBK-op-Gfs" secondAttribute="leading" constant="20" id="FeZ-i9-Dsv"/>
+                                                <constraint firstItem="xqf-Kk-zlo" firstAttribute="leading" secondItem="KI0-eg-Smy" secondAttribute="trailing" constant="16" id="Epq-Zn-bQj"/>
+                                                <constraint firstItem="KI0-eg-Smy" firstAttribute="leading" secondItem="nBK-op-Gfs" secondAttribute="leading" constant="16" id="FeZ-i9-Dsv"/>
                                                 <constraint firstItem="uvb-zb-fcX" firstAttribute="leading" secondItem="xqf-Kk-zlo" secondAttribute="leading" id="HVR-Mb-8Sh"/>
                                                 <constraint firstItem="qc8-aQ-dg6" firstAttribute="centerY" secondItem="x3q-O3-akL" secondAttribute="centerY" id="UWe-sj-EGZ"/>
-                                                <constraint firstItem="x3q-O3-akL" firstAttribute="leading" secondItem="uvb-zb-fcX" secondAttribute="leading" id="WSW-Bw-zkG"/>
+                                                <constraint firstItem="x3q-O3-akL" firstAttribute="leading" secondItem="uvb-zb-fcX" secondAttribute="leading" constant="-12" id="WSW-Bw-zkG"/>
                                                 <constraint firstItem="uvb-zb-fcX" firstAttribute="top" secondItem="xqf-Kk-zlo" secondAttribute="bottom" constant="6" id="Y7K-xQ-Vqd"/>
                                                 <constraint firstItem="jDf-QU-Xan" firstAttribute="centerY" secondItem="xqf-Kk-zlo" secondAttribute="centerY" id="adc-1Q-lR1"/>
                                                 <constraint firstItem="xqf-Kk-zlo" firstAttribute="top" secondItem="KI0-eg-Smy" secondAttribute="top" id="dT3-5z-Li4"/>
+                                                <constraint firstItem="dFK-Pk-gvE" firstAttribute="centerY" secondItem="qc8-aQ-dg6" secondAttribute="centerY" id="gfq-lB-UXB"/>
+                                                <constraint firstItem="dFK-Pk-gvE" firstAttribute="leading" secondItem="qc8-aQ-dg6" secondAttribute="leading" constant="5" id="hP1-xc-IN6"/>
                                                 <constraint firstItem="KI0-eg-Smy" firstAttribute="top" secondItem="nBK-op-Gfs" secondAttribute="top" constant="20" id="jxf-Md-imN"/>
-                                                <constraint firstItem="x3q-O3-akL" firstAttribute="top" secondItem="uvb-zb-fcX" secondAttribute="bottom" constant="10" id="lgi-SW-Jy5"/>
-                                                <constraint firstItem="qc8-aQ-dg6" firstAttribute="leading" secondItem="x3q-O3-akL" secondAttribute="trailing" constant="7" id="wXr-99-3Am"/>
+                                                <constraint firstItem="x3q-O3-akL" firstAttribute="top" secondItem="uvb-zb-fcX" secondAttribute="bottom" constant="15" id="lgi-SW-Jy5"/>
+                                                <constraint firstItem="qc8-aQ-dg6" firstAttribute="leading" secondItem="x3q-O3-akL" secondAttribute="trailing" constant="-10" id="wXr-99-3Am"/>
                                                 <constraint firstAttribute="trailing" secondItem="jDf-QU-Xan" secondAttribute="trailing" constant="20" symbolic="YES" id="xyd-X5-UwF"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1253,7 +1263,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RO8-j0-7W0">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="xPL-bK-ALd"/>
                                         </constraints>
@@ -1263,20 +1273,27 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS4-VS-98L">
                                                 <rect key="frame" x="334" y="0.0" width="60" height="40"/>
-                                                <color key="backgroundColor" red="0.8535287976" green="0.51572400330000001" blue="0.1894923449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.98701745269999996" green="0.62556457519999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="dkU-Ba-bWM"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="등록">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="등록">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name=".AppleKoreanFont-Bold"/>
+                                                                <font key="NSOriginalFont" size="16" name=".AppleKoreanFont-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="AddInquiryButton:" destination="0gr-DF-ylF" eventType="touchUpInside" id="v4O-1l-unJ"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvG-oY-cVI">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="문의내용을 입력해주세요                             100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvG-oY-cVI">
                                                 <rect key="frame" x="10" y="11" width="314" height="18.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1293,7 +1310,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="backgroundColor" red="0.90972405670000001" green="0.90985494850000004" blue="0.9096954465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="RO8-j0-7W0" firstAttribute="leading" secondItem="tY5-My-viZ" secondAttribute="leading" id="0UR-ud-mb9"/>
                                     <constraint firstItem="qZ0-Gh-bif" firstAttribute="leading" secondItem="tY5-My-viZ" secondAttribute="leading" constant="10" id="2vu-SN-Qd4"/>
@@ -1307,7 +1324,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Loc-7Z-okl"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <color key="backgroundColor" red="0.90972405670000001" green="0.90985494850000004" blue="0.9096954465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Loc-7Z-okl" firstAttribute="bottom" secondItem="fpm-bJ-uzJ" secondAttribute="bottom" id="EEq-dd-rwx"/>
@@ -1330,6 +1347,7 @@
                         <outlet property="quiryViewBottomConstraint" destination="Vre-dd-FAR" id="Fo8-JL-hJd"/>
                         <outlet property="tableView" destination="fpm-bJ-uzJ" id="3aF-ng-dpo"/>
                         <outlet property="textField" destination="HvG-oY-cVI" id="SpT-iS-Gck"/>
+                        <outlet property="textFieldView" destination="qZ0-Gh-bif" id="Bjn-Bo-Sl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86E-Ut-xGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1339,7 +1357,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="886" y="151"/>
+            <point key="canvasLocation" x="885.50724637681162" y="150.66964285714286"/>
         </scene>
         <!--Follow Modal View-->
         <scene sceneID="4Et-t6-QQ2">
@@ -1520,8 +1538,8 @@
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
