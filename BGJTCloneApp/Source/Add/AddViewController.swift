@@ -216,9 +216,9 @@ class AddViewController: UIViewController {
 
         imageCollectionView.contentInset.left = 20
         titleTextField.delegate = self
-        titleTextField.addDoneButtonOnKeyboard()
+        titleTextField.addDoneImageButtonOnKeyboard(message: "판매금지 품목 보기")
         priceTextField.delegate = self
-        priceTextField.addDoneButtonOnKeyboard()
+        priceTextField.addDoneImageButtonOnKeyboard()
         detailTextView.delegate = self
     }
 }

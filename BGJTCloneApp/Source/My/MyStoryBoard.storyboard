@@ -386,6 +386,9 @@
                                                                                 </fragment>
                                                                             </attributedString>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="Sale:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EbG-c0-M5a"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kh-nO-NWM" userLabel="판매중">
                                                                         <rect key="frame" x="10" y="38" width="37.5" height="2"/>
@@ -422,6 +425,9 @@
                                                                                 </fragment>
                                                                             </attributedString>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="Reserved:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aCV-dh-wo3"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amv-4x-jk1" userLabel="예약중">
                                                                         <rect key="frame" x="10" y="38" width="37" height="2"/>
@@ -458,6 +464,9 @@
                                                                                 </fragment>
                                                                             </attributedString>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="Sold:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4bJ-Bx-SYr"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unc-cn-Err" userLabel="판매완료">
                                                                         <rect key="frame" x="10" y="38" width="47.5" height="2"/>
@@ -824,9 +833,12 @@
                         <outlet property="followingCountLabel" destination="irz-Ci-ZbO" id="kCR-NV-6RE"/>
                         <outlet property="inquiryButton" destination="BGW-aR-uXC" id="hIo-WH-DU0"/>
                         <outlet property="numOfItemLabel" destination="yX0-bX-9Mz" id="CBf-6E-3wN"/>
+                        <outlet property="reservedBar" destination="amv-4x-jk1" id="lTw-CV-Ud4"/>
                         <outlet property="reviewCountLabel" destination="5LH-7R-rm9" id="6Kj-F2-zIh"/>
+                        <outlet property="saleBar" destination="3kh-nO-NWM" id="ySD-CP-Oqt"/>
                         <outlet property="shopImageView" destination="xem-Tr-Za4" id="Jmb-Kj-f7y"/>
                         <outlet property="shopNameLabel" destination="Mvz-Hh-4UA" id="WHz-vf-aVu"/>
+                        <outlet property="soldBar" destination="unc-cn-Err" id="RIV-FZ-kAZ"/>
                         <outlet property="tableView" destination="0oH-0S-8sb" id="fMp-4l-K6a"/>
                         <outlet property="tableViewHeightConstraint" destination="5Q9-bD-ieN" id="tMe-5O-mFe"/>
                         <outlet property="talbeView" destination="0oH-0S-8sb" id="Upd-Dq-Jwa"/>
@@ -1126,10 +1138,10 @@
             </objects>
             <point key="canvasLocation" x="-312" y="950"/>
         </scene>
-        <!--View Controller-->
+        <!--Deal Tab View Controller-->
         <scene sceneID="tKn-Rc-FyM">
             <objects>
-                <viewController id="nDF-re-8Uk" sceneMemberID="viewController">
+                <viewController id="nDF-re-8Uk" customClass="DealTabViewController" customModule="BGJTCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xO4-Do-IsB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1595,7 +1607,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnK-zZ-WyF">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="판매중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-Ey-wqd">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-Ey-wqd">
                                                                 <rect key="frame" x="166" y="28" width="42" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>

@@ -60,7 +60,7 @@ extension FollowingViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowingListTableViewCell") as! FollowingListTableViewCell
         let shop = shops[indexPath.row]
         
-        
+        cell.selectionStyle = .none
         
         cell.shopNameLabel.text = shop.shopName
         cell.itemCountLabel.text = String(shop.howManyItem)

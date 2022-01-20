@@ -20,7 +20,10 @@ class DealViewController: UIViewController {
     }
     
     let dealDataManager = DealDataManager()
-
+    
+    var delegate: DetailViewController?
+    
+    
     var itemID: Int?
     var dealType = 0
     var address = "경기도 부천시 경인로 134번길 16"
@@ -58,6 +61,8 @@ class DealViewController: UIViewController {
         if isAgree {
             if let itemID = itemID {
                 dealDataManager.deal(itemID: itemID, deal_type: dealType, address: address, pay: pay)
+                self.navigationController?.popViewController(animated: true)
+                delegate?.dealCompleted()
             } else {
                 self.presentAlert(title: "네트워킹 에러", message: "item ID 가 존재하지 않습니다.")
             }

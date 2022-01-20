@@ -59,6 +59,7 @@
 		C069EB31278B3390004C2900 /* ImageCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */; };
 		C06E9006278ADBA5005AE69F /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E9005278ADBA5005AE69F /* RecommendCollectionViewCell.swift */; };
 		C06E9009278B1A37005AE69F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E9008278B1A37005AE69F /* AddViewController.swift */; };
+		C07ED3AE27996E6000108450 /* DealTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07ED3AD27996E6000108450 /* DealTabViewController.swift */; };
 		C08B463327943F7300DCAB7B /* DealDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B463227943F7300DCAB7B /* DealDataManager.swift */; };
 		C08B46352794638F00DCAB7B /* DetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B46342794638F00DCAB7B /* DetailDataManager.swift */; };
 		C08B4638279476F300DCAB7B /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B4637279476F300DCAB7B /* DetailResponse.swift */; };
@@ -211,6 +212,7 @@
 		C069EB30278B3390004C2900 /* ImageCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionReusableView.swift; sourceTree = "<group>"; };
 		C06E9005278ADBA5005AE69F /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		C06E9008278B1A37005AE69F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		C07ED3AD27996E6000108450 /* DealTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealTabViewController.swift; sourceTree = "<group>"; };
 		C08B463227943F7300DCAB7B /* DealDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDataManager.swift; sourceTree = "<group>"; };
 		C08B46342794638F00DCAB7B /* DetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataManager.swift; sourceTree = "<group>"; };
 		C08B4637279476F300DCAB7B /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				C03B25442793A2A6007A360F /* MyStoryBoard.storyboard */,
+				C07ED3AD27996E6000108450 /* DealTabViewController.swift */,
 				C03B25422793A175007A360F /* MyViewController.swift */,
 				C02051B22793C47100924DA4 /* MyTableViewCell.swift */,
 				C0FF3FA927964B610008D1DC /* MyDataManager.swift */,
@@ -524,6 +527,16 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		C07ED3AF279977AE00108450 /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+				C0059C6627983875009C94A4 /* InquiryViewController.swift */,
+				C0DE257427983B2D001F25BF /* InquiryTableViewCell.swift */,
+				C0DE257627983E20001F25BF /* InquiryDataManager.swift */,
+			);
+			path = Inquiry;
+			sourceTree = "<group>";
+		};
 		C08B4636279476E000DCAB7B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,9 +566,7 @@
 				C02B57992795711700CD404D /* FollowDataManager.swift */,
 				C0FF3FB027965FBC0008D1DC /* DetailTableViewCell.swift */,
 				C01DEAAA2797E4A0000798A8 /* FollowModalView.swift */,
-				C0059C6627983875009C94A4 /* InquiryViewController.swift */,
-				C0DE257427983B2D001F25BF /* InquiryTableViewCell.swift */,
-				C0DE257627983E20001F25BF /* InquiryDataManager.swift */,
+				C07ED3AF279977AE00108450 /* Inquiry */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1167,6 +1178,7 @@
 				C057F506278BB60800405ACD /* OtherLoginViewController.swift in Sources */,
 				C0B275E927899F4F00C10AE4 /* Device.swift in Sources */,
 				C0FF3FAD279652AD0008D1DC /* MyResponse.swift in Sources */,
+				C07ED3AE27996E6000108450 /* DealTabViewController.swift in Sources */,
 				C0B275D027899F3C00C10AE4 /* Constant.swift in Sources */,
 				C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */,
 				C0C37B32279054E700AA9AC0 /* InterestViewController.swift in Sources */,

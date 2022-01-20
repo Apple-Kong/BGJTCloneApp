@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     var shopInfo: Shop?
     var reviewInfo: ResultReview?
     
+    @IBOutlet weak var inquiryCountLabel: UILabel!
     var itemID: Int?
     
     //MARK: - 커스텀 네비게이션 바
@@ -58,10 +59,13 @@ class DetailViewController: UIViewController {
                     wistDataManager.addWishItem(itemID: itemID)
                     self.presentBottomAlert(message: "찜 목록에 추가했어요!   ")
                     
+                   
+                    
                 } else {
                     wishButton.isHighlighted = false
                     wistDataManager.deleteWishItem(itemID: itemID)
                     self.presentBottomAlert(message: "찜 해제가 완료되었습니다.")
+       
                     
                 }
             }
@@ -117,6 +121,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet var inquiryButtonTap: UITapGestureRecognizer!
     
+    @IBOutlet weak var tagsLabel: UILabel!
     
     
     //MARK: - 상점 UI
@@ -140,6 +145,8 @@ class DetailViewController: UIViewController {
                 
                 if let shopInfo = shopInfo {
                     
+                    followerLabel.text = String(Int(followerLabel.text!)! + 1)
+                    
                     followDataManager.followShop(shopID: shopInfo.sellerID)
                     
                     let alert = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "FollowModalView") as! FollowModalView
@@ -153,6 +160,9 @@ class DetailViewController: UIViewController {
                 
                 
             } else {
+                
+                
+                followerLabel.text = String(Int(followerLabel.text!)! - 1)
                 
                 self.shopFollowButton.image = UIImage(named: "follow_shop")
                 if let shopInfo = shopInfo {
@@ -178,6 +188,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func followShop(_ sender: UITapGestureRecognizer) {
         isFollowing.toggle()
+        
     }
     //네비게이션 바 아이템 탭 액션
     @objc func fbButtonPressed() {
@@ -273,6 +284,7 @@ extension DetailViewController: DealModalDelegate {
     func delivery() {
         let vc = UIStoryboard(name: "DealStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "DealViewController") as! DealViewController
         vc.dealType = 1
+        vc.delegate = self
         
         
         if let itemInfo = self.itemInfo {
@@ -295,6 +307,7 @@ extension DetailViewController: DealModalDelegate {
     func direct() {
         let vc = UIStoryboard(name: "DealStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "DealViewController") as! DealViewController
         vc.dealType = 0
+        vc.delegate = self
         
         if let itemInfo = self.itemInfo {
             let url = URL(string: (Constant.IMAGE_URL + itemInfo.images[0].imagePath))
@@ -309,6 +322,13 @@ extension DetailViewController: DealModalDelegate {
         }
         vc.itemID = itemID
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+extension DetailViewController {
+    func dealCompleted() {
+        self.presentBottomAlert(message: "상품 구매가 완료되었습니다!    ")
     }
 }
 
@@ -354,7 +374,7 @@ extension DetailViewController: DetailDelegate {
         hideItemLabel.text = item.title
         priceLabel.text = String(item.price).insertComma
         hidePriceLabel.text = String(item.price).insertComma
-        
+        inquiryCountLabel.text = "\(item.inquiryCount)"
         let attributedString = NSMutableAttributedString(string: " ")
            
         //삽입할 이미지
@@ -415,7 +435,7 @@ extension DetailViewController: DetailDelegate {
         
         
         
-        otherInfoLabel.text = "\(condition) • \(deliveryFee) • 총\(item.count)개"
+        otherInfoLabel.text = "\(condition)  •  \(deliveryFee)  •  총\(item.count)개"
         
         detailTextView.text = item.detail
         
@@ -426,7 +446,13 @@ extension DetailViewController: DetailDelegate {
         }
 //            postInfo.text = item.creatd_at.stringToIntervalDateString().localized
         
+        var tags = ""
+        
+        for tag in item.tags {
+            tags += "#\(tag.tagName) "
+        }
        
+        tagsLabel.text = tags
         
         
         //MARK: - shop 구간

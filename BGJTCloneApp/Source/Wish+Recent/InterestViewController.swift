@@ -39,7 +39,7 @@ class InterestViewController: TabmanViewController {
             .font : UIFont.systemFont(ofSize: 16, weight: .bold),
         ]
         
-        self.navigationItem.title = "관심상품"
+//        self.navigationItem.title = "관심상품"
 
         let buttonStrings = ["edit", "filter", "plus"]
         var buttons: [UIBarButtonItem] = []

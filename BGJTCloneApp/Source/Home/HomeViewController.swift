@@ -24,6 +24,8 @@ class HomeViewController: UIViewController {
     let MaxTopHeight: CGFloat = 50
     let MinTopHeight: CGFloat = 50
     
+    @IBOutlet weak var labelIndicatorView: UIView!
+    @IBOutlet weak var currentPageLabel: UILabel!
     //기기에 따라서 달라질 수 있기에 뷰의 높이와 엮는 게 좋을 듯.
     var threshold: CGFloat = 370
     
@@ -35,10 +37,12 @@ class HomeViewController: UIViewController {
                     ]
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.tintColor = .clear
         self.navigationController?.navigationBar.isHidden = false
         UIApplication.statusBarBackgroundColor = .clear
         
+        scrollView.setContentOffset(CGPoint(x: 0, y: -50), animated: false)
+      
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -66,9 +70,12 @@ class HomeViewController: UIViewController {
         slideShow.setImageInputs(images)
         slideShow.contentScaleMode = .scaleAspectFill
         slideShow.slideshowInterval = 4
-        
-        
-        
+        slideShow.pageIndicator = LabelPageIndicator()
+        slideShow.currentPageChanged = { index in
+           
+            self.currentPageLabel.text = "\(index + 1) / 4"
+        }
+        labelIndicatorView.layer.cornerRadius = 4
         
         
         buttonCollectionView.delegate = self

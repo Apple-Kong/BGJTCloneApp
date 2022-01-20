@@ -14,7 +14,50 @@ class MyViewController: UIViewController {
     let myDataManager = MyDataManager()
     let itemEditManager = ItemEditManager()
     
-    var sellingItems: [SellListResult] = []
+    var showingItems: [SellListResult] = []
+    var allSellingItems: [SellListResult] = []
+    
+    var nowShowing = "Sale" {
+        didSet {
+            
+            // nowShowing이 변경됨에 따라. 문자열에 따라 보여지는 아이템의 항목을 필터링
+            
+            var temp: [SellListResult] = []
+            
+            for item in allSellingItems {
+                if item.sale == nowShowing {
+                    temp.append(item)
+                }
+            }
+            
+            showingItems = temp
+            tableView.reloadData()
+        }
+    }
+    
+    @IBOutlet weak var saleBar: UIView!
+    @IBAction func Sale(_ sender: UIButton) {
+        nowShowing = "Sale"
+        saleBar.isHidden = false
+        reservedBar.isHidden = true
+        soldBar.isHidden = true
+    }
+    @IBOutlet weak var reservedBar: UIView!
+    @IBAction func Reserved(_ sender: UIButton) {
+        nowShowing = "Reserved"
+        
+        saleBar.isHidden = true
+        reservedBar.isHidden = false
+        soldBar.isHidden = true
+    }
+    
+    @IBOutlet weak var soldBar: UIView!
+    @IBAction func Sold(_ sender: UIButton) {
+        nowShowing = "Sold"
+        saleBar.isHidden = true
+        reservedBar.isHidden = true
+        soldBar.isHidden = false
+    }
     
     @IBAction func wishListButton(_ sender: UITapGestureRecognizer) {
         
@@ -142,7 +185,19 @@ extension MyViewController {
 extension MyViewController: SellListDelegate {
     func didFetched(data: [SellListResult]) {
       
-        self.sellingItems = data
+        self.allSellingItems = data
+        
+        var temp: [SellListResult] = []
+        
+        for item in allSellingItems {
+            if item.sale == nowShowing {
+                temp.append(item)
+            }
+        }
+        
+        showingItems = temp
+        
+        
         self.tableView.reloadData()
     }
     
@@ -199,10 +254,10 @@ extension MyViewController: UIViewControllerTransitioningDelegate {
     
     //half modal view 띄우는 메서드
     private func presentConditionModalViewController(index: Int) {
-            let storyboard = UIStoryboard(name: "MyStoryBoard", bundle: nil)
-            guard let changeModalViewController = storyboard.instantiateViewController(withIdentifier: "ChangeConditionViewController") as? ChangeConditionViewController else {
-                return
-            }
+        let storyboard = UIStoryboard(name: "MyStoryBoard", bundle: nil)
+        guard let changeModalViewController = storyboard.instantiateViewController(withIdentifier: "ChangeConditionViewController") as? ChangeConditionViewController else {
+            return
+        }
             
         
         
@@ -218,13 +273,13 @@ extension MyViewController: UIViewControllerTransitioningDelegate {
     
     //half modal view 띄우는 메서드
     private func presentEditModalViewController(index: Int) {
-            let storyboard = UIStoryboard(name: "MyStoryBoard", bundle: nil)
-            guard let editModalViewController = storyboard.instantiateViewController(withIdentifier: "ItemEditViewController") as? ItemEditViewController else {
-                return
-            }
+        let storyboard = UIStoryboard(name: "MyStoryBoard", bundle: nil)
+        guard let editModalViewController = storyboard.instantiateViewController(withIdentifier: "ItemEditViewController") as? ItemEditViewController else {
+            return
+        }
             
         editModalViewController.delegate = self
-        editModalViewController.itemID = sellingItems[index].item_id
+        editModalViewController.itemID = showingItems[index].item_id
         
         editModalViewController.modalPresentationStyle = .custom
         editModalViewController.transitioningDelegate = self
@@ -249,8 +304,6 @@ extension MyViewController: UIViewControllerTransitioningDelegate {
             
             return halfModalPC
         }
-        
-        
     }
 }
 
@@ -258,15 +311,20 @@ extension MyViewController: UIViewControllerTransitioningDelegate {
 extension MyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        tableViewHeightConstraint.constant = CGFloat(130 * sellingItems.count)
-        self.numOfItemLabel.text = "\(sellingItems.count)개"
-        return sellingItems.count
+        tableViewHeightConstraint.constant = CGFloat(130 * showingItems.count)
+        self.numOfItemLabel.text = "\(showingItems.count)개"
+        
+        
+  
+        return showingItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         
-        let sellingItem = sellingItems[indexPath.row]
+        cell.selectionStyle = .none
+        
+        let sellingItem = showingItems[indexPath.row]
         //데이터 연결
         if let imagePath = sellingItem.image_path {
             let url = URL(string: Constant.IMAGE_URL + imagePath)

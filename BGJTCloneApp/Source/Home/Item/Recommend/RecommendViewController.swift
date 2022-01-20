@@ -37,6 +37,10 @@ class RecommendViewController: UIViewController {
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+    }
 }
 
 

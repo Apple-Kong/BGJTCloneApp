@@ -65,7 +65,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
             delegate?.categorySelected(cateogry: category)
             
             //네비게이션 컨트롤러 디스미스
-            _ = navigationController?.popViewController(animated: true)
+            _ = navigationController?.popViewController(animated: false)
             
             
         } else if indexPath.section == 1 {

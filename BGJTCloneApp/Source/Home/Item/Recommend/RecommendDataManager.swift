@@ -19,7 +19,7 @@ class RecommendDataManager {
         let urlString = Constant.MAIN_URL + "/api/items/main/recommends"
         let headers = Secret.tokenHeaders
         let parameters: [String : Any] = [
-            "offset" : page * 12 ,
+            "offset" : 1 ,
             "limit" : 40
          ]
         

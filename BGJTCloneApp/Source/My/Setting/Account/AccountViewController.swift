@@ -49,9 +49,7 @@ class AccountViewController: BaseViewController {
         super.viewDidLoad()
         accountDataManager.deleagate = self
         
-        
-        
-        
+
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -115,7 +113,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         cell.index = indexPath.row
         cell.delegate = self
         
-        
+        cell.selectionStyle = .none
         cell.nameLabel.text = item.bank
         cell.numberLabel.text = item.account_number
         cell.ownerLabel.text = item.user_name

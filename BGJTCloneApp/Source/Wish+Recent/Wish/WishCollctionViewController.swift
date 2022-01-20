@@ -32,6 +32,14 @@ class WishCollctionViewController: UIViewController {
         wishListDataManager.fetchData()
   
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "관심상품"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
 }
 extension WishCollctionViewController: WishDelegate {
     func wishButtonTapped(index: Int) {

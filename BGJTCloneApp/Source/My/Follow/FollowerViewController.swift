@@ -56,6 +56,9 @@ extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowerTableViewCell") as! FollowerTableViewCell
+        
+        cell.selectionStyle = .none
+        
         let user = users[indexPath.row]
         
         cell.shopNameLabel.text = user.shop_name

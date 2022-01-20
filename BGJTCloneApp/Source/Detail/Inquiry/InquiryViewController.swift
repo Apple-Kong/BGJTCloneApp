@@ -14,9 +14,12 @@ class InquiryViewController: UIViewController {
     var inquirys: [InquiryResult] = []
     var isKeyBoardShown = false
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var quiryViewBottomConstraint: NSLayoutConstraint!
+    
+    
     let inquiryDataManager = InquiryDataManager()
     
     @IBOutlet weak var inquiryView: UIView!
@@ -24,6 +27,10 @@ class InquiryViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func AddInquiryButton(_ sender: UIButton) {
+        
+        
+        self.dismissKeyboard()
+        
         if let content = textField.text {
             inquiryDataManager.addInquiry(itemID: itemID, content: content)
         } else {

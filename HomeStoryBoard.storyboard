@@ -31,6 +31,24 @@
                                                     <constraint firstAttribute="height" constant="280" id="0eN-dH-LwF"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv5-79-Hq6">
+                                                <rect key="frame" x="344" y="226" width="50" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbR-bU-yBn">
+                                                        <rect key="frame" x="12.5" y="10" width="25" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23964723926380369" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="UbR-bU-yBn" firstAttribute="centerX" secondItem="gv5-79-Hq6" secondAttribute="centerX" id="CtZ-sG-jVH"/>
+                                                    <constraint firstAttribute="height" constant="34" id="LAV-fM-MMs"/>
+                                                    <constraint firstAttribute="width" constant="50" id="mEc-rN-OFQ"/>
+                                                    <constraint firstItem="UbR-bU-yBn" firstAttribute="centerY" secondItem="gv5-79-Hq6" secondAttribute="centerY" id="ubv-IM-gEB"/>
+                                                </constraints>
+                                            </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUd-zt-Jaz">
                                                 <rect key="frame" x="0.0" y="288" width="414" height="140"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -127,6 +145,7 @@
                                         <constraints>
                                             <constraint firstItem="o8B-tu-HX0" firstAttribute="leading" secondItem="ELT-Yy-SRS" secondAttribute="leading" id="2zf-JR-Yue"/>
                                             <constraint firstItem="EjB-57-iVU" firstAttribute="top" secondItem="o8B-tu-HX0" secondAttribute="bottom" id="31c-Au-NEb"/>
+                                            <constraint firstItem="gv5-79-Hq6" firstAttribute="bottom" secondItem="dQc-Kn-f3x" secondAttribute="bottom" constant="-20" id="4go-fo-1mH"/>
                                             <constraint firstItem="CiQ-eH-qKw" firstAttribute="top" secondItem="kUd-zt-Jaz" secondAttribute="bottom" constant="6" id="5zH-fk-eJo"/>
                                             <constraint firstItem="o8B-tu-HX0" firstAttribute="top" secondItem="CiQ-eH-qKw" secondAttribute="bottom" constant="22" id="9iV-BG-61d"/>
                                             <constraint firstItem="dQc-Kn-f3x" firstAttribute="leading" secondItem="ELT-Yy-SRS" secondAttribute="leading" id="C7g-mm-4w2"/>
@@ -135,6 +154,7 @@
                                             <constraint firstItem="EjB-57-iVU" firstAttribute="leading" secondItem="ELT-Yy-SRS" secondAttribute="leading" id="QvE-Dj-TSt"/>
                                             <constraint firstAttribute="bottom" secondItem="EjB-57-iVU" secondAttribute="bottom" id="Uiw-nZ-UfU"/>
                                             <constraint firstItem="kUd-zt-Jaz" firstAttribute="leading" secondItem="ELT-Yy-SRS" secondAttribute="leading" id="X3z-qM-800"/>
+                                            <constraint firstItem="gv5-79-Hq6" firstAttribute="trailing" secondItem="dQc-Kn-f3x" secondAttribute="trailing" constant="-20" id="Xj9-yh-xQD"/>
                                             <constraint firstItem="CiQ-eH-qKw" firstAttribute="centerX" secondItem="ELT-Yy-SRS" secondAttribute="centerX" id="ZMp-uw-ODT"/>
                                             <constraint firstItem="CiQ-eH-qKw" firstAttribute="width" secondItem="ELT-Yy-SRS" secondAttribute="width" multiplier="0.13" id="fsy-kd-Cmf"/>
                                             <constraint firstAttribute="trailing" secondItem="dQc-Kn-f3x" secondAttribute="trailing" id="nsf-dT-Uz3"/>
@@ -248,10 +268,12 @@
                     <connections>
                         <outlet property="buttonCollectionView" destination="kUd-zt-Jaz" id="6CV-ku-jEP"/>
                         <outlet property="containerView" destination="EjB-57-iVU" id="P3M-xq-7lt"/>
+                        <outlet property="currentPageLabel" destination="UbR-bU-yBn" id="fUu-jD-lO1"/>
                         <outlet property="headerTopConstraint" destination="vzj-bP-WQw" id="LlR-IE-jMb"/>
                         <outlet property="indicatorBackgroundView" destination="CiQ-eH-qKw" id="dND-XR-Oy8"/>
                         <outlet property="indicatorLeadingConstraint" destination="V4u-8w-8uP" id="er3-xK-ad2"/>
                         <outlet property="indicatorView" destination="Lgc-67-DxS" id="hnt-Vi-bB1"/>
+                        <outlet property="labelIndicatorView" destination="gv5-79-Hq6" id="TUU-y1-PfA"/>
                         <outlet property="scrollView" destination="G6s-jx-uPd" id="ztS-Bo-zhl"/>
                         <outlet property="slideShow" destination="dQc-Kn-f3x" id="qeI-RC-pfN"/>
                     </connections>
