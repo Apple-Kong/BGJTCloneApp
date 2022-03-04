@@ -1312,8 +1312,8 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="등록">
                                                             <attributes>
-                                                                <font key="NSFont" size="16" name=".AppleKoreanFont-Bold"/>
-                                                                <font key="NSOriginalFont" size="16" name=".AppleKoreanFont-Bold"/>
+                                                                <font key="NSFont" metaFont="system" size="16"/>
+                                                                <font key="NSOriginalFont" metaFont="system" size="16"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1542,7 +1542,7 @@
         <image name="go_back" width="69" height="72"/>
         <image name="item_header" width="71" height="73"/>
         <image name="location_header" width="61" height="71"/>
-        <image name="logo" width="900" height="900"/>
+        <image name="logo" width="122" height="121"/>
         <image name="search_detail" width="29" height="28"/>
         <image name="share_detail" width="28" height="28"/>
         <image name="star_5" width="185" height="48"/>

@@ -14,11 +14,6 @@ extension UITextField {
         doneToolbar.barStyle = .default
         
         
-//        let title = NSAttributedString(string: message)
-//        let item = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(self.doneButtonAction))
-//        item.tintColor = .black
-//
-        
   
 
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)

@@ -137,14 +137,22 @@ extension HomeViewController: NestedScrollDelegate {
 
 
 
+
+
+
+
 //MARK: - 스크롤에 따른 UI 애니메이션 들
 extension HomeViewController: UIScrollViewDelegate {
+    
+    
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        
+        
+        
         if scrollView == self.buttonCollectionView {
-            
             let offset = scrollView.contentOffset.x / 6
-            
             indicatorLeadingConstraint.constant = offset
         }
         

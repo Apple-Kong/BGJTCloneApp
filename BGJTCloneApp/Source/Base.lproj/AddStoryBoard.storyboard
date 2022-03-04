@@ -604,33 +604,9 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tut-M5-IQU">
                                         <rect key="frame" x="309" y="16.5" width="85" height="17"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="부천시">
+                                            <fragment content="부천시 송내2동">
                                                 <attributes>
-                                                    <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                    <integer key="NSUnderline" value="1"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="menu" size="14"/>
-                                                    <integer key="NSUnderline" value="1"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="송내">
-                                                <attributes>
-                                                    <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                    <integer key="NSUnderline" value="1"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="2">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="menu" size="14"/>
-                                                    <integer key="NSUnderline" value="1"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="동">
-                                                <attributes>
-                                                    <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                     <integer key="NSUnderline" value="1"/>
                                                 </attributes>
                                             </fragment>
