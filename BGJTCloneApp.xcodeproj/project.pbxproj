@@ -92,7 +92,6 @@
 		C0B275D527899F3C00C10AE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275CF27899F3C00C10AE4 /* BaseViewController.swift */; };
 		C0B275E127899F4F00C10AE4 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275D727899F4F00C10AE4 /* IndicatorView.swift */; };
 		C0B275E227899F4F00C10AE4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275D927899F4F00C10AE4 /* Date.swift */; };
-		C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DA27899F4F00C10AE4 /* UIColor.swift */; };
 		C0B275E427899F4F00C10AE4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DB27899F4F00C10AE4 /* String.swift */; };
 		C0B275E527899F4F00C10AE4 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DC27899F4F00C10AE4 /* UIButton.swift */; };
 		C0B275E627899F4F00C10AE4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DD27899F4F00C10AE4 /* UIViewController.swift */; };
@@ -100,6 +99,7 @@
 		C0B275E827899F4F00C10AE4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275DF27899F4F00C10AE4 /* UIFont.swift */; };
 		C0B275E927899F4F00C10AE4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275E027899F4F00C10AE4 /* Device.swift */; };
 		C0B275EC2789BDF200C10AE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */; };
+		C0B544C527D2633000F20D5E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B544C427D2633000F20D5E /* UIColor.swift */; };
 		C0BBCE59278A80C300C12161 /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBCE58278A80C300C12161 /* HomeViewController+DataSource.swift */; };
 		C0BBCE5B278A9AE200C12161 /* HomeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBCE5A278A9AE200C12161 /* HomeItemViewController.swift */; };
 		C0BBCE5E278A9CB400C12161 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBCE5D278A9CB400C12161 /* RecommendViewController.swift */; };
@@ -249,7 +249,6 @@
 		C0B275CF27899F3C00C10AE4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C0B275D727899F4F00C10AE4 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		C0B275D927899F4F00C10AE4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		C0B275DA27899F4F00C10AE4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C0B275DB27899F4F00C10AE4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C0B275DC27899F4F00C10AE4 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		C0B275DD27899F4F00C10AE4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +256,7 @@
 		C0B275DF27899F4F00C10AE4 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C0B275E027899F4F00C10AE4 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C0B275EB2789BDF200C10AE4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0B544C427D2633000F20D5E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C0BBCE58278A80C300C12161 /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
 		C0BBCE5A278A9AE200C12161 /* HomeItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemViewController.swift; sourceTree = "<group>"; };
 		C0BBCE5D278A9CB400C12161 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
@@ -694,7 +694,6 @@
 			isa = PBXGroup;
 			children = (
 				C0B275D927899F4F00C10AE4 /* Date.swift */,
-				C0B275DA27899F4F00C10AE4 /* UIColor.swift */,
 				C0B275DB27899F4F00C10AE4 /* String.swift */,
 				C0B275DC27899F4F00C10AE4 /* UIButton.swift */,
 				C0B275DD27899F4F00C10AE4 /* UIViewController.swift */,
@@ -704,6 +703,7 @@
 				C0A5EE05278A66640070E617 /* UIView.swift */,
 				C069EB2E278B1C1A004C2900 /* UITextField.swift */,
 				C0A2215727910C1F0043B27F /* UIImage.swift */,
+				C0B544C427D2633000F20D5E /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1164,6 +1164,7 @@
 				C05CED2027918EB6005A2646 /* DealViewController.swift in Sources */,
 				C0A2215B279116D40043B27F /* DetailViewController.swift in Sources */,
 				C01DAD802789E4C4008430B8 /* UIApplication.swift in Sources */,
+				C0B544C527D2633000F20D5E /* UIColor.swift in Sources */,
 				C0526AAF278EB7E50014C824 /* TagCollectionViewCell.swift in Sources */,
 				C02B579A2795711700CD404D /* FollowDataManager.swift in Sources */,
 				C03B25432793A175007A360F /* MyViewController.swift in Sources */,
@@ -1171,7 +1172,6 @@
 				C0B275E227899F4F00C10AE4 /* Date.swift in Sources */,
 				C0FDCD922790774000859989 /* WishCollctionViewController.swift in Sources */,
 				C0A986872793DED9003A0298 /* AccountTableViewCell.swift in Sources */,
-				C0B275E327899F4F00C10AE4 /* UIColor.swift in Sources */,
 				C0B275E127899F4F00C10AE4 /* IndicatorView.swift in Sources */,
 				C0526AA8278E78090014C824 /* AllTableViewCell.swift in Sources */,
 				C063F725278D50A800636680 /* TabBarController.swift in Sources */,

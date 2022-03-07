@@ -19,9 +19,6 @@ class DetailDataManager {
  
         
         AF.request(urlString, method: .get, headers: Secret.tokenHeaders)
-            .responseString(completionHandler: { response in
-                print(response.value)
-                       })
             .responseDecodable(of: DetailResponse2.self) { response in
                 switch response.result {
                 case .success:
